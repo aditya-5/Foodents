@@ -2,26 +2,30 @@
 
 require_once('config.inc.php'); 
 
-$mysqli = new mysqli($database_host, $database_user, $database_pass, $group_dbnames[0]);
+$con = new mysqli($database_host, $database_user, $database_pass, $group_dbnames[0]);
 
-if($mysqli -> connect_error) {
-    die('Connect Error ('.$mysqli -> connect_errno.') '.$mysqli -> connect_error);
+if($con -> connect_error) {
+    die('Connect Error ('.$con -> connect_errno.') '.$con -> connect_error);
 }
 
-$sql = "CREATE TABLE MyGuests (
-id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-firstname VARCHAR(30) NOT NULL,
-lastname VARCHAR(30) NOT NULL,
-email VARCHAR(50),
-reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-)";
+$sql = "INSERT INTO USERS (username, password, email, first_name, last_name) 
+VALUES ('admin', '1234', 'admin@manchester.ac.uk', 'Mr. Admin', 'Realperson')";
 
-if ($mysqli->query($sql) === TRUE) {
-  echo "Table MyGuests created successfully";
-} else {
-  echo "Error creating table: " . $mysqli->error;
+if($conn->query($sql) === FALSE) echo "Error: " . $sql . "<br>" . $conn->error;
+else
+{
+  echo "Admin added successfully";
+
+  $sql = "SELECT * FROM USERS";
+
+  $result = mysqli_query($sql);
+  while($row = mysqli_fetch_array($result)){
+    print_r($row);
+  }
 }
 
 
-$mysqli -> close();
+
+
+$con -> close();
 ?>
