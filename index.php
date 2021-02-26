@@ -18,7 +18,7 @@ else
 
   $sql = "SELECT * FROM USERS";
 
-  if ($result = $mysqli -> query($sql)) {
+  if ($result = $con -> query($sql)) {
     echo "Returned rows are: " . $result -> num_rows;
     $result -> free_result();
   }
