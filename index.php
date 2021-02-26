@@ -18,9 +18,9 @@ else
 
   $sql = "SELECT * FROM USERS";
 
-  $result = mysqli_query($sql);
-  while($row = mysqli_fetch_array($result)){
-    print_r($row);
+  if ($result = $mysqli -> query($sql)) {
+    echo "Returned rows are: " . $result -> num_rows;
+    $result -> free_result();
   }
 }
 
