@@ -14,7 +14,7 @@ VALUES ('admin', '1234', 'admin@manchester.ac.uk', 'Mr. Admin', 'Realperson')";
 if($con->query($sql) === FALSE) echo "Error: " . $sql . "<br>" . $con->error;
 else
 {
-  echo "Admin added successfully";
+  echo "Admin added successfully<br>";
 
   $sql = "SELECT * FROM USERS";
 
