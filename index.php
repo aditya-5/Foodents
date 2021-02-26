@@ -1,4 +1,4 @@
-<?php
+<?php // Test comment for Git
 
 require_once('config.inc.php'); 
 
