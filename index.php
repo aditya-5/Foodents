@@ -11,7 +11,7 @@ if($con -> connect_error) {
 $sql = "INSERT INTO USERS (username, password, email, first_name, last_name) 
 VALUES ('admin', '1234', 'admin@manchester.ac.uk', 'Mr. Admin', 'Realperson')";
 
-if($conn->query($sql) === FALSE) echo "Error: " . $sql . "<br>" . $conn->error;
+if($con->query($sql) === FALSE) echo "Error: " . $sql . "<br>" . $con->error;
 else
 {
   echo "Admin added successfully";
