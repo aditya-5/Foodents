@@ -1,4 +1,4 @@
-<?php // push test
+<?php
 
 require_once('config.inc.php'); 
 
