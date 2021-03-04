@@ -377,6 +377,7 @@ h1, h2, h3, h4, h5, h6 {
   top: 70px;
   left: 55px;
   right: 55px;
+  z-index: +1;
 }
 
 #hero .carousel-content {
