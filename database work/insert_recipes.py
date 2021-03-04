@@ -1,18 +1,18 @@
 # I could not find a suitable online JSON to CSV parser (or to any other format, really), 
 # so I'm doing it manually
 
-from recipe import Recipe
 from entries import Entries as e
 from random import choice, randint
 
 
 def printKeys():
-
     print("Total keys in DB: ", totalKeys)
     print("Keys common to all entries: ", commonKeys)
     print("Inconsistent keys: ", [k for k in totalKeys if k not in commonKeys])
 
 def populateRecipes():
+    # creates the query to populate RECIPES
+
     # ['id', 'name', 'source', 'preptime', 'waittime', 'cooktime', 'servings', 
     # 'comments', 'calories', 'fat', 'satfat', 'carbs', 'fiber', 'sugar', 'protein', 
     # 'instructions', 'ingredients', 'tags']
@@ -37,9 +37,8 @@ def populateRecipes():
 
         sql = "INSERT INTO RECIPES (user_id, name, date_created, servings, instructions, story, time, difficulty) VALUES "
         f.write(sql)
-
         for entry in e.entries:
-            recipe_id = e.entries[entry]["id"]
+            recipe_id = e.entries[entry]["id"] # only for tests, recipe_id is auto_increment
             user_id = choice(userIds)
             name = e.entries[entry]["name"]
             date_created = str(randint(2012, 2022)) + "-" + str(randint(1, 12)) + "-" + str(randint(1, 28))
@@ -62,6 +61,8 @@ def populateRecipes():
         # last , must be manually transformed into ;
 
 def deleteApostrophes(text):
+    # removes single and double quotes from string
+
     text = text.replace("\'", "\\\'")
     return text.replace("\"", "\\\"")
 
@@ -78,6 +79,8 @@ def deleteApostrophes(text):
 
 
 def findKeys():
+    # finds the total number of keys and the keys that are common to all entries
+
     commonKeys = list(e.entries["2"].keys())
     totalKeys = []
 
@@ -94,6 +97,8 @@ def findKeys():
     return (totalKeys, commonKeys)
 
 def changeIds():
+    # changes ids from "idx" form to "x" form
+
     for entry in e.entries:
         id = e.entries[entry]["id"]
         if id.find("id") != -1:
@@ -102,14 +107,41 @@ def changeIds():
             e.entries[entry]["id"] = id
         
 
+def matchRecipeIds():
+    # matches recipe ids to those in RECIPES (RECIPES is auto-incremented and so they are mismatched)
+    id = 619
+
+    es = []
+    for entry in e.entries:
+        es.append(entry)
+
+    for entry in es:
+        e.entries[str(id)] = e.entries.pop(entry)
+        id += 1
+
+def printRecipes():
+    with open("entries_corrected_ids.txt", "w") as f:
+        f.write("entries = {\n")
+        for entry in e.entries:
+            entry = e.entries[entry]
+            id = entry["id"]
+            f.write(f"    {id}: " + str(entry) + ", \n")
+        # must remove last semicolon
+        f.write("}")
+
 if __name__ == "__main__":
     (totalKeys, commonKeys) = findKeys()
     # conclusion: all entries have the same structure
     # printKeys()
 
     changeIds()
+    # ids are NOT consecutive, they go up to 600 but are only 500
 
-    populateRecipes()
+    # populateRecipes()
+
+    matchRecipeIds()
+
+    printRecipes()
 
 
 

@@ -1865,7 +1865,7 @@ class Entries():
             "coarse salt and ground pepper\r",
             "<hr>\r",
             "4 flour tortillas, warmed or lightly toasted\r",
-            "1 cup Monterey Jack cheese, shredded (1 cup \u2248 3 oz)\r",
+            "1 cup Monterey Jack cheese, shredded (1 cup times 3 oz)\r",
             "1 avocado, pitted, peeled and thinly sliced\r",
             "1 cup packed shredded romaine lettuce"
         ],
@@ -4304,7 +4304,7 @@ class Entries():
             "1 1\/2 tablespoon extra-virgin olive oil\r",
             "1 medium onion, coarsely chopped\r",
             "2 garlic cloves, coarsely chopped\r",
-            "2 bunches broccoli (1 bunch \u2248 1\u00bdlbs), stems and florets chopped separately into 1\/2-inch pieces\r",
+            "2 bunches broccoli (1 bunch or 1lbs), stems and florets chopped separately into 1\/2-inch pieces\r",
             "7 cup low-sodium chicken stock\r",
             "1 teaspoon coarse salt\r",
             "1 cup skim milk\r",
@@ -11114,17 +11114,17 @@ class Entries():
         "ingredients": [
             "4 cup all-purpose flour, sifted\r",
             "2 tablespoon sugar\r",
-            "1\u20444 teaspoon salt\r",
+            "1/4 teaspoon salt\r",
             "3 tablespoon butter, softened\r",
             "2 egg yolks\r",
-            "3\u20444 cup white wine\r",
+            "3/4 cup white wine\r",
             "canola oil or shortening, for frying\r",
             "<hr>\r",
             "4 cup whole milk ricotta cheese\r",
-            "1 1\u20442 cups powdered sugar\r",
+            "1 1/2 cups powdered sugar\r",
             "1 tablespoon vanilla extract\r",
-            "1\u20443 cup finely chopped maraschino cherry\r",
-            "1\u20444 cup semisweet mini chocolate chips\r",
+            "1/3 cup finely chopped maraschino cherry\r",
+            "1/4 cup semisweet mini chocolate chips\r",
             "1 cup heavy whipping cream, optional"
         ],
         "tags": [
@@ -13513,7 +13513,7 @@ class Entries():
             "1\/4 small carrot, cut into green bean-equivalent sticks\r",
             "5 green beans, topped and tailed\r",
             "salt\r",
-            "6 slices salami (6 slices \u2248 1oz)\r",
+            "6 slices salami (6 slices of 1oz)\r",
             "2 tbsp cream cheese, softened\r",
             "<hr>\r",
             "1 cup cooked sushi rice\r",
@@ -14414,7 +14414,7 @@ class Entries():
         "protein": 136,
         "instructions": "*Components can all be made ahead of time*\r\n\r\nFor tofu: Combine all tofu ingredients in a zip top bag and marinate 4-24 hours (ok, but really, if you\u2019ve only got 30 minutes, that\u2019s fine, too). Preheat oven to 350F. Drain tofu reserving the marinade. Place cubes on a parchment paper lined baking sheet and bake for 30 minutes or until tofu begins to brown in places where it\u2019s exposed. Allow to cool.\r\n\r\nFor dressing: Whisk all ingredients together in a small bowl, adding more marinade, if needed, to create a drizzleable consistency. Store in the fridge until ready to use.\r\n\r\nFor veggies: Combine all ingredients and \u201cmarinate\u201d in the fridge for 12-24 hours.\r\n\r\nTo assemble salad: In a large bowl, layer half (each) of the bread, dressing, veggies, tofu and cilantro. Repeat. Top with sesame seeds. Toss just before serving.",
         "ingredients": [
-            "28 oz super firm tofu, cut into 1\/2\u2033 \u2013 1\u2033 pieces\r",
+            "28 oz super firm tofu, cut into 1\/2 1/2 \u2013 1 1/2 pieces\r",
             "1 cup lite soy sauce\r",
             "4 tbsp sesame oil\r",
             "4 tbsp rice wine vinegar\r",
@@ -14432,7 +14432,7 @@ class Entries():
             "2 tsp sea salt\r",
             "1\/2 tsp sugar\r",
             "<hr>\r",
-            "8 oz French bread, cut into 1\u2033 cubes (needs to be stale, if bread is too fresh, leave cubes on the counter overnight to stale)\r",
+            "8 oz French bread, cut into 1 1/2 cubes (needs to be stale, if bread is too fresh, leave cubes on the counter overnight to stale)\r",
             "1\/4 cup fresh cilantro, stems removed\r",
             "2 tbsp black sesame seeds, for sprinkling"
         ],
@@ -15081,7 +15081,7 @@ class Entries():
         "instructions": "Heat the olive oil in a small non-stick frying pan. Tip in the mushrooms and fry over a high heat, stirring occasionally for 2-3 mins until golden. Lift out of the pan into a bowl and mix with the cheese and parsley.\r\n\r\nPlace the pan back on the heat and swirl the eggs into it. Cook for 1 min or until set to your liking, swirling with a fork now and again.\r\n\r\nSpoon the mushroom mix over one half of the omelette. Using a spatula or palette knife, flip the omelette over to cover the mushrooms. Cook for a few moments more, lift onto a plate and serve.",
         "ingredients": [
             "1\/2 tbsp olive oil\r",
-            "3 cremini mushrooms (3 \u2248 2oz), sliced\r",
+            "3 cremini mushrooms (3 / 2oz), sliced\r",
             "1 oz cheddar cheese, grated\r",
             "1 tbsp fresh parsley, chopped\r",
             "2 eggs, beaten"
