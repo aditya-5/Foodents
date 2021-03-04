@@ -69,6 +69,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
@@ -1539,6 +1540,35 @@ section {
 .blog {
   padding: 40px 0 20px 0;
 }
+
+.blog .steps li {
+  padding: 0px 0 20px 0;
+}
+
+.blog .ingg{
+  list-style-type: none;
+}
+
+.blog .ingg li::before{
+   content: "\f2e7";
+  font-family: "FontAwesome";
+    padding: 0 10px 0 0;
+
+}
+
+.blog .overview-title{
+  font-weight: 600;
+}
+
+.blog .checked{
+   color: orange;
+}
+
+.blog .overview{
+  list-style-type: none;
+}
+
+
 
 .blog .entry {
   padding: 30px;
