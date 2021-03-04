@@ -32,10 +32,14 @@ def populateRecipes():
     # sql = f"INSERT INTO RECIPES (user_id, date_created, servings, instructions, story, time, difficulty) VALUES ({user_id}, '{date_created}', {servings}, '{instructions}', '{story}', {time}, {difficulty});"
 
     with open("sql_insert.txt", "w") as f:
+        sql = "DELETE FROM RECIPES;\n"
+        f.write(sql)
+
         sql = "INSERT INTO RECIPES (user_id, name, date_created, servings, instructions, story, time, difficulty) VALUES "
         f.write(sql)
 
         for entry in e.entries:
+            recipe_id = e.entries[entry]["id"]
             user_id = choice(userIds)
             name = e.entries[entry]["name"]
             date_created = str(randint(2012, 2022)) + "-" + str(randint(1, 12)) + "-" + str(randint(1, 28))
@@ -47,10 +51,31 @@ def populateRecipes():
                 time = randint(1, 5) * 10
             difficulty = randint(1, 4)
 
-            sql = f"({user_id}, '{name}', '{date_created}', {servings}, '{instructions}', '{story}', {time}, {difficulty}),\n"
+            name = deleteApostrophes(name)
+            instructions = deleteApostrophes(instructions)
+            story = deleteApostrophes(story)
 
-            # print(sql)
-            f.write(sql) # THE REASON IT DOESN'T WORK ARE FUCKING APOSTROPHES
+            sql = f"({user_id}, \"{name}\", \"{date_created}\", {servings}, \"{instructions}\", \"{story}\", {time}, {difficulty}),\n"
+
+            f.write(sql)
+
+        # last , must be manually transformed into ;
+
+def deleteApostrophes(text):
+    text = text.replace("\'", "\\\'")
+    return text.replace("\"", "\\\"")
+
+# def deleteApostrophes():
+#     text = ""
+#     with open("sql_insert.txt", "r") as f:
+#         text = f.readlines()
+    
+#     with open("sql_insert.txt", "w") as f:
+#         for line in text:
+#             line = line.replace("\'", "\\\'")
+#             line = line.replace("\"", "\\\"")
+#             f.write(line)
+
 
 def findKeys():
     commonKeys = list(e.entries["2"].keys())
@@ -68,11 +93,21 @@ def findKeys():
 
     return (totalKeys, commonKeys)
 
+def changeIds():
+    for entry in e.entries:
+        id = e.entries[entry]["id"]
+        if id.find("id") != -1:
+            id = id.replace("id", "")
+            id = str(int(id) + 63)
+            e.entries[entry]["id"] = id
+        
+
 if __name__ == "__main__":
     (totalKeys, commonKeys) = findKeys()
-
     # conclusion: all entries have the same structure
     # printKeys()
+
+    changeIds()
 
     populateRecipes()
 
