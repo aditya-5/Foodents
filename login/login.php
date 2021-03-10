@@ -58,6 +58,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 							$_SESSION['first_name'] = $firstn;
 							$_SESSION['last_name'] = $lastn;
 							$_SESSION['email'] = $email;
+							// header("location: welcome.php");
 							header("location: welcome.php");
 						}
 						else{
