@@ -26,13 +26,6 @@
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-  <script src="jquery-3.5.1.min.js"></script>
-        <script>
-            $(function(){
-                $("#navbar_comp").load("navbar.html");
-            });
-        </script>
-
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
@@ -45,8 +38,7 @@
 </head>
 
 <body>
-  <div id="navbar_comp"></div>
-
+<?php include("navbar.php") ?>
   <main id="main">
 
     <!-- ======= Breadcrumbs ======= -->
@@ -56,7 +48,7 @@
         <div class="d-flex justify-content-between align-items-center">
           <h2>Testimonials</h2>
           <ol>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.php">Home</a></li>
             <li>Testimonials</li>
           </ol>
         </div>
@@ -83,7 +75,7 @@
             </div>
           </div>
 
-        
+
 
         </div>
 
@@ -92,7 +84,7 @@
 
   </main><!-- End #main -->
 
-   <div id="footer_comp"></div>
+<?php include("footer.php") ?>
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 

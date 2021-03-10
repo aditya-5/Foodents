@@ -29,22 +29,6 @@
 
 <script src="https://kit.fontawesome.com/21dbb8851c.js" crossorigin="anonymous"></script>
 
-   <script src="jquery-3.5.1.min.js"></script>
-        <script>
-            $(function(){
-                $("#navbar_comp").load("navbar.html");
-            });
-
-            $(function(){
-          $("#footer_comp").load("footer.html");
-      });
-
-            $(function(){
-                $("#sidebar_comp").load("sidebar.html");
-            });
-
-        </script>
-
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
@@ -58,8 +42,7 @@
 
 <body>
 
-  <div id="navbar_comp"></div>
-
+<?php include("navbar.php") ?>
 
   <main id="main">
 
@@ -107,13 +90,13 @@
 
               <div class="entry-content"><br>
 
-                <h4 class="text-muted">Overview</h4> 
-      
+                <h4 class="text-muted">Overview</h4>
+
         <div class="row">
           <div class="col-lg-6">
             <ul class="list-group overview">
               <li><i class="fas fa-clock"></i> <span class="overview-title"> Cooking time:</span> 10 mins</li>
-              <li><i class="fas fa-star"></i> <span class="overview-title"> Difficulty: 
+              <li><i class="fas fa-star"></i> <span class="overview-title"> Difficulty:
                   <span class="fa fa-star checked"></span>
                   <span class="fa fa-star checked"></span>
                   <span class="fa fa-star "></span>
@@ -124,16 +107,16 @@
           </div>
           <div class="col-lg-6">
             <ul class="list-group overview">
-              
+
               <li><i class="fas fa-clock"></i> <span class="overview-title"> Total time:</span> 15 minutes</li>
               <li><i class="fas fa-list-ul"></i> <span class="overview-title"> Yield: </span>4 servings</li>
             </ul>
           </div>
         </div>
-        
+
       <br>
 
-      <h4 class="text-muted">Ingredients</h4> 
+      <h4 class="text-muted">Ingredients</h4>
       <ul class="list-group ingg">
         <li>6 tablespoon lemon juice</li>
         <li>2 clove garlic, minced</li>
@@ -149,19 +132,19 @@
         <li>Freshly ground black pepper</li>
 
 
-      
+
       </ul>
       <br>
-      <h4 class="text-muted">Recipe</h4> 
+      <h4 class="text-muted">Recipe</h4>
 
       <ol style="1" class="steps">
         <li>In a small bowl, whisk together the lemon juice, garlic, salt, and oil. Set aside.   In a large bowl lightly toss the lettuce with the olives, cheese, cucumber, tomatoes, onion, oregano, and black pepper. Let sit up to 2 hours.  To serve, toss salad with dressing and place sliced chicken on top.</li>
-        
 
-        
+
+
       </ol>
-   
-                
+
+
 <figure class="text-end">
   <blockquote class="blockquote">
     <p>
@@ -174,12 +157,12 @@
 </figure>
                 <img src="" class="img-fluid" alt="">
 
-               
+
 
               </div>
 
               <div class="entry-footer">
-                
+
 
                 <i class="bi bi-tags"></i>
                 <ul class="tags">
@@ -247,7 +230,7 @@
 
               </div><!-- End comment #2-->
 
-             
+
               <div class="reply-form">
                 <h4>Leave a Reply</h4>
                 <p>Your email address will not be published. Required fields are marked * </p>
@@ -281,7 +264,7 @@
           </div><!-- End blog entries list -->
 
              <div class="col-lg-4">
-              <div id="sidebar_comp"></div>
+              <?php include("sidebar.php") ?>
           </div><!-- End blog sidebar -->
 
         </div>
@@ -291,8 +274,7 @@
 
   </main><!-- End #main -->
 
-    <div id="footer_comp"></div>
-
+  <?php include("footer.php") ?>
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 

@@ -30,15 +30,7 @@
   <link href="assets/css/style.css" rel="stylesheet">
 
   <script src="jquery-3.5.1.min.js"></script>
-        <script>
-            $(function(){
-                $("#navbar_comp").load("navbar.html");
-            });
 
-            $(function(){
-          $("#footer_comp").load("footer.html");
-      });
-        </script>
 
   <!-- =======================================================
   * Template Name: Company - v4.0.1
@@ -49,8 +41,7 @@
 </head>
 
 <body>
-<div id="navbar_comp"></div>
-
+<?php include("navbar.php") ?>
 
   <main id="main">
 
@@ -61,7 +52,7 @@
         <div class="d-flex justify-content-between align-items-center">
           <h2>Search Recipes</h2>
           <ol>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.php">Home</a></li>
             <li>Recipes</li>
           </ol>
         </div>
@@ -82,7 +73,7 @@
                 <div class="col-md-12 form-group">
                   <input type="text" name="Ingredient1" class="form-control" id="Ingredient1" placeholder="Name of the recipe" required>
                 </div>
-                
+
               <div class="text-center" style = "padding-top: 10px"><button type="submit">Search</button></div>
             </form>
           </div>
@@ -94,8 +85,7 @@
 
   </main><!-- End #main -->
 
-  <div id="footer_comp"></div>
-
+<?php include("footer.php") ?>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->

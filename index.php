@@ -29,17 +29,6 @@
 
   <script src="jquery-3.5.1.min.js"></script>
 
-        <!-- <script>
-            $(function(){
-                $("#navbar_comp").load("navbar.html");
-            });
-
-            $(function(){
-          $("#footer_comp").load("footer.html");
-      });
-        </script> -->
-
-
   <!-- =======================================================
   * Template Name: Company - v4.0.1
   * Template URL: https://bootstrapmade.com/company-free-html-bootstrap-template/
@@ -49,9 +38,7 @@
 </head>
 
 <body>
-<!-- <div id="navbar_comp"></div> -->
-<?php
-include("navbar.php") ?>
+<?php include("navbar.php") ?>
   <!-- ======= Hero Section ======= -->
   <section id="hero">
     <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -234,7 +221,7 @@ include("navbar.php") ?>
 
   </main><!-- End #main -->
 
-  <div id="footer_comp"></div>
+<?php include("footer.php") ?>
 
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
