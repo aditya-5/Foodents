@@ -1,3 +1,16 @@
+<?php
+session_start();
+$log = false;
+if(isset($_SESSION['loggedin'])){
+  if($_SESSION['loggedin']==true){
+  	$fname = $_SESSION['first_name'];
+    $lname = $_SESSION['first_name'];
+    $log = true;
+  }
+}
+ ?>
+
+
 <header id="header" class="fixed-top">
       <div class="container d-flex align-items-center">
 
@@ -12,26 +25,27 @@
 
 
         <nav id="navbar" class="navbar order-last order-lg-0">
-          <ul>
-            <li><a href="index.html" class="active">Home</a></li>
+          <a href="index.php" class="active">Home</a>
 
-            <li class="dropdown"><a href="#"><span>About</span> <i class="bi bi-chevron-down"></i></a>
-              <ul>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="team.html">Team</a></li>
-                <li><a href="testimonials.html">Testimonials</a></li>
-              </ul>
-            </li>
+          <span class="dropdown"><a href="#"><span>About</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="team.html">Team</a></li>
+              <li><a href="testimonials.html">Testimonials</a></li>
+            </ul>
+          </span>
 
-            <li><a href="fridge.html">Fridge</a></li>
-            <li><a href="search.html">Search Recipe</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            
-            <li class="my-lg-0"><a href="./login/login.php">Login</a></li>
-
-
-
-          </ul>
+          <a href="fridge.html">Fridge</a>
+          <a href="search.html">Search Recipe</a>
+          <a href="contact.html">Contact</a>
+          <?php
+            if($log){
+              echo $fname." ".$lname;
+            }
+            else{
+              echo "<a href='./login/login.php'>Login</a>";
+            }
+           ?>
           <i class="bi bi-list mobile-nav-toggle"></i>
         </nav>
 

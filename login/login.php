@@ -4,7 +4,7 @@
 session_start();
 
 if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']==true){
-	header("location: welcome.php");
+	header("location: ../index.php");
 	exit();
 }
 
@@ -59,7 +59,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 							$_SESSION['last_name'] = $lastn;
 							$_SESSION['email'] = $email;
 							// header("location: welcome.php");
-							header("location: welcome.php");
+							header("location: ../index.php");
 						}
 						else{
 							echo "Oops. The password is incorrect";

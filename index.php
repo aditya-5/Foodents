@@ -28,7 +28,8 @@
   <link href="assets/css/style.css" rel="stylesheet">
 
   <script src="jquery-3.5.1.min.js"></script>
-        <script>
+
+        <!-- <script>
             $(function(){
                 $("#navbar_comp").load("navbar.html");
             });
@@ -36,7 +37,9 @@
             $(function(){
           $("#footer_comp").load("footer.html");
       });
-        </script>
+        </script> -->
+
+
   <!-- =======================================================
   * Template Name: Company - v4.0.1
   * Template URL: https://bootstrapmade.com/company-free-html-bootstrap-template/
@@ -46,24 +49,26 @@
 </head>
 
 <body>
-<div id="navbar_comp"></div>
+<!-- <div id="navbar_comp"></div> -->
+<?php
+include("navbar.php") ?>
   <!-- ======= Hero Section ======= -->
   <section id="hero">
     <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
 
       <div class="carousel-inner" role="listbox">
 
-        <div class="carousel-item active" style="background-image: url(assets/img/slide/valeria-aksakova.jpg);"></div>
+        <!-- <div class="carousel-item active" style="background-image: url(assets/img/slide/valeria-aksakova.jpg);"></div>
         <div class="carousel-item" style="background-image: url(assets/img/slide/stockking-1.jpg);"></div>
         <div class="carousel-item" style="background-image: url(assets/img/slide/master1305-2.jpg);"></div>
         <div class="carousel-item" style="background-image: url(assets/img/slide/pvproductions.jpg);"></div>
         <div class="carousel-item" style="background-image: url(assets/img/slide/schantalao.jpg);"></div>
         <div class="carousel-item" style="background-image: url(assets/img/slide/master1305-2.jpg);"></div>
         <div class="carousel-item" style="background-image: url(assets/img/slide/stockking-2.jpg);"></div>
-        <div class="carousel-item" style="background-image: url(assets/img/slide/timolina.jpg);"></div>
+        <div class="carousel-item" style="background-image: url(assets/img/slide/timolina.jpg);"></div> -->
 
-         
-       
+
+
 
 
         <div class="carousel-container">
@@ -106,7 +111,7 @@
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-left">
             <p>
-              Foodents is your friend in these unfortunate times. With over 500 recipes in store, you can search recipes based on a number of constraints - 
+              Foodents is your friend in these unfortunate times. With over 500 recipes in store, you can search recipes based on a number of constraints -
             </p>
             <ul>
               <li><i class="ri-check-double-line"></i> Have specific ingredients? Use our <a href="fridge.html">Fridge Feature</a> to search for recipes based on the specific set of ingredients you have in fridge.</li>
@@ -184,7 +189,7 @@
 
          <!--  _________
  -->
-          
+
           <div class="col-lg-4 col-md-6 portfolio-item filter-Starters">
             <img src="assets/img/recipeimg/pasta.jpg" class="img-fluid" alt="">
             <div class="portfolio-info">
@@ -216,8 +221,8 @@
             </div>
           </div>
 
-         
-         
+
+
 
         </div>
 
@@ -225,7 +230,7 @@
     </section>
     <!-- End Portfolio Section -->
 
-    
+
 
   </main><!-- End #main -->
 
