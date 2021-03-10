@@ -4,12 +4,11 @@ $log = false;
 if(isset($_SESSION['loggedin'])){
   if($_SESSION['loggedin']==true){
   	$fname = $_SESSION['first_name'];
-    $lname = $_SESSION['first_name'];
+    $lname = $_SESSION['last_name'];
     $log = true;
   }
 }
  ?>
-
 
 <header id="header" class="fixed-top">
       <div class="container d-flex align-items-center">
@@ -40,7 +39,7 @@ if(isset($_SESSION['loggedin'])){
           <a href="contact.html">Contact</a>
           <?php
             if($log){
-              echo $fname." ".$lname;
+              echo "<a href='./login/logout.php'>Logout ($fname"." "."$lname)</a>";
             }
             else{
               echo "<a href='./login/login.php'>Login</a>";

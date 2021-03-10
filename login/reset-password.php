@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == false){
 	header("location: login.php");
@@ -8,7 +8,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == false){
 
 $curpass = $newpass =$confirmpass = "";
 $curpass_err = $newpass_err = $confirmpass_err=  "";
- 
+
 require('index.php') ;
 if($_SERVER['REQUEST_METHOD']=="POST"){
 
@@ -53,7 +53,7 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
 		// Checking if new password and confirm new password match
 		if(strcmp($newpass,$confirmpass)==0){
 
-		$sql = "SELECT password from users where id =?";
+		$sql = "SELECT password from USERS where user_id =?";
 
 		if($stmt = mysqli_prepare($conn, $sql)){
 			mysqli_stmt_bind_param($stmt, 'i', $param_id);
@@ -64,7 +64,7 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
 				mysqli_stmt_bind_result($stmt, $passhash);
 				if(mysqli_stmt_fetch($stmt)){
 					if(password_verify($curpass, $passhash)){
-						$sql = "UPDATE users SET password = ? where id =?";
+						$sql = "UPDATE USERS SET password = ? where user_id =?";
 						if($stmt1 = mysqli_prepare($conn, $sql)){
 							mysqli_stmt_bind_param($stmt1, 'si',$param_password, $param_id);
 							$param_password = password_hash($newpass,PASSWORD_DEFAULT);
@@ -77,11 +77,12 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
 								echo "Something went wrong with the stmt 2 part";
 							}
 						}
+						echo "Something went wrong with the stmt 2 part";
 							mysqli_stmt_close($stmt1);
 				}
 				else{
 					echo "Your current password doesn't match the one in the database";
-				}	
+				}
 			}
 		}else{
 			echo "Something went wrong with the stmt 1 part";
@@ -92,8 +93,10 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
 	else{
 		echo "New Password and Confirm New Password don't match";
 	}
-	
+
 }
+
+
 mysqli_close($conn);
 }
 
