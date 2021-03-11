@@ -4,17 +4,20 @@
 
 <?php
 
-define("DB_SERVER",'localhost');
-define("DB_USERNAME", 'root');
-define("DB_PASSWORD", '');
-define("DB_NAME", '2020_comp10120_x9');
+require_once('config.inc.php');
+// For local database only
+// define("DB_SERVER",'localhost');
+// define("DB_USERNAME", 'root');
+// define("DB_PASSWORD", '');
+// define("DB_NAME", '2020_comp10120_x9');
 
-// First run
-$conn = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD);
+// First run (Local)
+// $conn = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD);
 
-// If database already created
-$conn = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD, DB_NAME);
+// If database already created (Local)
+// $conn = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD, DB_NAME);
 
+$conn = new mysqli($database_host, $database_user, $database_pass, $group_dbnames[0]);
 
 if($conn === false){
 	die("ERROR: COULDN'T CONNECT TO DATABASE " .  mysqli_connect_error());
