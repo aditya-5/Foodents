@@ -19,18 +19,14 @@
 
       <div class="carousel-inner" role="listbox">
 
-        <!-- <div class="carousel-item active" style="background-image: url(assets/img/slide/valeria-aksakova.jpg);"></div>
+        <div class="carousel-item active" style="background-image: url(assets/img/slide/valeria-aksakova.jpg);"></div>
         <div class="carousel-item" style="background-image: url(assets/img/slide/stockking-1.jpg);"></div>
         <div class="carousel-item" style="background-image: url(assets/img/slide/master1305-2.jpg);"></div>
         <div class="carousel-item" style="background-image: url(assets/img/slide/pvproductions.jpg);"></div>
         <div class="carousel-item" style="background-image: url(assets/img/slide/schantalao.jpg);"></div>
         <div class="carousel-item" style="background-image: url(assets/img/slide/master1305-2.jpg);"></div>
         <div class="carousel-item" style="background-image: url(assets/img/slide/stockking-2.jpg);"></div>
-        <div class="carousel-item" style="background-image: url(assets/img/slide/timolina.jpg);"></div> -->
-
-
-
-
+        <div class="carousel-item" style="background-image: url(assets/img/slide/timolina.jpg);"></div>
 
         <div class="carousel-container">
             <div class="carousel-content animate__animated animate__fadeInUp ">
