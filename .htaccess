@@ -4,10 +4,6 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.php -f
 RewriteRule ^(.*)$ $1.php
 
-# Return 404 if original request is .php
-RewriteCond %{THE_REQUEST} "^[^ ]* .*?\.php[? ].*$"
-RewriteRule .* - [L,R=404]
-
 Options +FollowSymLinks
 RewriteEngine On
 
@@ -15,4 +11,4 @@ RewriteCond %{SCRIPT_FILENAME} !-d
 RewriteCond %{SCRIPT_FILENAME} !-f
 
 
-RewriteRule ^(\w+)$ ./1.php?short=$1
+RewriteRule ^([\W\w\.]+)$ ./error.php?short=$1

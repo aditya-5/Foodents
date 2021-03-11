@@ -1,9 +1,13 @@
+<?php header( "refresh:5;url=index" );
+ ?>
+
+
 <div class="sidebar">
 
               <h3 class="sidebar-title"><a href="search.html"> <- Go Back</h3><br></a>
-           
 
-           
+
+
 
               <h3 class="sidebar-title">Recent Recipes</h3>
               <div class="sidebar-item recent-posts">
