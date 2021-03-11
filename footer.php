@@ -17,20 +17,20 @@
           <div class="col-lg-2 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="index.html">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="about.html">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="team.html">Team</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="contact.html">Contact</a></li>
-              
+              <li><i class="bx bx-chevron-right"></i> <a href="index.php">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="about.php">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="team.php">Team</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="contact.php">Contact</a></li>
+
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Our Services</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Fridge</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Search Recipe</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Login</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="fridge.php">Fridge</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="search.php">Search Recipe</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="./login/login.php">Login</a></li>
             </ul>
           </div>
 
@@ -59,6 +59,6 @@
           Template by <a href="https://bootstrapmade.com/">BootstrapMade</a>
         </div>
       </div>
-      
+
     </div>
   </footer>
