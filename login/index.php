@@ -4,7 +4,7 @@
 
 <?php
 
-require_once('config.inc.php');
+require_once('../config.inc.php');
 // For local database only
 // define("DB_SERVER",'localhost');
 // define("DB_USERNAME", 'root');
