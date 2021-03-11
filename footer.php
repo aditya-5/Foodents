@@ -17,10 +17,10 @@
           <div class="col-lg-2 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="index.php">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="about.php">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="team.php">Team</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="contact.php">Contact</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="about">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="team">Team</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="contact">Contact</a></li>
 
             </ul>
           </div>
@@ -28,9 +28,9 @@
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Our Services</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="fridge.php">Fridge</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="search.php">Search Recipe</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="./login/login.php">Login</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="fridge">Fridge</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="search">Search Recipe</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="./login/login">Login</a></li>
             </ul>
           </div>
 

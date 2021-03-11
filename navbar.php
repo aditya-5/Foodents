@@ -50,7 +50,7 @@ if(isset($_SESSION['loggedin'])){
 <header id="header" class="fixed-top">
       <div class="container d-flex align-items-center">
 
-        <h1 class="logo me-auto"><a href="index.php"><span>F</span>OODENTS</a></h1>
+        <h1 class="logo me-auto"><a href="index"><span>F</span>OODENTS</a></h1>
         <!--Above command for text-title and below for a logo -->
         <!-- <a href="index.html" class="logo me-auto "><img src="assets/img/logo.png" alt="" class="img-fluid"></a> -->
 
@@ -61,25 +61,25 @@ if(isset($_SESSION['loggedin'])){
 
 
         <nav id="navbar" class="navbar order-last order-lg-0">
-          <a href="index.php" class="active">Home</a>
+          <a href="index" class="active">Home</a>
 
           <span class="dropdown"><a href="#"><span>About</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="about.php">About Us</a></li>
-              <li><a href="team.php">Team</a></li>
-              <li><a href="testimonials.php">Testimonials</a></li>
+              <li><a href="about">About Us</a></li>
+              <li><a href="team">Team</a></li>
+              <li><a href="testimonials">Testimonials</a></li>
             </ul>
           </span>
 
-          <a href="fridge.php">Fridge</a>
-          <a href="search.php">Search Recipe</a>
-          <a href="contact.php">Contact</a>
+          <a href="fridge">Fridge</a>
+          <a href="search">Search Recipe</a>
+          <a href="contact">Contact</a>
           <?php
             if($log){
-              echo "<a href='./login/logout.php'>Logout ($fname"." "."$lname)</a>";
+              echo "<a href='./login/logout'>Logout ($fname"." "."$lname)</a>";
             }
             else{
-              echo "<a href='./login/login.php'>Login</a>";
+              echo "<a href='./login/login'>Login</a>";
             }
            ?>
           <i class="bi bi-list mobile-nav-toggle"></i>
