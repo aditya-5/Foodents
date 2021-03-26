@@ -5,50 +5,74 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == false){
 	exit();
 }
 
+if(isset($_SESSION['loggedin'])){
+  if($_SESSION['loggedin']==true){
+  	$fname = $_SESSION['first_name'];
+    $lname = $_SESSION['last_name'];
+		$em = $_SESSION['email'];
+		$us = $_SESSION['username'];
+    $log = true;
+  }
+}
 
-$curpass = $newpass =$confirmpass = "";
-$curpass_err = $newpass_err = $confirmpass_err=  "";
+if(isset($_SESSION["msg"])){
+	$msg = $_SESSION["msg"];
+	unset($_SESSION["msg"]);
+}else{
+	unset($msg);
+}
+
+if(isset($_SESSION["error"])){
+	$error = $_SESSION["error"];
+	unset($_SESSION["error"]);
+}else{
+	unset($error);
+}
+
 
 require('index.php') ;
-if($_SERVER['REQUEST_METHOD']=="POST"){
+
+// ************************************
+// ************************************
+// RESET PASSWORD PHP
+// ************************************
+// ************************************
+// if($_SERVER['REQUEST_METHOD']=="POST"){
+if(isset($_POST["resetForm"])){
+
+
+	$curpass = $newpass =$confirmpass = "";
 
 
 	// Checking if current password is empty
 	if(empty(trim($_POST['curpass']))){
-		$curpass_err = "Current password field cannot be empty";
+		$error = "Current password field cannot be empty";
 	}
 	else{
 		$curpass = trim($_POST['curpass']);
 	}
-	echo $curpass_err;
 
 	// Checking if new password is less than 6 characters or empty
 	if(empty(trim($_POST['newpass']))){
-		$newpass_err = "New password field cannot be empty";
+		$error = "New password field cannot be empty";
 	}
 	elseif(strlen(trim($_POST['newpass']))<6){
-		$newpass_err = "New Password field cannot be less than 6 characters";
+		$error = "New Password field cannot be less than 6 characters";
 	}
 	else{
 		$newpass = trim($_POST['newpass']);
 	}
-	echo $newpass_err;
-
-
 
 	// Checking if confirm new password is empty
 	if(empty(trim($_POST['confirmpass']))){
-		$confirmpass_err = "Confirm New Password field cannot be empty";
+		$error = "Confirm New Password field cannot be empty";
 	}
 	else{
 		$confirmpass = trim($_POST['confirmpass']);
 	}
-	echo $confirmpass_err;
-
-
 
 	// Validation if no errors
-	if(empty($curpass_err) && empty($newpass_err) && empty($confirmpass_err) ){
+	if(empty($error)){
 
 		// Checking if new password and confirm new password match
 		if(strcmp($newpass,$confirmpass)==0){
@@ -70,8 +94,8 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
 							$param_password = password_hash($newpass,PASSWORD_DEFAULT);
 							$param_id = $_SESSION['id'];
 							if(mysqli_execute($stmt1)){
-								session_destroy();
-								header("location: login.php");
+								$_SESSION["msg"]="Password changed";
+								header("location: profile.php");
 							}
 							else{
 								echo "Something went wrong with the stmt 2 part";
@@ -96,8 +120,187 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
 
 }
 
-
+if(isset($error)){
+	$_SESSION["error"] = $error;
+	header("location: ./profile.php");
+}
 mysqli_close($conn);
+}
+// ************************************
+// ************************************
+// ************************************
+// ************************************
+
+
+if(isset($_POST["profileForm"])){
+	// if(isset($_POST("fname"))|| isset($_POST("lname"))|| isset($_POST("email"))|| isset($_POST("user")) ){
+		if((!empty(trim($_POST["fname"]))) && (!empty(trim($_POST["lname"]))) && (!empty(trim($_POST["email"]))) && (!empty(trim($_POST["user"])))){
+
+			// ***************************************************************************
+			// Checking if username already exists
+				$sql = "SELECT user_id from USERS WHERE username=?";
+				if($stmt = mysqli_prepare($conn,$sql)){
+					mysqli_stmt_bind_param($stmt, "s", $param_username);
+					$param_username = trim($_POST['user']);
+					if(mysqli_stmt_execute($stmt)){
+						mysqli_stmt_store_result($stmt);
+						if(mysqli_stmt_num_rows($stmt)==1){
+							mysqli_stmt_bind_result($stmt, $uid);
+							if(mysqli_stmt_fetch($stmt)){
+								if($uid == $_SESSION['id']){
+									$form_user = strtolower(trim($_POST['user']));
+									if(strpos($form_user,' ')){
+										$error = "Username cannot contain spaces.";
+									}
+									else{
+										if(!preg_match('/^[a-z0-9]+$/',$form_user)){
+											$error = "Username can contain only letters and numbers";
+										}
+									}
+								}
+								else{
+									$error = "Username already exists";
+								}
+							}
+						}else if(mysqli_stmt_num_rows($stmt)==0){
+							$form_user = strtolower(trim($_POST['user']));
+							if(strpos($form_user,' ')){
+								$error = "Username cannot contain spaces";
+							}
+							else{
+								if(!preg_match('/^[a-z0-9]+$/',$form_user)){
+									$error = "Username can contain only letters and numbers";
+								}
+							}
+						}
+						else{
+							$error = "Interval - More than 1 users exist with the same username already";
+						}
+					}else{
+						$error = "Interval - Couldn't execute the Username query";
+					}
+					}
+				else{
+					echo("Something went wrong with the dollar stmt part");
+				}
+
+
+
+				mysqli_stmt_close($stmt);
+				// ***************************************************************************
+				// Checking if email already exists
+				$sql = "SELECT user_id from USERS WHERE email=?";
+
+				// Prepare the SQL query and bind the username param to it (in place of the question mark)
+				if($stmt = mysqli_prepare($conn,$sql)){
+					// Bind params to the query, s means string here.
+					mysqli_stmt_bind_param($stmt, "s", $param_email);
+					$param_email = trim($_POST['email']);
+
+					if(mysqli_stmt_execute($stmt)){
+
+						// To store the result received (doesn't cause performance loss)
+						mysqli_stmt_store_result($stmt);
+
+						if(mysqli_stmt_num_rows($stmt)==1){
+							mysqli_stmt_bind_result($stmt, $uid);
+							if(mysqli_stmt_fetch($stmt)){
+								if($uid == $_SESSION['id']){
+									$form_email = strtolower(trim($_POST['email']));
+									if(!filter_var($form_email, FILTER_VALIDATE_EMAIL)){
+										$error = "Email Validation failed";
+									}
+								}
+								else{
+									$error = "E-mail already in use";
+								}
+							}
+						}
+						else if(mysqli_stmt_num_rows($stmt)==0){
+							$form_email = strtolower(trim($_POST['email']));
+							if(!filter_var($form_email, FILTER_VALIDATE_EMAIL)){
+								$error = "Email Validation failed";
+							}
+						}
+						else{
+							$error = "Interval - More than 1 users exist with the same email already";
+						}
+					}
+				}
+				else{
+					echo("Something went wrong with the dollar stmt part");
+				}
+
+
+				mysqli_stmt_close($stmt);
+
+				// ***************************************************************************
+				// ***************************************************************************
+				// Checking first name and last name
+
+
+				$form_fname = trim($_POST['fname']);
+				$form_lname = trim($_POST['lname']);
+				if(empty($form_fname)){
+					$error = "First Name cannot be empty";
+				}
+
+				if(empty($form_lname)){
+					$error = "Last Name cannot be empty";
+				}
+
+				$form_fname = strtolower($form_fname);
+				$form_fname = ucfirst($form_fname);
+				$form_fname = explode(' ', $form_fname);
+				$form_fname = $form_fname[0];
+
+				$form_lname = strtolower($form_lname);
+				$form_lname = ucfirst($form_lname);
+				$form_lname = explode(' ', $form_lname);
+				$form_lname = $form_lname[0];
+
+				if(!preg_match("/^[A-Z][a-z]*$/",$form_fname)){
+					$error = "First Name cannot contain spaces";
+				}
+
+				if(!preg_match("/^[A-Z][a-z]*$/",$form_lname)){
+					$error = "Last Name cannot contain spaces";
+				}
+
+				// ***************************************************************************
+				// ***************************************************************************
+
+
+				if(empty($error)){
+								$sql = "UPDATE USERS SET email = ?,first_name=?,last_name=?,username=?  where user_id =?";
+								if($stmt = mysqli_prepare($conn,$sql)){
+									mysqli_stmt_bind_param($stmt, "ssssi",$form_email,$form_fname,$form_lname,$form_user,$param_id);
+									$param_id = $_SESSION['id'];
+									if(mysqli_stmt_execute($stmt)){
+											$_SESSION["msg"] = "Details Updated";
+											$_SESSION['first_name']= $form_fname;
+											$_SESSION['last_name']= $form_lname;
+											$_SESSION['email']= $form_email;
+											$_SESSION['username']=$form_user ;
+											header("location: profile.php");
+											}else{
+												$error = "Internal - Couldn't execute the update statement";
+											}
+										}else{
+											$error = "Internal - Couldn't prepare the first statement";
+										}
+									}
+
+							}
+							else{
+								$error = "All fields empty";
+							}
+
+							if(isset($error)){
+								$_SESSION["error"] = $error;
+								header("location: ./profile.php");
+							}
+	mysqli_close($conn);
 }
 
 ?>
@@ -110,24 +313,108 @@ mysqli_close($conn);
 	</title>
 </head>
 <body>
-<div class="container middle p-4">
-	<form action="reset-password.php" method="POST">
-		<div class="form-group mb-3">
-			<label for="curpass">Current Password</label>
-			<input type="password" id="curpass" name="curpass" placeholder="Current Password" class="form-control">
+
+	<?php
+	include("account_navbar.php")
+	?>
+	<!-- ======= Breadcrumbs ======= -->
+	<section id="breadcrumbs" class="breadcrumbs">
+		<div class="container">
+
+			<div class="d-flex justify-content-between align-items-center">
+				<h2>Profile</h2>
+				<ol>
+					<li><a href="../index">Home</a></li>
+					<li>Profile</li>
+				</ol>
+			</div>
+
 		</div>
-		<div class="form-group">
-			<label for="newpass">New Password</label>
-			<input type="password" id="newpass" name="newpass" placeholder="New Password" class="form-control">
-		</div>
-		<div class="form-group">
-			<label for="confirmpass">Confirm New Password</label>
-			<input type="password" id="confirmpass" name="confirmpass" placeholder="Confirm New Password" class="form-control">
-		</div><br>
-		<div class="text-center">
-			<button class="btn btn-primary">Reset Password</button>
-		</div>
-	</form>
+	</section><!-- End Breadcrumbs -->
+<br><br>
+<div class="container">
+
+<?php
+
+if(isset($msg)){
+echo "<div class='alert alert-success' role='alert'>".$msg."</div>";
+}
+if(isset($error)){
+echo "<div class='alert alert-danger' role='alert'>".$error."</div>";
+}
+?>
+	<!-- Nav Tabs -->
+<div class="ner">
+	<div class="d-flex justify-content-start">
+  <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+    <button class="nav-link active" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="true">Profile</button>
+    <button class="nav-link" id="v-pills-pass-tab" data-bs-toggle="pill" data-bs-target="#v-pills-pass" type="button" role="tab" aria-controls="v-pills-pass" aria-selected="false">Password</button>
+    <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</button>
+    <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</button>
+  </div>
+  <div class="tab-content" id="v-pills-tabContent"  style="width:60vw" >
+
+
+
+
+    <div class="tab-pane fade show active" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+			<div class="container  p-4">
+				<form action="profile.php" method="POST" >
+					<div class="form-group mb-3">
+						<label for="fname">First Name</label>
+						<input type="text" id="fname" name="fname" value="<?php if($log==True){echo $fname;} ?>
+" class="form-control">
+					</div>
+					<div class="form-group mb-3">
+						<label for="lname">Last Name</label>
+						<input type="text" id="lname" name="lname" value="<?php if($log==True){echo $lname;} ?>" class="form-control">
+					</div>
+					<div class="form-group mb-3">
+						<label for="email">Email</label>
+						<input type="email" id="email" name="email" value="<?php if($log==True){echo $em;} ?>" class="form-control">
+					</div>
+					<div class="form-group mb-3">
+						<label for="user">Username</label>
+						<input type="text" id="user" name="user" value="<?php if($log==True){echo $us;} ?>" class="form-control">
+					</div><br>
+					<div class="text-center">
+						<button class="btn btn-primary" name="profileForm" type="submit">Save Changes</button>
+					</div>
+				</form>
+			</div>
+    </div>
+
+
+		<div class="tab-pane fade" id="v-pills-pass" style="max-width:60vw"  role="tabpanel" aria-labelledby="v-pills-pass-tab">
+			<div class="container  p-4">
+				<form action="profile.php" method="POST" >
+					<div class="form-group mb-3">
+						<label for="curpass">Current Password</label>
+						<input type="password" id="curpass" name="curpass" class="form-control">
+					</div>
+					<div class="form-group mb-3">
+						<label for="newpass">New Password</label>
+						<input type="password" id="newpass" name="newpass" class="form-control">
+					</div>
+					<div class="form-group mb-3">
+						<label for="confirmpass">Confirm New Password</label>
+						<input type="password" id="confirmpass" name="confirmpass" class="form-control">
+					</div><br>
+					<div class="text-center">
+						<button class="btn btn-primary" name="resetForm" type="submit">Reset Password</button>
+					</div>
+				</form>
+			</div>
+    </div>
+
+
+    <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>
+    <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
+  </div>
 </div>
+  </div>
+</div>
+<br><br><br>
+	<?php include("account_footer.php") ?>
 </body>
 </html>

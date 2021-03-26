@@ -79,7 +79,7 @@ if(isset($_SESSION['loggedin'])){
           <a href="contact">Contact</a>
           <?php
             if($log){
-              echo "<span class='dropdown'><a href='#'><span>".$fname." ".$lname."</span> <i class='bi bi-chevron-down'></i>."&nbsp&nbsp&nbsp&nbsp".</a>
+              echo "<span class='dropdown'><a href='#'><span>".$fname." ".$lname."</span> <i class='bi bi-chevron-down'></i>"."&nbsp&nbsp&nbsp&nbsp"."</a>
                 <ul>
                   <li><a href='./login/profile'>Profile</a></li>
                   <li><a href='./login/logout'>Logout</a></li>
