@@ -303,6 +303,107 @@ if(isset($_POST["profileForm"])){
 	mysqli_close($conn);
 }
 
+// ************************************
+// ************************************
+// ************************************
+// ************************************
+if(isset($_POST["addRecipe"])){
+
+// if(isset($_POST['name']) && isset($_POST['servings']) && isset($_POST['time'])
+// && isset($_POST['rating']) && isset($_POST['imgurl']) && isset($_POST['instruction']) && isset($_POST['ing'])){
+
+	if(true){
+
+	$name = trim($_POST['name']);
+	$servings = $_POST['servings'];
+	$time = $_POST['time'];
+	$difficulty = $_POST['rating'];
+	$imgurl = trim($_POST['imgurl']);
+	$instruction = trim($_POST['instruction']) ;
+	$ings = $_POST['ing'] ;
+	echo $name.$servings.$time.$difficulty.$imgurl.$instruction.$ings;
+
+	if(isset($_POST['story'])){
+		$story = trim($_POST['story']);
+	}else{
+		$story = "";
+	}
+
+	if(preg_match("/^\d+$/",$servings)){
+		$servings = strval($servings);
+	}
+	else{
+		$error= "Number of servings needs to be a number.";
+	}
+
+	if(preg_match("/^\d+$/",$time)){
+		$time = strval($time);
+	}
+	else{
+		$error= "Time (number of minutes) needs to be a number.";
+	}
+
+	if(preg_match("/^\d+$/",$difficulty)){
+		$difficulty = strval($difficulty);
+		// $rating = bcdiv($rating, 2, 1);
+	}
+	else{
+		$error= "Something is wrong with the difficulty system";
+	}
+
+	if(empty($name)){
+		$error = "Recipe Name cannot be empty";
+	}
+	if(empty($imgurl)){
+		$error = "Image URL cannot be empty";
+	}
+
+	if(empty($instruction)){
+		$error = "Instructions cannot be empty";
+	}else if(strlen($instruction)<25){
+		$error = "Instructions need to be a minimum of 25 characters";
+	}
+
+	if(empty($error)){
+		$sql = "INSERT INTO RECIPES (user_id, name, date_created, servings, instructions, story, time, difficulty, image_url)
+		VALUES(?,?,?,?,?,?,?,?,?)";
+		if($stmt = mysqli_prepare($conn, $sql)){
+			mysqli_stmt_bind_param($stmt, "ississiis", $param_userid,$param_name,
+			$param_date,$param_servings,$param_instructions,$param_story,$param_time,$param_difficulty,$param_image_url,);
+			$param_userid= $_SESSION['id'];
+			$param_name= $name;
+			$param_date= date("Y-m-d");
+			$param_servings= $servings;
+			$param_instructions= $instruction;
+			$param_story= $story;
+			$param_time= $time;
+			$param_difficulty= $difficulty;
+			$param_image_url= $imgurl;
+
+			if(mysqli_stmt_execute($stmt)){
+				header("location: profile.php");
+				$_SESSION["msg"] = "Recipe Added";
+			}else{
+				$error = "Couldn't execute the query";
+			}
+
+		}else{
+			$error = "Couldn't prepare the STMT statement";
+		}
+	}
+
+}
+else{
+	$error = "Not set";
+}
+	if(isset($error)){
+		$_SESSION["error"] = $error;
+		header("location: ./profile.php");
+	}
+
+	mysqli_close($conn);
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -429,7 +530,7 @@ echo "<div class='alert alert-danger' role='alert'>".$error."</div>";
 						</div>
 						<div class="col">
 							<div class="form-group mb-3">
-								<label for="time">Total Time</label>
+								<label for="time">Total Time <span id="opti">(Number of minutes)</span></label>
 								<input type="number" id="time" min="1" name="time" class="form-control">
 							</div>
 						</div>
@@ -467,12 +568,12 @@ echo "<div class='alert alert-danger' role='alert'>".$error."</div>";
 					<div class="form-group mb-3">
 						<div class="row">
 							<div class="col">
-								<label for="name">Instructions</label>
-								<textarea class="form-control" placeholder="Start by heating the pan...." id="instruction" style="height: 300px"></textarea>
+								<label for="name">Instructions <span id="opti">(Separate steps by a new line) (>25 chars)</span></label>
+								<textarea class="form-control" placeholder="Start by heating the pan.... " name="instruction" id="instruction" style="height: 300px"></textarea>
 							</div>
 							<div class="col">
 								<label for="story">Story <span id="opti">(Optional)</span></label>
-								<textarea class="form-control" placeholder="I discovered this recipe while...." id="story" style="height: 300px"></textarea>
+								<textarea class="form-control" placeholder="I discovered this recipe while...." id="story" name="story" style="height: 300px"></textarea>
 							</div>
 						</div>
 					</div>
