@@ -260,7 +260,7 @@ if(isset($_POST["profileForm"])){
 				$form_lname = $form_lname[0];
 
 				if(!preg_match("/^[A-Z][a-z]*$/",$form_fname)){
-					$error = "First Name cannot contain spaces";
+					$error = "First Name can contain only letters";
 				}
 
 				if(!preg_match("/^[A-Z][a-z]*$/",$form_lname)){
@@ -293,7 +293,7 @@ if(isset($_POST["profileForm"])){
 
 							}
 							else{
-								$error = "All fields empty";
+								$error = "Fields cannot be empty";
 							}
 
 							if(isset($error)){
@@ -349,8 +349,8 @@ echo "<div class='alert alert-danger' role='alert'>".$error."</div>";
   <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
     <button class="nav-link active" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="true">Profile</button>
     <button class="nav-link" id="v-pills-pass-tab" data-bs-toggle="pill" data-bs-target="#v-pills-pass" type="button" role="tab" aria-controls="v-pills-pass" aria-selected="false">Password</button>
-    <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</button>
-    <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</button>
+    <button class="nav-link" id="v-pills-addrecipe-tab" data-bs-toggle="pill" data-bs-target="#v-pills-addrecipe" type="button" role="tab" aria-controls="v-pills-addrecipe" aria-selected="false">Add Recipe</button>
+    <button class="nav-link" id="v-pills-myrecipes-tab" data-bs-toggle="pill" data-bs-target="#v-pills-myrecipes" type="button" role="tab" aria-controls="v-pills-myrecipes" aria-selected="false">My Recipes</button>
   </div>
   <div class="tab-content" id="v-pills-tabContent"  style="width:60vw" >
 
@@ -408,8 +408,8 @@ echo "<div class='alert alert-danger' role='alert'>".$error."</div>";
     </div>
 
 
-    <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>
-    <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
+    <div class="tab-pane fade" id="v-pills-addrecipe" role="tabpanel" aria-labelledby="v-pills-addrecipe-tab">...</div>
+    <div class="tab-pane fade" id="v-pills-myrecipes" role="tabpanel" aria-labelledby="v-pills-myrecipes-tab">...</div>
   </div>
 </div>
   </div>
