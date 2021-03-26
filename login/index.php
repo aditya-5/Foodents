@@ -15,7 +15,7 @@ require_once('../config.inc.php');
 // $conn = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD);
 
 // If database already created (Local)
-$conn = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD, DB_NAME);
+// $conn = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD, DB_NAME);
 
 $conn = new mysqli($database_host, $database_user, $database_pass, $group_dbnames[0]);
 
