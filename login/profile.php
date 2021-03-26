@@ -408,7 +408,90 @@ echo "<div class='alert alert-danger' role='alert'>".$error."</div>";
     </div>
 
 
-    <div class="tab-pane fade" id="v-pills-addrecipe" role="tabpanel" aria-labelledby="v-pills-addrecipe-tab">...</div>
+    <div class="tab-pane fade" id="v-pills-addrecipe" role="tabpanel" aria-labelledby="v-pills-addrecipe-tab">
+			<div class="container  p-4">
+				<form action="profile.php" method="POST" >
+
+
+
+					<div class="form-group mb-3">
+						<label for="name">Recipe Name</label>
+						<input type="text" id="name" name="name" class="form-control">
+					</div>
+
+
+					<div class="row">
+						<div class="col">
+							<div class="form-group mb-3">
+								<label for="servings">Servings</label>
+								<input type="number" id="servings" min="1" name="servings" class="form-control">
+							</div>
+						</div>
+						<div class="col">
+							<div class="form-group mb-3">
+								<label for="time">Total Time</label>
+								<input type="number" id="time" min="1" name="time" class="form-control">
+							</div>
+						</div>
+						<div class="col">
+								<label for="difficulty">Difficulty</label>
+								<span class="star-rating">
+		  <input type="radio" name="rating" value="1"><i></i>
+		  <input type="radio" name="rating" value="2"><i></i>
+		  <input type="radio" name="rating" value="3"><i></i>
+		  <input type="radio" name="rating" value="4"><i></i>
+		  <input type="radio" name="rating" value="5"><i></i>
+		  <input type="radio" name="rating" value="6"><i></i>
+		  <input type="radio" name="rating" value="7"><i></i>
+		  <input type="radio" name="rating" value="8"><i></i>
+		  <input type="radio" name="rating" value="9"><i></i>
+		  <input type="radio" name="rating" value="10"><i></i>
+		</span>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-lg-3">
+							<img src="../assets/img/logo.png" alt="RECIPE IMAGE" id="recipeimghold">
+						</div>
+						<div class="col-lg-9">
+							<br>
+								<label for="imgurl">Image URL <span id="opti">(Ensure that it loads)</span></label>
+							<input type="text" name="imgurl" id="imgurl" class="form-control">
+						</div>
+					</div>
+
+					<br>
+
+
+					<div class="form-group mb-3">
+						<div class="row">
+							<div class="col">
+								<label for="name">Instructions</label>
+								<textarea class="form-control" placeholder="Start by heating the pan...." id="instruction" style="height: 300px"></textarea>
+							</div>
+							<div class="col">
+								<label for="story">Story <span id="opti">(Optional)</span></label>
+								<textarea class="form-control" placeholder="I discovered this recipe while...." id="story" style="height: 300px"></textarea>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="form-group mb-3" id="ings">
+						<label for="ing1">Ingredients <span><i class="fas fa-plus-circle" id="addIng"></i></span></label>
+						<input type="text" id="ing1" name="ing[]" placeholder="Ingredient #1" class="form-control mb-2">
+					</div><br>
+
+					<div class="text-center">
+						<button class="btn btn-primary" name="addRecipe" type="submit">Add Recipe</button>
+					</div>
+				</form>
+			</div>
+    </div>
+
+
+
     <div class="tab-pane fade" id="v-pills-myrecipes" role="tabpanel" aria-labelledby="v-pills-myrecipes-tab">...</div>
   </div>
 </div>

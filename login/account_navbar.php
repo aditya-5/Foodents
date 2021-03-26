@@ -26,8 +26,11 @@
    <!-- Template Main CSS File -->
    <link href="../assets/css/style.css" rel="stylesheet">
 
-   <!-- jQuery Local -->
+   <!-- jQuery CDN -->
    <script src="https://code.jquery.com/jquery-3.6.0.slim.js"></script>
+
+   <!-- jQuery CDN -->
+   <script src="../assets/js/script.js"></script>
 
    <!-- MDB ICONS -->
    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css" rel="stylesheet"/>
