@@ -30,6 +30,25 @@ if(isset($_GET['id'])){
           array_push($ings, $value['text']);
         }
 
+
+
+        $sql = "SELECT user_id, text,date from COMMENTS where recipe_id=$uid";
+        $result = mysqli_query($conn, $sql);
+        mysqli_fetch_all($result);
+        $comments = array();
+        foreach($result as $value){
+          $idd = $value['user_id'];
+          $sql2 = "SELECT first_name, last_name from USERS where user_id= $idd ";
+          $temp_user = mysqli_query($conn, $sql2);
+          mysqli_fetch_all($temp_user);
+          foreach($temp_user as $val){
+            $name = $val['first_name']." ".$val['last_name'];
+            array_push($comments,array("name"=>$name, "comment"=> $value['text'],'date'=>$value['date']) );
+          }
+        }
+
+
+
       }
       else{
         header("location: error");
@@ -42,7 +61,10 @@ if(isset($_GET['id'])){
   }else{
     header("location: error");
   }
+
 }
+
+
 
  ?>
 
@@ -261,79 +283,55 @@ if(isset($_GET['id'])){
 
               <h4 class="comments-count">3 Comments</h4>
 
-              <div id="comment-1" class="comment">
-                <div class="d-flex">
-                  <div class="comment-img"><img src="assets/img/blog/1.png" alt=""></div>
-                  <div>
-                    <h5><a href="">Georgia Reader</a> <a href="#" class="reply"><i class="bi bi-reply-fill"></i> Reply</a></h5>
-                    <time datetime="2020-01-01">6 March, 2021</time>
-                    <p>
-                     Would love to try it out soon!
-                    </p>
-                  </div>
-                </div>
-              </div><!-- End comment #1 -->
+              <?php
+              foreach($comments as $value){
 
-              <div id="comment-2" class="comment">
-                <div class="d-flex">
-                  <div class="comment-img"><img src="assets/img/blog/2.png" alt=""></div>
-                  <div>
-                    <h5>Aron Alvarado <a href="#" class="reply"><i class="bi bi-reply-fill"></i> Reply</a></h5>
-                    <time datetime="2020-01-01">10 March, 2021</time>
-                    <p>
-                      Looks delicious!
-                    </p>
-                  </div>
-                </div>
 
-                <div id="comment-reply-1" class="comment comment-reply">
-                  <div class="d-flex">
-                    <div class="comment-img"><img src="assets/img/blog/3.png" alt=""></div>
+
+                echo "<div id='comment-1' class='comment'>
+                  <div class='d-flex'>
+                    <div class='comment-img'><img src='assets/img/blog/1.png' alt=''></div>
                     <div>
-                      <h5><a href="">Lynda Small</a> <a href="#" class="reply"><i class="bi bi-reply-fill"></i> Reply</a></h5>
-                      <time datetime="2020-01-01">11 March, 2021</time>
+                      <h5><a href='#'>".$value['name']."</a></h5>
+                      <time datetime='2020-01-01'>".$value['date']."</time>
                       <p>
-                        Couldn't agree more
+                       ".$value['comment']."
                       </p>
                     </div>
                   </div>
+                </div>";
+              }
+              ?>
 
 
-                </div><!-- End comment reply #1-->
 
-              </div><!-- End comment #2-->
+
 
 
               <div class="reply-form">
-                <h4>Leave a Reply</h4>
-                <p>Your email address will not be published. Required fields are marked * </p>
-                <form action="">
-                  <div class="row">
-                    <div class="col-md-6 form-group">
-                      <input name="name" type="text" class="form-control" placeholder="Your Name*">
-                    </div>
-                    <div class="col-md-6 form-group">
-                      <input name="email" type="text" class="form-control" placeholder="Your Email*">
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col form-group">
-                      <input name="website" type="text" class="form-control" placeholder="Your Website">
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col form-group">
-                      <textarea name="comment" class="form-control" placeholder="Your Comment*"></textarea>
-                    </div>
-                  </div>
-                  <button type="submit" class="btn btn-primary">Post Comment</button>
+                <div class="alert alert-success" hidden role="alert" id="commentSuccess">
 
+                </div>
+                <div class="alert alert-danger" hidden role="alert" id="commentError">
+
+                </div>
+                <h4>Leave a Reply</h4>
+                <p><span id="opti"> < 255 characters</span> </p>
+
+
+
+                <form id="comAdd">
+                  <div class="row">
+                    <div class="col form-group">
+                      <textarea name="comment" name="comment" id="comment" class="form-control" placeholder="Your Comment"></textarea>
+                    </div>
+                    <input type="text" hidden name="rid" value="<?php echo $uid ?>">
+                  </div>
+                  <button type="submit"  name="comAdd" class="btn btn-primary">Post Comment</button>
                 </form>
 
               </div>
-
             </div><!-- End blog comments -->
-
           </div><!-- End blog entries list -->
 
           <div class="col-lg-4">
@@ -357,7 +355,6 @@ if(isset($_GET['id'])){
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
 

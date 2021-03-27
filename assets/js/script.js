@@ -21,4 +21,37 @@ $( document ).ready(function() {
 
 
 
+  $('#comAdd').on('submit', function (e) {
+
+       e.preventDefault();
+
+
+       $.ajax({
+         type: 'post',
+         url: 'comment_add.php',
+         data: $('#comAdd').serialize(),
+         success: function (data1) {
+           $("#comment").val("");
+           data1 = JSON.parse(data1);
+           if(data1['error'].length>1){
+             $('#commentError').removeAttr("hidden");
+             $('#commentError').text(data1['error']);
+             setTimeout(function(){
+              $('#commentError').attr("hidden",true);
+            },5000)
+           }
+           if(data1['success'].length>1){
+             $('#commentSuccess').removeAttr("hidden");
+             $('#commentSuccess').text(data1['success']);
+             setTimeout(function(){
+              $('#commentSuccess').attr("hidden",true);
+            },5000)
+           }
+
+         }
+       });
+
+     });
+
+
 });

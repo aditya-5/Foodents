@@ -57,6 +57,7 @@ if(isset($_SESSION['loggedin'])){
 
    <!-- Template Main JS File -->
    <script src="assets/js/main.js"></script>
+   <script src="assets/js/script.js"></script>
 
    <!-- MDB ICONS -->
    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css" rel="stylesheet"/>
