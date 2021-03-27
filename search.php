@@ -1,14 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php
-session_start();
-if(isset($_SESSION["error"])){
-	$error = $_SESSION["error"];
-	unset($_SESSION["error"]);
-}else{
-	unset($error);
-}
- ?>
+
 
 <head>
   <title>Search Recipes-Foodents</title>
@@ -23,7 +15,14 @@ if(isset($_SESSION["error"])){
 
 <body>
 <?php include("navbar.php") ?>
-
+<?php
+if(isset($_SESSION["error"])){
+	$error = $_SESSION["error"];
+	unset($_SESSION["error"]);
+}else{
+	unset($error);
+}
+ ?>
   <main id="main">
 
     <!-- ======= Breadcrumbs ======= -->
