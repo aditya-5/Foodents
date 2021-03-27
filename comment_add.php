@@ -1,6 +1,6 @@
 
 
-<?php include("./login/index.php") ?>
+<?php include("./server.php") ?>
 <?php
 
 if(session_status() == PHP_SESSION_NONE){
