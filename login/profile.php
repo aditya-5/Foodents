@@ -335,21 +335,29 @@ if(isset($_POST["profileForm"])){
 					$profurl = "1.png";
 				}
 
+				if(isset($_POST['bio'])){
+					$bio = $_POST['bio'];
+				}
+				else{
+					$bio = "";
+				}
+
+
 
 
 				if(empty($error)){
-								$sql = "UPDATE USERS SET email = ?,first_name=?,last_name=?,username=?, profile_url=?  where user_id =?";
+								$sql = "UPDATE USERS SET email = ?,first_name=?,last_name=?,username=?, profile_url=?, Bio=?  where user_id =?";
 								if($stmt = mysqli_prepare($conn,$sql)){
-									mysqli_stmt_bind_param($stmt, "sssssi",$form_email,$form_fname,$form_lname,$form_user, $profurl,$param_id);
+									mysqli_stmt_bind_param($stmt, "ssssssi",$form_email,$form_fname,$form_lname,$form_user, $profurl,$bio, $param_id);
 									$param_id = $_SESSION['id'];
 									if(mysqli_stmt_execute($stmt)){
-											// $_SESSION["msg"] = "Details Updated";
-											$_SESSION["msg"] = $profurl;
+											$_SESSION["msg"] = "Details Updated";
 											$_SESSION['first_name']= $form_fname;
 											$_SESSION['last_name']= $form_lname;
 											$_SESSION['email']= $form_email;
 											$_SESSION['username']=$form_user ;
 											$_SESSION['profurl']=$profurl ;
+											$_SESSION['bio']=$bio ;
 											header("location: profile.php");
 											}else{
 												$error = "Internal - Couldn't execute the update statement";
@@ -632,6 +640,20 @@ echo "<div class='alert alert-danger' role='alert'>".$error."</div>";
 					  <img src="../assets/img/blog/7.png" class="profDP">
 					</label>
 					</div>
+
+					<div class="form-group mb-3">
+						<label for="user">Username</label>
+						<input type="text" id="user" name="user" value="<?php if($log==True){echo $us;} ?>" class="form-control">
+					</div>
+
+					<div class="col form-group">
+						<label for="bio">About You</label>
+						<textarea name="bio"  id="bio" class="form-control" placeholder="Tell people a bit of yourself"><?php
+						echo $display_bio  ?></textarea>
+					</div>
+
+
+
 					<br>
 					<div class="text-center">
 						<button class="btn btn-primary" name="profileForm" type="submit">Save Changes</button>
