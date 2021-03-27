@@ -5,6 +5,8 @@
 * License: https://bootstrapmade.com/license/
 */
 
+
+
 /*--------------------------------------------------------------
 #  Recipe Results Page
 --------------------------------------------------------------*/
@@ -13,6 +15,24 @@
   width:20vh;
 }
 
+
+.link-res:link {
+  color: black;
+}
+
+/* visited link */
+.link-res:visited {
+  color: green;
+}
+
+.link-res:hover {
+  color: #1bbd36;
+}
+
+/* selected link */
+.link-res:active {
+  color: blue;
+}
 /*--------------------------------------------------------------
 # Add Recipe Page
 --------------------------------------------------------------*/

@@ -32,7 +32,7 @@ if(isset($_SESSION["error"])){
         <div class="d-flex justify-content-between align-items-center">
           <h2>Search Recipes</h2>
           <ol>
-            <li><a href="index.php">Home</a></li>
+            <li><a href="index">Home</a></li>
             <li>Recipes</li>
           </ol>
         </div>

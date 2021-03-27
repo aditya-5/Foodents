@@ -1,8 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php include("./login/index.php") ?>
+<?php
+if(isset($_GET['id'])){
+  if(!empty($_GET['id'])){
+    $uid = $_GET['id'];
+    if(preg_match("/^[0-9]+$/", $uid)){
+      $sql = "SELECT * from RECIPES where recipe_id=$uid";
+      $result = mysqli_query($conn, $sql);
+      mysqli_fetch_all($result);
+      foreach($result as $value){
+        $recipe = $value;
+      }
+      if(isset($recipe)){
+        $user_id = $recipe['user_id'];
+        $sql = "SELECT username, email, first_name, last_name from USERS where user_id=$user_id";
+        $user = mysqli_query($conn, $sql);
+        mysqli_fetch_row($user);
+
+        foreach($user as $value){
+          $user = $value;
+        }
+
+        $sql = "SELECT text from RECIPEINGREDIENTS where recipe_id=$uid";
+        $result = mysqli_query($conn, $sql);
+        mysqli_fetch_all($result);
+        $ings = array();
+        foreach($result as $value){
+          array_push($ings, $value['text']);
+        }
+
+      }
+      else{
+        header("location: error");
+      }
+
+
+    }else{
+      header("location: error");
+    }
+  }else{
+    header("location: error");
+  }
+}
+
+ ?>
 
 <head>
-  <title>Flaky Buttermilk Biscuits</title>
+  <title><?php
+  echo $recipe['name']; ?></title>
 
   <!-- =======================================================
   * Template Name: Company - v4.0.1
@@ -24,11 +70,15 @@
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>Flaky Buttermilk Biscuits</h2>
+          <?php
+            echo "<h2>".$recipe['name']."</h2>";
+           ?>
           <ol>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="search.html">Search Recipes</a></li>
-            <li>Flaky Buttermilk Biscuits</li>
+            <li><a href="index">Home</a></li>
+            <li><a href="search">Search Recipes</a></li>
+            <?php
+              echo "<li>".$recipe['name']."</li>";
+             ?>
           </ol>
         </div>
 
@@ -46,17 +96,27 @@
             <article class="entry entry-single">
 
               <div class="entry-img">
-                <img src="assets/img/recipeimg/biscuit.jpg" alt="" class="img-fluid">
+                <img src="<?php
+                echo $recipe['image_url'] ?>" alt="" class="img-fluid">
               </div>
 
               <h2 class="entry-title">
-                <a href="recipe1.html">Flaky Buttermilk Biscuits</a>
+                <a href="#"><?php
+                  echo $recipe['name'];
+                 ?></a>
               </h2>
 
               <div class="entry-meta">
                 <ul>
-                  <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="recipe1.html">Heston Marc Blumenthal</a></li>
-                  <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="recipe1.html"><time datetime="2020-01-01">March 5, 2021</time></a></li>
+                  <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="recipe1.html">
+                    <?php
+                    echo $user['first_name']." ".$user['last_name']; ?>
+                  </a></li>
+                  <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="recipe1.html"><time datetime="2020-01-01">
+                    <?php
+                      echo $recipe['date_created'];
+                     ?>
+                   </time></a></li>
                   <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="recipe1.html">0 Comments</a></li>
                 </ul>
               </div>
@@ -65,24 +125,42 @@
 
                 <h4 class="text-muted">Overview</h4>
 
+
+
         <div class="row">
           <div class="col-lg-6">
             <ul class="list-group overview">
-              <li><i class="fas fa-clock"></i> <span class="overview-title"> Cooking time:</span> 30 mins</li>
+              <li><i class="fas fa-clock"></i> <span class="overview-title"> Cooking time:</span>
+                <?php
+                  echo $recipe['time']." minutes";
+                 ?>
+               </li>
               <li><i class="fas fa-star"></i> <span class="overview-title"> Difficulty:
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star"></span>
-                  <span class="fa fa-star"></span>
+                <?php
+                  $star = $recipe['difficulty'];
+                  for($i=1;$i<=$star;$i++){
+                    echo "<span class='fa fa-star checked'></span>";
+                  }
+                  for($i=1;$i<=5-$star;$i++){
+                    echo "<span class='fa fa-star '></span>";
+                  }
+                 ?>
               </span></li>
             </ul>
           </div>
           <div class="col-lg-6">
             <ul class="list-group overview">
 
-              <li><i class="fas fa-clock"></i> <span class="overview-title"> Total time:</span> 40 minutes</li>
-              <li><i class="fas fa-list-ul"></i> <span class="overview-title"> Yield: </span>12 servings</li>
+              <li><i class="fas fa-clock"></i> <span class="overview-title"> Total time:</span>
+                <?php
+                  echo ($recipe['time']+15)." minutes";
+                 ?>
+               </li>
+              <li><i class="fas fa-list-ul"></i> <span class="overview-title"> Yield: </span>
+                <?php
+                  echo $recipe['servings']." servings";
+                 ?>
+               </li>
             </ul>
           </div>
         </div>
@@ -91,41 +169,58 @@
 
       <h4 class="text-muted">Ingredients</h4>
       <ul class="list-group ingg">
-        <li>2 tablespoon vegetable shortening, cut into ½-inch chunks</li>
-        <li>8 tablespoon unsalted butter, cold, lightly floured and cut into ⅛-inch slices</li>
-        <li>1 teaspoon salt</li>
-        <li>1 tablespoon baking powder</li>
-        <li>½ teaspoon baking soda</li>
-        <li>2 ½ cup unbleached all-purpose flour</li>
-        <li>2 tablespoon butter, melted</li>
-        <li>1 ¼ cup buttermilk, cold</li>
+        <?php
+        if(isset($ings)){
+          foreach ($ings as $value){
+            echo "<li>".$value."</li>";
+          }
+        }
+        if(count($ings)<1){
+          echo "<b >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspNo Ingredients Found</b>";
+        }
+         ?>
       </ul>
       <br>
       <h4 class="text-muted">Recipe</h4>
 
       <ol style="1" class="steps">
-        <li>Adjust oven rack to lower-middle position; heat oven to 450 degrees.</li>
-        <li>Whisk flour, baking power, baking soda, and salt in large bowl.
-</li>
-        <li>Add shortening to flour mixture; break up chunks with fingertips until only pea-sized pieces remain.  Working in batches, drop butter slices into flour mixture and toss to coat; pick up each slice of butter and press between floured fingertips into flat, nickel-sized pieces.  Repeat until all butter is incorporated; toss to combine.  Freeze mixture (in bowl) until chilled, about 15 minutes.
-</li>
-        <li>Spray 24-square-inch work surface with nonstick cooking spray; spread spray evenly across surface with kitchen towel or paper towel.  Sprinkle 1/3 cup of extra flour across sprayed area; gently spread flour across work surface with palm to form thin, even coating.  Add all but 2 tablespoons of buttermilk to flour mixture; stir briskly with fork until ball forms and no dry bits of flour are visible, adding remaining buttermilk as needed (dough will be sticky and shaggy but should clear sides of bowl).  With rubber spatula, transfer dough onto center of prepared work surface, dust surface lightly with flour, and, with floured hands, bring dough together into cohesive ball.
-</li>
-        <li>Pat dough into approximate 10-inch square; roll into 18- by 14-inch rectangle about 1/4 inch thick, dusting dough and rolling pin with flour as needed.  Using bench scraper or thin metal spatula, fold dough into thirds, brushing any excess flour from surface; lift short end of dough and fold in thirds again to form approximate 6- by 4-inch rectangle.  Rotate dough 90 degrees, dusting work surface underneath with flour; roll and fold dough again, dusting with flour as needed.
-</li>
-        <li>Roll dough into 10-inch square about 1/2 inch thick; flip dough and cut nine 3-inch rounds with floured biscuit cutter, dipping cutter back into flour after each cut.  Carefully invert and transfer rounds to ungreased baking sheet, spaced 1 inch apart.  Gather dough scraps into ball; roll and fold once or twice until scraps form smooth dough.  Roll dough into 1/2-inch-thick round; cut 3 more 3-inch rounds and transfer to baking sheet.  Discard excess dough.
-</li>
-        <li>Brush biscuit tops with melted butter.  Bake, without opening oven door, until tops are golden brown and crisp, 15 to 17 minutes.  Let cool on baking sheet 5 to 10 minutes before serving.
-</li>
+
+      <?php
+      if(isset($recipe['instructions'])){
+        $lines = explode("\n", $recipe['instructions']);
 
 
+        if(!empty($recipe['instructions'])){
+          foreach ($lines as $value){
+            if(strlen($value)>5){
+              echo "<li>$value</li>";
+            }
+          }
+        }else{
+            echo "<b>No Steps Found</b>";
+        }
+      }
+
+       ?>
       </ol>
 
 
 <figure class="text-end">
   <blockquote class="blockquote">
     <p>
-      STORY GOES HERE
+      <?php
+      if(isset($recipe['story'])){
+        if(!empty($recipe['story'])){
+          echo $recipe['story'];
+        }
+        else{
+          echo "NO STORY FOUND";
+        }
+
+      }
+
+
+       ?>
     </p>
   </blockquote>
   <figcaption class="blockquote-footer">
@@ -154,7 +249,8 @@
             <div class="blog-author d-flex align-items-center">
               <img src="assets/img/blog/6.png" class="rounded-circle float-left" alt="">
               <div>
-                <h4>Heston Marc Blumenthal</h4>
+                <h4>  <?php
+                  echo $user['first_name']." ".$user['last_name']; ?></h4>
                 <p>
                   I am a cooking enthusiast. I love trying out new recipes and also sharing my recipes with the world.
                 </p>
@@ -182,7 +278,7 @@
                 <div class="d-flex">
                   <div class="comment-img"><img src="assets/img/blog/2.png" alt=""></div>
                   <div>
-                    <h5><a href="">Aron Alvarado</a> <a href="#" class="reply"><i class="bi bi-reply-fill"></i> Reply</a></h5>
+                    <h5>Aron Alvarado <a href="#" class="reply"><i class="bi bi-reply-fill"></i> Reply</a></h5>
                     <time datetime="2020-01-01">10 March, 2021</time>
                     <p>
                       Looks delicious!

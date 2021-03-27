@@ -84,7 +84,7 @@ include("navbar.php")
         <div class="d-flex justify-content-between align-items-center">
           <h2>Results</h2>
           <ol>
-            <li><a href="index.php">Home</a></li>
+            <li><a href="index">Home</a></li>
             <li>Results</li>
           </ol>
         </div>
@@ -110,7 +110,8 @@ include("navbar.php")
                      <div class='card-body'>
                       <div class='row'>
                       <div class='col-lg-9'>
-                        <h5 class='card-title'>".$value['name']."</h5>
+                      <a class='link-res' href='./recipe?id=".$value['recipe_id']."'><h5 class='card-title'>".$value['name']."</h5></a>
+
                         <p class='card-text'>".substr($value['instructions'],0,200)."....<br><span id='opti'>Cooking time : ".$value['time']." minutes</span></p>
                       </div>
 
