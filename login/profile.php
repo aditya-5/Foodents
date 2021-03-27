@@ -11,7 +11,40 @@ if(isset($_SESSION['loggedin'])){
     $lname = $_SESSION['last_name'];
 		$em = $_SESSION['email'];
 		$us = $_SESSION['username'];
+		$display_url = $_SESSION['profurl'];
+		$display_bio = $_SESSION['bio'];
     $log = true;
+
+
+		switch ($display_url) {
+		case "1.png":
+			$display_url_no = 0;
+			break;
+		case "2.png":
+			$display_url_no = 1;
+			break;
+		case "3.png":
+			$display_url_no = 2;
+			break;
+		case "4.png":
+			$display_url_no = 3;
+			break;
+		case "5.png":
+			$display_url_no = 4;
+			break;
+		case "6.png":
+			$display_url_no = 5;
+			break;
+		case "7.png":
+			$display_url_no = 6;
+			break;
+		default:
+			$display_url_no = 0;
+			break;
+		}
+
+
+
   }
 }
 
@@ -269,19 +302,54 @@ if(isset($_POST["profileForm"])){
 
 				// ***************************************************************************
 				// ***************************************************************************
+				if(isset($_POST['test'])){
+					$profile = intval($_POST['test']);
+
+					switch ($profile) {
+				  case 1:
+				    $profurl = "1.png";
+				    break;
+				  case 2:
+						$profurl = "2.png";
+				    break;
+				  case 3:
+						$profurl = "3.png";
+				    break;
+					case 4:
+						$profurl = "4.png";
+				    break;
+					case 5:
+						$profurl = "5.png";
+				    break;
+					case 6:
+						$profurl = "6.png";
+				    break;
+					case 7:
+						$profurl = "7.png";
+				    break;
+				  default:
+						$profurl = "1.png";
+						break;
+					}
+				}else{
+					$profurl = "1.png";
+				}
+
 
 
 				if(empty($error)){
-								$sql = "UPDATE USERS SET email = ?,first_name=?,last_name=?,username=?  where user_id =?";
+								$sql = "UPDATE USERS SET email = ?,first_name=?,last_name=?,username=?, profile_url=?  where user_id =?";
 								if($stmt = mysqli_prepare($conn,$sql)){
-									mysqli_stmt_bind_param($stmt, "ssssi",$form_email,$form_fname,$form_lname,$form_user,$param_id);
+									mysqli_stmt_bind_param($stmt, "sssssi",$form_email,$form_fname,$form_lname,$form_user, $profurl,$param_id);
 									$param_id = $_SESSION['id'];
 									if(mysqli_stmt_execute($stmt)){
-											$_SESSION["msg"] = "Details Updated";
+											// $_SESSION["msg"] = "Details Updated";
+											$_SESSION["msg"] = $profurl;
 											$_SESSION['first_name']= $form_fname;
 											$_SESSION['last_name']= $form_lname;
 											$_SESSION['email']= $form_email;
 											$_SESSION['username']=$form_user ;
+											$_SESSION['profurl']=$profurl ;
 											header("location: profile.php");
 											}else{
 												$error = "Internal - Couldn't execute the update statement";
@@ -525,7 +593,46 @@ echo "<div class='alert alert-danger' role='alert'>".$error."</div>";
 					<div class="form-group mb-3">
 						<label for="user">Username</label>
 						<input type="text" id="user" name="user" value="<?php if($log==True){echo $us;} ?>" class="form-control">
-					</div><br>
+					</div>
+
+					<br>
+					<div class="form-group mb-3">
+						<label>
+					  <input type="radio" value="1" name="test"  checked style="visibility:hidden">
+					  <img src="../assets/img/blog/1.png" class="profDP">
+					</label>
+
+					<label>
+					  <input type="radio" value="2" name="test"  style="visibility:hidden">
+					  <img src="../assets/img/blog/2.png" class="profDP">
+					</label>
+
+					<label>
+					  <input type="radio"  value="3" name="test"  style="visibility:hidden">
+					  <img src="../assets/img/blog/3.png" class="profDP">
+					</label>
+
+					<label>
+					  <input type="radio" value="4" name="test"   style="visibility:hidden">
+					  <img src="../assets/img/blog/4.png" class="profDP">
+					</label>
+
+					<label>
+					  <input type="radio" value="5"  name="test" style="visibility:hidden">
+					  <img src="../assets/img/blog/5.png" class="profDP">
+					</label>
+
+					<label>
+					  <input type="radio"  value="6" name="test"  style="visibility:hidden">
+					  <img src="../assets/img/blog/6.png" class="profDP">
+					</label>
+
+					<label>
+					  <input type="radio" value="7"  name="test"  style="visibility:hidden">
+					  <img src="../assets/img/blog/7.png" class="profDP">
+					</label>
+					</div>
+					<br>
 					<div class="text-center">
 						<button class="btn btn-primary" name="profileForm" type="submit">Save Changes</button>
 					</div>
@@ -648,5 +755,19 @@ echo "<div class='alert alert-danger' role='alert'>".$error."</div>";
 </div>
 <br><br><br>
 	<?php include("account_footer.php") ?>
+
+	<script type="text/javascript">
+
+	$( document ).ready(function() {
+		$(".profDP:eq(<?php echo $display_url_no ?>)").css("border","2px solid black");
+
+
+
+
+	});
+
+
+
+	</script>
 </body>
 </html>

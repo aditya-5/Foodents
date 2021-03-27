@@ -44,7 +44,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 
 	if(empty($username_err) && empty($password_err)){
 
-		$sql = "SELECT user_id, username, password, first_name, last_name,email from USERS where username= ? or email = ?";
+		$sql = "SELECT user_id, username, password, first_name, last_name,email,profile_url,Bio from USERS where username= ? or email = ?";
 
 		if($stmt = mysqli_prepare($conn,$sql)){
 			mysqli_stmt_bind_param($stmt, 'ss', $param_username,$param_email);
@@ -57,7 +57,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 				// If any information has been retrieved or not
 				if(mysqli_stmt_num_rows($stmt)==1){
 					// Used to bind the fetched stuff to the variables
-					mysqli_stmt_bind_result($stmt, $id, $username, $hashed_password, $firstn, $lastn, $email);
+					mysqli_stmt_bind_result($stmt, $id, $username, $hashed_password, $firstn, $lastn, $email, $profurl, $bio);
 
 					// Fetch the results into the variables above
 					if(mysqli_stmt_fetch($stmt)){
@@ -70,6 +70,8 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 							$_SESSION['first_name'] = $firstn;
 							$_SESSION['last_name'] = $lastn;
 							$_SESSION['email'] = $email;
+							$_SESSION['profurl'] = $profurl;
+							$_SESSION['bio'] = $bio;
 							// header("location: welcome.php");
 							header("location: ../index.php");
 						}
