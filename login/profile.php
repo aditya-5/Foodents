@@ -182,14 +182,12 @@ if(isset($_POST["profileForm"])){
 							if(mysqli_stmt_fetch($stmt)){
 								if($uid == $_SESSION['id']){
 									$form_user = strtolower(trim($_POST['user']));
-									if(strpos($form_user,' ')){
+									if(strpos(' ',$form_user)){
 										$error = "Username cannot contain spaces.";
 									}
-									else{
 										if(!preg_match('/^[a-z0-9]+$/',$form_user)){
 											$error = "Username can contain only letters and numbers";
 										}
-									}
 								}
 								else{
 									$error = "Username already exists";
@@ -197,14 +195,12 @@ if(isset($_POST["profileForm"])){
 							}
 						}else if(mysqli_stmt_num_rows($stmt)==0){
 							$form_user = strtolower(trim($_POST['user']));
-							if(strpos($form_user,' ')){
+							if(strpos(' ',$form_user)){
 								$error = "Username cannot contain spaces";
 							}
-							else{
 								if(!preg_match('/^[a-z0-9]+$/',$form_user)){
 									$error = "Username can contain only letters and numbers";
 								}
-							}
 						}
 						else{
 							$error = "Interval - More than 1 users exist with the same username already";
@@ -216,7 +212,6 @@ if(isset($_POST["profileForm"])){
 				else{
 					echo("Something went wrong with the dollar stmt part");
 				}
-
 
 
 				mysqli_stmt_close($stmt);
@@ -641,10 +636,6 @@ echo "<div class='alert alert-danger' role='alert'>".$error."</div>";
 					</label>
 					</div>
 
-					<div class="form-group mb-3">
-						<label for="user">Username</label>
-						<input type="text" id="user" name="user" value="<?php if($log==True){echo $us;} ?>" class="form-control">
-					</div>
 
 					<div class="col form-group">
 						<label for="bio">About You</label>

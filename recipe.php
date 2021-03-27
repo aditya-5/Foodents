@@ -14,12 +14,12 @@ if(isset($_GET['id'])){
       }
       if(isset($recipe)){
         $user_id = $recipe['user_id'];
-        $sql = "SELECT username, email, first_name, last_name from USERS where user_id=$user_id";
-        $user = mysqli_query($conn, $sql);
-        mysqli_fetch_row($user);
+        $sql = "SELECT username, email, first_name, last_name,profile_url, Bio from USERS where user_id=$user_id";
+        $recipe_owner = mysqli_query($conn, $sql);
+        mysqli_fetch_row($recipe_owner);
 
-        foreach($user as $value){
-          $user = $value;
+        foreach($recipe_owner as $value){
+          $recipe_owner = $value;
         }
 
         $sql = "SELECT text from RECIPEINGREDIENTS where recipe_id=$uid";
@@ -38,17 +38,14 @@ if(isset($_GET['id'])){
         $comments = array();
         foreach($result as $value){
           $idd = $value['user_id'];
-          $sql2 = "SELECT first_name, last_name from USERS where user_id= $idd ";
+          $sql2 = "SELECT first_name, last_name, profile_url from USERS where user_id= $idd ";
           $temp_user = mysqli_query($conn, $sql2);
           mysqli_fetch_all($temp_user);
           foreach($temp_user as $val){
             $name = $val['first_name']." ".$val['last_name'];
-            array_push($comments,array("name"=>$name, "comment"=> $value['text'],'date'=>$value['date']) );
+            array_push($comments,array("name"=>$name, "comment"=> $value['text'],'date'=>$value['date'], "profileurl"=> $val['profile_url']) );
           }
         }
-
-
-
       }
       else{
         header("location: error");
@@ -132,14 +129,15 @@ if(isset($_GET['id'])){
                 <ul>
                   <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="recipe1.html">
                     <?php
-                    echo $user['first_name']." ".$user['last_name']; ?>
+                    echo $recipe_owner['first_name']." ".$recipe_owner['last_name']; ?>
                   </a></li>
                   <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="recipe1.html"><time datetime="2020-01-01">
                     <?php
                       echo $recipe['date_created'];
                      ?>
                    </time></a></li>
-                  <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="recipe1.html">0 Comments</a></li>
+                  <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="recipe1.html"><?php
+                  echo count($comments) ?> Comments</a></li>
                 </ul>
               </div>
 
@@ -269,19 +267,20 @@ if(isset($_GET['id'])){
             </article><!-- End blog entry -->
 
             <div class="blog-author d-flex align-items-center">
-              <img src="assets/img/blog/6.png" class="rounded-circle float-left" alt="">
+              <img src="assets/img/blog/<?php echo $recipe_owner['profile_url'] ?>" class="rounded-circle float-left" alt="">
               <div>
                 <h4>  <?php
-                  echo $user['first_name']." ".$user['last_name']; ?></h4>
+                  echo $recipe_owner['first_name']." ".$recipe_owner['last_name']; ?></h4>
                 <p>
-                  I am a cooking enthusiast. I love trying out new recipes and also sharing my recipes with the world.
+                  <?php echo $recipe_owner['Bio']; ?>
                 </p>
               </div>
             </div><!-- End blog author bio -->
 
             <div class="blog-comments">
 
-              <h4 class="comments-count">3 Comments</h4>
+              <h4 class="comments-count"><?php
+              echo count($comments) ?> Comments</h4>
 
               <?php
               foreach($comments as $value){
@@ -290,7 +289,7 @@ if(isset($_GET['id'])){
 
                 echo "<div id='comment-1' class='comment'>
                   <div class='d-flex'>
-                    <div class='comment-img'><img src='assets/img/blog/1.png' alt=''></div>
+                    <div class='comment-img'><img src='assets/img/blog/".$value['profileurl']."' alt=''></div>
                     <div>
                       <h5><a href='#'>".$value['name']."</a></h5>
                       <time datetime='2020-01-01'>".$value['date']."</time>
@@ -302,11 +301,6 @@ if(isset($_GET['id'])){
                 </div>";
               }
               ?>
-
-
-
-
-
 
               <div class="reply-form">
                 <div class="alert alert-success" hidden role="alert" id="commentSuccess">

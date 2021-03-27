@@ -68,7 +68,7 @@
           <a href="../contact">Contact</a>
           <?php
             if($log){
-              echo "<span class='dropdown'><a href='#'><span>".$fname." ".$lname."</span> <i class='bi bi-chevron-down'></i>"."&nbsp&nbsp&nbsp&nbsp"."</a>
+              echo "<span class='dropdown'><a href='#'><i class='fas fa-user-circle'  style='font-size: 1.8em; padding:3px 5px 0px 0px'></i><span>".$fname." ".$lname."</span> <i class='bi bi-chevron-down'></i>"."&nbsp&nbsp&nbsp&nbsp"."</a>
                 <ul>
                   <li><a href='./profile'>Profile</a></li>
                   <li><a href='./logout'>Logout</a></li>
