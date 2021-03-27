@@ -321,7 +321,6 @@ if(isset($_POST["addRecipe"])){
 	$imgurl = trim($_POST['imgurl']);
 	$instruction = trim($_POST['instruction']) ;
 	$ings = $_POST['ing'] ;
-	echo $name.$servings.$time.$difficulty.$imgurl.$instruction.$ings;
 
 	if(isset($_POST['story'])){
 		$story = trim($_POST['story']);
@@ -353,9 +352,17 @@ if(isset($_POST["addRecipe"])){
 
 	if(empty($name)){
 		$error = "Recipe Name cannot be empty";
+	}else{
+		$name = strtolower($name);
+		$name = ucwords($name);
 	}
+
 	if(empty($imgurl)){
 		$error = "Image URL cannot be empty";
+	}else{
+				if (!filter_var($imgurl, FILTER_VALIDATE_URL)) {
+				    $error  = "It is not a valid URL";
+				}
 	}
 
 	if(empty($instruction)){
@@ -381,6 +388,25 @@ if(isset($_POST["addRecipe"])){
 			$param_image_url= $imgurl;
 
 			if(mysqli_stmt_execute($stmt)){
+				$inserted_id =  mysqli_insert_id($conn);
+				foreach($ings as $value){
+					$sql = "INSERT INTO RECIPEINGREDIENTS(recipe_id, ingredient_id, text) VALUES(?,NULL,?)";
+					if($stmt = mysqli_prepare($conn, $sql)){
+						mysqli_stmt_bind_param($stmt, 'is', $param_id, $param_text);
+						$param_id = $inserted_id;
+						$param_text = $value;
+						if(mysqli_stmt_execute($stmt)){
+							$error = "Added ".$value;
+						}else{
+							$error = "Couldn't execute the ingredient add query";
+						}
+					}else{
+						$error = "Couldn't prepare the ingredient add statement";
+					}
+					mysqli_stmt_close($stmt);
+				}
+
+
 				header("location: profile.php");
 				$_SESSION["msg"] = "Recipe Added";
 			}else{
