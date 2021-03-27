@@ -51,7 +51,7 @@ if(isset($_SESSION['loggedin'])){
    <link href="assets/css/style.css" rel="stylesheet">
 
    <!-- jQuery Local -->
-   <script src="jquery-3.5.1.min.js"></script>
+   <script src="./assets/vendor/jquery/jquery-3.5.1.min.js"></script>
 
    <!-- Template Main JS File -->
    <script src="assets/js/main.js"></script>

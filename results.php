@@ -6,11 +6,44 @@
 session_start();
 if(isset($_GET['showRes'])){
   if(!empty($_GET['search'])){
-    $search_param = trim($_GET['search']);
+    $search_param = strtolower(trim($_GET['search']));
+    if(!preg_match("/^[A-Za-z0-9\s]+$/", $search_param)){
+      $error = "Search string can be letters and numbers only";
+    }
     $search_param = explode(' ',$search_param);
-    $sql = "SELECT recipe_id,name,date_created,instructions,time, image_url from RECIPES";
-    $result = mysqli_query($conn, $sql);
-    mysqli_fetch_all($result);
+
+
+
+    if(empty($error)){
+      $sql = "SELECT recipe_id,name,date_created,instructions,time, image_url from RECIPES";
+      $result = mysqli_query($conn, $sql);
+      mysqli_fetch_all($result);
+      $results2 = array();
+
+      foreach($result as $value){
+        $occur = 0;
+        foreach($search_param as $word){
+
+
+          if(strpos( strtolower($value['name']), $word ) !== false){
+            $occur = 1;
+            continue;
+          }else{
+            $occur = 0;
+          }
+          if($occur==0){
+            break;
+          }
+        }
+        if ($occur ==1){
+          array_push($results2, $value);
+        }
+
+      }
+      $result = $results2;
+    }
+
+
 
   }
   else{
@@ -38,8 +71,9 @@ if(isset($_GET['showRes'])){
 
 <body>
 
-<?php include("navbar.php") ?>
-
+<?php
+include("navbar.php")
+ ?>
 
   <main id="main">
 
@@ -67,28 +101,34 @@ if(isset($_GET['showRes'])){
           <div class="col-lg-10">
 
             <?php
+            if(isset($result)){
+              if(count($result)>0){
+                foreach($result as $value){
+                  echo "
+                   <div class='card'>
 
-            foreach($result as $value){
-              echo "
-               <div class='card'>
+                     <div class='card-body'>
+                      <div class='row'>
+                      <div class='col-lg-9'>
+                        <h5 class='card-title'>".$value['name']."</h5>
+                        <p class='card-text'>".substr($value['instructions'],0,200)."....<br><span id='opti'>Cooking time : ".$value['time']." minutes</span></p>
+                      </div>
 
-                 <div class='card-body'>
-                  <div class='row'>
-                  <div class='col-lg-9'>
-                    <h5 class='card-title'>".$value['name']."</h5>
-                    <p class='card-text'>".substr($value['instructions'],0,200)."....<br><span id='opti'>Cooking time : ".$value['time']." minutes</span></p>
-                  </div>
+                      <div class='col-lg-3'>
+                        <img class=' thumb' src='".$value['image_url']."' alt='Card image cap'>
+                      </div>
 
-                  <div class='col-lg-3'>
-                    <img class=' thumb' src='".$value['image_url']."' alt='Card image cap'>
-                  </div>
-
-                 </div></div>
-                 <div class='card-footer'>
-                   <small class='text-muted'>".$value['date_created']."</small>
-                 </div>
-               </div><br><br>
-             ";
+                     </div></div>
+                     <div class='card-footer'>
+                       <small class='text-muted'>".$value['date_created']."</small>
+                     </div>
+                   </div><br><br>
+                 ";
+               }
+              }else{
+                echo "<div class='alert alert-danger' role='alert'>Sorry, no recipes found. <a href='./search'>Search for something else?</a> </div>";
+                echo "<div class='alert alert-primary' role='alert'>Have a recipe on your mind? Add it to our database. <a href='./login/login'>Login and Add</a> </div>";
+              }
             }
 
               ?>

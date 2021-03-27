@@ -26,10 +26,10 @@
    <!-- Template Main CSS File -->
    <link href="../assets/css/style.css" rel="stylesheet">
 
-   <!-- jQuery CDN -->
-   <script src="https://code.jquery.com/jquery-3.6.0.slim.js"></script>
+   <!-- jQuery Local -->
+   <script src="../assets/vendor/jquery/jquery-3.5.1.min.js"></script>
 
-   <!-- jQuery CDN -->
+   <!-- jQuery Custom -->
    <script src="../assets/js/script.js"></script>
 
    <!-- MDB ICONS -->
