@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php include("./login/index.php") ?>
+<?php include("./server.php") ?>
 <?php
 if(isset($_GET['id'])){
   if(!empty($_GET['id'])){
