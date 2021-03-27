@@ -76,7 +76,7 @@
               </span>";
             }
             else{
-              echo "<a href='./login'>Login</a>";
+              echo "<a href='./login'>Login&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a>";
             }
            ?>
 

@@ -102,7 +102,7 @@ if(isset($_SESSION['loggedin'])){
               </span>";
             }
             else{
-              echo "<a href='./login/login'>Login</a>";
+              echo "<a href='./login/login'>Login&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a>";
             }
            ?>
         </nav>

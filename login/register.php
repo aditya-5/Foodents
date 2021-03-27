@@ -10,6 +10,18 @@ if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']==true){
 	exit();
 }
 
+if(isset($_SESSION['loggedin'])){
+  if($_SESSION['loggedin']==true){
+  	$fname = $_SESSION['first_name'];
+    $lname = $_SESSION['last_name'];
+		$em = $_SESSION['email'];
+		$us = $_SESSION['username'];
+    $log = true;
+  }
+}else{
+	$log = false;
+}
+
 // Initialising the values
 $username = $password = $confirm_password = $email= $firstname = $lastname = '';
 $username_err = $password_err = $confirm_password_err = $email_err = $firstname_err = $lastname_err = '' ;
@@ -185,6 +197,24 @@ mysqli_close($conn);
 </head>
 <body>
 
+	<?php
+ include("account_navbar.php")
+ ?>
+
+ <!-- ======= Breadcrumbs ======= -->
+ <section id="breadcrumbs" class="breadcrumbs">
+ 	<div class="container">
+
+ 		<div class="d-flex justify-content-between align-items-center">
+ 			<h2>Register</h2>
+ 			<ol>
+ 				<li><a href="../index">Home</a></li>
+ 				<li>Register</li>
+ 			</ol>
+ 		</div>
+
+ 	</div>
+ </section><!-- End Breadcrumbs -->
 
 	<div class="container p-4 middle">
 		<form action="register.php" method="POST">
@@ -229,6 +259,7 @@ mysqli_close($conn);
 		<a href="login.php"><button class="btn btn-secondary">Login</button></a>
 	</div>
 </div>
-
+<br><br><br>
+<?php include("account_footer.php") ?>
 </body>
 </html>

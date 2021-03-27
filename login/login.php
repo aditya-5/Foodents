@@ -8,6 +8,18 @@ if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']==true){
 	exit();
 }
 
+if(isset($_SESSION['loggedin'])){
+  if($_SESSION['loggedin']==true){
+  	$fname = $_SESSION['first_name'];
+    $lname = $_SESSION['last_name'];
+		$em = $_SESSION['email'];
+		$us = $_SESSION['username'];
+    $log = true;
+  }
+}else{
+	$log = false;
+}
+
 require("index.php");
 
 
@@ -93,6 +105,26 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
  	</title>
  </head>
  <body>
+	 <?php
+ 	include("account_navbar.php")
+ 	?>
+
+	<!-- ======= Breadcrumbs ======= -->
+	<section id="breadcrumbs" class="breadcrumbs">
+		<div class="container">
+
+			<div class="d-flex justify-content-between align-items-center">
+				<h2>Login</h2>
+				<ol>
+					<li><a href="../index">Home</a></li>
+					<li>Login</li>
+				</ol>
+			</div>
+
+		</div>
+	</section><!-- End Breadcrumbs -->
+
+
  	<div class="container middle p-3">
  		<form action="login.php" method="POST">
  			<h2 class="text-center">Login</h2><br>
@@ -112,8 +144,8 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
  		<div class="text-center">
  			<a href="register.php"><button class="btn btn-secondary">Register</button></a>
  		</div><br>
-
  	</div>
-
+	<br><br><br>
+	<?php include("account_footer.php") ?>
  </body>
  </html>
