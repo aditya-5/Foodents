@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php include("./login/index.php") ?>
+<?php include("./server.php") ?>
 
 <?php
 session_start();
