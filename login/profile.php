@@ -389,6 +389,29 @@ if(isset($_POST["addRecipe"])){
 
 			if(mysqli_stmt_execute($stmt)){
 				$inserted_id =  mysqli_insert_id($conn);
+
+
+				// $sql = "SELECT ingredient_id,name from INGREDIENTS";
+				// if($stmt2 = mysqli_prepare($conn, $sql)){
+				// 	if(mysqli_stmt_execute($stmt2)){
+				// 		mysqli_stmt_store_result($stmt);
+				// 	}else{
+				// 		$error="Couldn't execute the stmt2 statement";
+				// 	}
+				// }else{
+				// 	$error = "Couldnt execute the stmt2 statement";
+				// }
+
+				$sql = "SELECT ingredient_id,name from INGREDIENTS";
+				$result = mysqli_query($conn, $sql);
+				mysqli_fetch_all($result);
+
+				// foreach($result as $value){
+				// 	$error = $value['ingredient_id'].$value['name'];
+				// 	$error = similar_text($value['name'], "ativnimd");
+				// }
+
+
 				foreach($ings as $value){
 					$sql = "INSERT INTO RECIPEINGREDIENTS(recipe_id, ingredient_id, text) VALUES(?,NULL,?)";
 					if($stmt = mysqli_prepare($conn, $sql)){
@@ -396,7 +419,6 @@ if(isset($_POST["addRecipe"])){
 						$param_id = $inserted_id;
 						$param_text = $value;
 						if(mysqli_stmt_execute($stmt)){
-							$error = "Added ".$value;
 						}else{
 							$error = "Couldn't execute the ingredient add query";
 						}
