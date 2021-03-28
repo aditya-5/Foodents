@@ -20,7 +20,7 @@ if(isset($_GET['showRes'])){
 
 
     if(empty($error)){
-      $sql = "SELECT recipe_id,name,date_created,instructions,time, image_url from RECIPES";
+      $sql = "SELECT recipe_id,name,date_created,instructions,time, image_url,difficulty from RECIPES";
       $result = mysqli_query($conn, $sql);
       mysqli_fetch_all($result);
       $results2 = array();
@@ -99,7 +99,7 @@ if(isset($_GET['fridgeRes'])){
 
       $results2= array();
       foreach($selectedRecIds as $value){
-        $sql = "SELECT recipe_id,name,date_created,instructions,time, image_url from RECIPES where recipe_id=$value";
+        $sql = "SELECT recipe_id,name,date_created,instructions,time, image_url,difficulty from RECIPES where recipe_id=$value";
         $indiRecipe = mysqli_query($conn, $sql);
         mysqli_fetch_all($indiRecipe);
         foreach($indiRecipe as $rec){
@@ -177,7 +177,7 @@ include("navbar.php")
                       <div class='col-lg-9'>
                       <a class='link-res' href='./recipe?id=".$value['recipe_id']."'><h5 class='card-title'>".$value['name']."</h5></a>
 
-                        <p class='card-text'>".substr($value['instructions'],0,200)."....<br><span id='opti'>Cooking time : ".$value['time']." minutes</span></p>
+                        <p class='card-text'>".substr($value['instructions'],0,200).".... <a href='./recipe?id=".$value['recipe_id']."'><span id='checkedd'>Read More</span></a><br><span id='opti'>Cooking time : ".$value['time']." minutes</span></p>
                       </div>
 
                       <div class='col-lg-3'>
@@ -187,7 +187,16 @@ include("navbar.php")
                      </div></div>
                      <div class='card-footer'>
                        <small class='text-muted'>".$value['date_created']."</small>
-                     </div>
+                       <span class='overview-title'> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Difficulty level : ";
+                       $star = $value['difficulty'];
+                       for($i=1;$i<=$star;$i++){
+                         echo "<span class='fa fa-star checked' style='color: orange;'></span>";
+                       }
+                       for($i=1;$i<=5-$star;$i++){
+                         echo "<span class='fa fa-star '></span>";
+                       }
+
+                     echo "</div>
                    </div><br><br>
                  ";
                }
@@ -198,6 +207,11 @@ include("navbar.php")
             }
 
               ?>
+
+              </span></li>
+
+
+
 
 
           </div>

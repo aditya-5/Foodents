@@ -18,6 +18,20 @@
 transform: scale(1.2);
 }
 
+ #checkedd{
+ 	color: green;
+  border: 0;
+  padding: 4px 6px;
+
+  transition: 0.4s;
+  border-radius: 4px;
+}
+
+ #checkedd:hover {
+  background: grey;
+	color:white
+}
+
 
 /*--------------------------------------------------------------
 #  Login Pages
