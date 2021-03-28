@@ -4,6 +4,11 @@
 
 <?php
 session_start();
+
+
+// ************************************************************
+// SEARCH FORM SUBMISSION
+// ************************************************************
 if(isset($_GET['showRes'])){
   if(!empty($_GET['search'])){
     $search_param = strtolower(trim($_GET['search']));
@@ -55,6 +60,66 @@ if(isset($_GET['showRes'])){
 		header("location: ./search.php");
 	}
 }
+
+
+
+// ************************************************************
+// FRIDGE FORM SUBMISSION
+// ************************************************************
+if(isset($_GET['fridgeRes'])){
+  if(isset($_GET['selectedIngs'])){
+    if(!empty(trim($_GET['selectedIngs']))){
+      $selectedIngs = trim($_GET['selectedIngs']);
+      $explodedIngs = explode(",",$selectedIngs);
+      $array = array();
+      foreach($explodedIngs as $value){
+        if(!empty($value)){
+          array_push($array, $value);
+        }
+      }
+
+      $explodedIngs = $array;
+
+
+
+      $sql = "SELECT recipe_id, text from RECIPEINGREDIENTS";
+      $result = mysqli_query($conn, $sql);
+      mysqli_fetch_all($result);
+      $selectedRecIds = array();
+      foreach($result as $value){
+        foreach($explodedIngs as $val){
+          if(strpos(strtolower($value['text']), strtolower(strval($val)))){
+            array_push($selectedRecIds, intval($value['recipe_id']));
+          }
+
+        }
+      }
+      $selectedRecIds = array_unique($selectedRecIds);
+
+
+      $results2= array();
+      foreach($selectedRecIds as $value){
+        $sql = "SELECT recipe_id,name,date_created,instructions,time, image_url from RECIPES where recipe_id=$value";
+        $indiRecipe = mysqli_query($conn, $sql);
+        mysqli_fetch_all($indiRecipe);
+        foreach($indiRecipe as $rec){
+          array_push($results2, $rec);
+        }
+      }
+
+
+      $result = $results2;
+
+    }else{
+      $error = "Ingredients cannot be empty";
+    }
+  }
+
+  if(isset($error)){
+		$_SESSION["error"] = $error;
+		header("location: ./fridge");}
+}
+
  ?>
 
 
