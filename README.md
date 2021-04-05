@@ -1,7 +1,7 @@
 # Cookbook-10120-X9
 
 
-`The easiest and safest way to savour delicious food during these unfortunate times!`
+<Strong>The easiest and safest way to savour delicious food during these unfortunate times!</Strong>
 
 
 ## About this project
