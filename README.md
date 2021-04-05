@@ -13,11 +13,15 @@ We are first-year students in the Department of Computer Science at the Universi
 
 ### Functions of `Foodents`
 *`Fridge`<br>
-*`Search recipes`<br>
-*`Share and comment recipes`<br>
+*`Search`<br>
+*`Sharing and commenting`<br>
 
-#### `Fridege`
+#### Fridege
 `Fridge` feature is the core of our web application, 
+
+#### Search
+
+#### Sharing and commenting
 
 
 ### Our developers
