@@ -12,11 +12,13 @@ We are first-year students in the `Department of Computer Science` at the `Unive
 *`Sharing and commenting`<br>
 
 #### Fridege
-`Fridge` feature is the core of our web application, 
+`Fridge` feature is the core of our web application! Have specific ingredients? Use our Fridge Feature to search for recipes based on the specific set of ingredients you have in fridge!
 
 #### Search
+Looking for a particular recipe? Use our Search Recipe feature to search recipes by title
 
 #### Sharing and commenting
+Register/Login to interact with other users on Foodents. Share your personalised recipes and hear what others have to say about it.
 
 
 ### Our developers
