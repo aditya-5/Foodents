@@ -1,7 +1,7 @@
 # Cookbook-10120-X9
 
 
-<font color=#1bbd36><Strong>The easiest and safest way to savour delicious food during these unfortunate times!</Strong></font>
+<font color=#1bbd36 size = 12><Strong>The easiest and safest way to savour delicious food during these unfortunate times!</Strong></font>
 
 
 ## About this project
