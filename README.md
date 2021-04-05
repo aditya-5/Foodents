@@ -5,7 +5,9 @@
 
 
 ## About this project
-<br>
+*`Fridge`<br>
+*`Search recipes`<br>
+*`Share and comment recipes`<br>
 <br>
 
 ### The idea of `Foodents`
