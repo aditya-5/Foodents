@@ -1,7 +1,7 @@
 # Cookbook-10120-X9
 
 
-$\color{#1BBD36}{<Strong>The easiest and safest way to savour delicious food during these unfortunate times!</Strong>}$
+<font color=#1bbd36><Strong>The easiest and safest way to savour delicious food during these unfortunate times!</Strong></font>
 
 
 ## About this project
