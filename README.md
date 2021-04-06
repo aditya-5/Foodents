@@ -7,7 +7,7 @@
 We are first-year students in the `Department of Computer Science` at the `University of Manchester`. We come from different countries and cultures, but what brought us together was our commmon inability to keep up with a good meal schedule during term time. Not to mention the fact that we had to frequently self-isolate which left us with very limited ingredients in our kitchen. We decided to build a solution that would help not only just us, but also other students like us.
 
 ### Functions of `Foodents`
-*`Fridge`<br>
+![Fridge](https://img.shields.io/badge/-Fridge-brightgreen)
 *`Search`<br>
 *`Sharing and commenting`<br>
 
