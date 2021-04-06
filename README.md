@@ -12,7 +12,7 @@ We are first-year students in the [`Department of Computer Science` ](https://ww
 *`Sharing and Commenting`<br>
 
 #### ![Fridge](https://img.shields.io/badge/-Fridge-%231bbd36)
-![Fridge](https://img.shields.io/badge/-Fridge-%231bbd36)feature is the core of our web application! What can it do? If you have some specific ingredients, just use ![Fridge](https://img.shields.io/badge/-Fridge-%231bbd36) to search for recipes based on the specific set of ingredients you have in your `fridge`!
+`Fridge`feature is the core of our web application! What can it do? If you have some specific ingredients, just use `Fridge Feature` to search for recipes based on the specific set of ingredients you have in your `fridge`!
 
 #### ![Search](https://img.shields.io/badge/-Search-%231bbd36)
 ![Search](https://img.shields.io/badge/-Search-%231bbd36)
