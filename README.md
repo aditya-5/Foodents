@@ -1,7 +1,7 @@
 # Cookbook-10120-X9---Foodents
 
 
-<Strong><font color=red size = 12>The easiest and safest way to savour delicious food during these unfortunate times!</font></Strong>
+<Strong>The easiest and safest way to savour delicious food during these unfortunate times!</font></Strong>
 
 ### The idea of `Foodents`
 We are first-year students in the `Department of Computer Science` at the `University of Manchester`. We come from different countries and cultures, but what brought us together was our commmon inability to keep up with a good meal schedule during term time. Not to mention the fact that we had to frequently self-isolate which left us with very limited ingredients in our kitchen. We decided to build a solution that would help not only just us, but also other students like us.
@@ -9,15 +9,18 @@ We are first-year students in the `Department of Computer Science` at the `Unive
 ### Functions of `Foodents`
 *`Fridge`<br>
 *`Search`<br>
-*`Sharing and commenting`<br>
+*`Sharing and Commenting`<br>
 
-![Fridge](https://img.shields.io/badge/-Fridge-brightgreen)
-`Fridge` feature is the core of our web application! Have specific ingredients? Use our Fridge Feature to search for recipes based on the specific set of ingredients you have in fridge!
+#### Fridge
+![Fridge](https://img.shields.io/badge/-Fridge-%231bbd36)feature is the core of our web application! Have specific ingredients? Use our Fridge Feature to search for recipes based on the specific set of ingredients you have in fridge!
 
-![Search](https://img.shields.io/badge/-Search-brightgreen)
+#### Search
+![Search](https://img.shields.io/badge/-Search-%231bbd36)
 Looking for a particular recipe? Use our Search Recipe feature to search recipes by title
 
-![Sharing and commenting](https://img.shields.io/badge/-Sharing and commenting-brightgreen)
+
+#### Sharing and Commenting
+![Sharing and Commenting](https://img.shields.io/badge/-Sharing%20and%20Commenting-%231bbd36)
 Register/Login to interact with other users on Foodents. Share your personalised recipes and hear what others have to say about it.
 
 
