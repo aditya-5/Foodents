@@ -19,7 +19,7 @@ This is the basic part of our application! If you are looking for a particular r
 
 
 #### ![Sharing and Commenting](https://img.shields.io/badge/-Sharing%20and%20Commenting-%231bbd36)
-If you are so good are cooking, don't waste your recipes, use our `Login/Register` funtion to interact with other users on Foodents. Share your personalised recipes and hear what others have to say about it. Additionally, you can also give suggestions to other recipes.
+If you are so good are cooking, don't waste your recipes, use our `Login/Register` funtion to interact with other users on Foodents. Share your personalised recipes and hear what others have to say about it. Additionally, you can also give suggestions to other recipes the creators can see your ideas about their recipes.
 
 
 ### Our developers
