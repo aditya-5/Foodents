@@ -3,10 +3,10 @@
 
 <Strong>The easiest and safest way to savour delicious food during these unfortunate times!</font></Strong>
 
-### The idea of `Foodents`
+### The idea of Foodents
 We are first-year students in the [`Department of Computer Science` ](https://www.cs.manchester.ac.uk)at [`The Univesity of Manchester`](https://www.manchester.ac.uk/). We come from different countries and cultures, but what brought us together was our commmon inability to keep up with a good meal schedule during term time. Not to mention the fact that we had to frequently self-isolate which left us with very limited ingredients in our kitchen. We decided to build a solution that would help not only just us, but also other students like us.
 
-### Functions of `Foodents`
+### Functions of Foodents
 *`Fridge`<br>
 *`Search`<br>
 *`Sharing and Commenting`<br>
