@@ -12,15 +12,14 @@ We are first-year students in the [`Department of Computer Science` ](https://ww
 *`Sharing and Commenting`<br>
 
 #### ![Fridge](https://img.shields.io/badge/-Fridge-%231bbd36)
-`Fridge`feature is the core of our web application! What can it do? If you have some specific ingredients, just use `Fridge feature` to search for recipes based on the specific set of ingredients you have in your `fridge`!
+*Fridge*feature is the core of our web application! What can it do? If you have some specific ingredients, just use *Fridge feature* to search for recipes based on the specific set of ingredients you have in your `fridge`!
 
 #### ![Search](https://img.shields.io/badge/-Search-%231bbd36)
-This is the basic part of our application! If you are looking for a particular recipe, use our `Search Recipe feature`  to find the one you want! Don't be worry if you see so many recipes, you can sort the recipes out based on their cooking times, number of ingredients and ratings。
+This is the basic part of our application! If you are looking for a particular recipe, use our *Search Recipe feature*  to find the one you want! Don't be worry if you can not find the recipe you actually want among so many recipes, you can sort the recipes out based on their cooking times, number of ingredients and ratings。
 
 
 #### ![Sharing and Commenting](https://img.shields.io/badge/-Sharing%20and%20Commenting-%231bbd36)
-If you are so good are cooking, don't waste your recipes, use our `Login/Register` funtion to interact with other users on Foodents. Share your personalised recipes and hear what others have to say about it. Additionally, you can also give suggestions to other recipes the creators can see your ideas about their recipes.
-
+Don't waste your fantastic recipes, use our *Login/Register* function to interact with other users on Foodents. Share your personalised recipes and hear what others have to say about it. Also, if you have something to say about other recipes, remeber to *login* before commenting on recipes.
 
 ### Our developers
 [Aditya Agarwal](http://linkedin.com/in/aditya-5/)<br>
