@@ -31,7 +31,7 @@
         <div class="carousel-container">
             <div class="carousel-content animate__animated animate__fadeInUp ">
               <h2>Welcome to <span>Foodents</span></h2>
-              <p>Foodents has been designed by the<a href="team.html"> Team X9</a>. It is an app which lets you to not only look for recipes according to your specific constraints, but also share your own recipe story with the world.  </p>
+              <p>Foodents has been designed by the<a href="team"> Team X9</a>. It is an app which lets you to not only look for recipes according to your specific constraints, but also share your own recipe story with the world.  </p>
             </div>
           </div>
 
@@ -71,12 +71,12 @@
               Foodents is your friend in these unfortunate times. With over 500 recipes in store, you can search recipes based on a number of constraints -
             </p>
             <ul>
-              <li><i class="ri-check-double-line"></i> Have specific ingredients? Use our <a href="fridge.html">Fridge Feature</a> to search for recipes based on the specific set of ingredients you have in fridge.</li>
+              <li><i class="ri-check-double-line"></i> Have specific ingredients? Use our <a href="fridge">Fridge Feature</a> to search for recipes based on the specific set of ingredients you have in fridge.</li>
               <li><i class="ri-check-double-line"></i> Have little time to cook? Sort the recipes out based on their cooking times.</li>
-              <li><i class="ri-check-double-line"></i> Looking for a particular recipe? Use our <a href="search.html">Search Recipe</a> feature to search recipes by title.</li>
+              <li><i class="ri-check-double-line"></i> Looking for a particular recipe? Use our <a href="search">Search Recipe</a> feature to search recipes by title.</li>
             </ul>
             <p class="font-italic">
-                It isn't over yet. <a href="">Register/Login </a>to interact with other users on Foodents. Share your personalised recipes and hear what others have to say about it.
+                It isn't over yet. <a href="./login/login">Register/Login </a>to interact with other users on Foodents. Share your personalised recipes and hear what others have to say about it.
             </p>
           </div>
         </div>
