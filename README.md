@@ -11,15 +11,15 @@ We are first-year students in the [`Department of Computer Science` ](https://ww
 *`Search`<br>
 *`Sharing and Commenting`<br>
 
-#### Fridge
+#### ![Fridge](https://img.shields.io/badge/-Fridge-%231bbd36)
 ![Fridge](https://img.shields.io/badge/-Fridge-%231bbd36)feature is the core of our web application! What can it do? If you have some specific ingredients, just use ![Fridge](https://img.shields.io/badge/-Fridge-%231bbd36) to search for recipes based on the specific set of ingredients you have in your `fridge`!
 
-#### Search
+#### ![Search](https://img.shields.io/badge/-Search-%231bbd36)
 ![Search](https://img.shields.io/badge/-Search-%231bbd36)
 Looking for a particular recipe? Use our Search Recipe feature to search recipes by title
 
 
-#### Sharing and Commenting
+#### ![Sharing and Commenting](https://img.shields.io/badge/-Sharing%20and%20Commenting-%231bbd36)
 ![Sharing and Commenting](https://img.shields.io/badge/-Sharing%20and%20Commenting-%231bbd36)
 Register/Login to interact with other users on Foodents. Share your personalised recipes and hear what others have to say about it.
 
