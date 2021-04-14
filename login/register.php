@@ -1,25 +1,22 @@
-
-
-
 <?php
 require("index.php");
 session_start();
 
 if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']==true){
-	header("location: login.php");
-	exit();
+    header("location: login.php");
+    exit();
 }
 
 if(isset($_SESSION['loggedin'])){
   if($_SESSION['loggedin']==true){
-  	$fname = $_SESSION['first_name'];
+      $fname = $_SESSION['first_name'];
     $lname = $_SESSION['last_name'];
-		$em = $_SESSION['email'];
-		$us = $_SESSION['username'];
+        $em = $_SESSION['email'];
+        $us = $_SESSION['username'];
     $log = true;
   }
 }else{
-	$log = false;
+    $log = false;
 }
 
 // Initialising the values
@@ -28,140 +25,140 @@ $username_err = $password_err = $confirm_password_err = $email_err = $firstname_
 
 // Checking if form has been submitted or not (similar to isset())
 if($_SERVER['REQUEST_METHOD']=="POST"){
-	if(empty(trim($_POST['username']))){
-		$username_err = 'Email cannot be blank';
-	}
-	else{
+    if(empty(trim($_POST['username']))){
+        $username_err = 'Email cannot be blank';
+    }
+    else{
 
-	// ***************************************************************************
-	// Checking if username already exists
-		$sql = "SELECT user_id from USERS WHERE username=?";
+    // ***************************************************************************
+    // Checking if username already exists
+        $sql = "SELECT user_id from USERS WHERE username=?";
 
-		// Prepare the SQL query and bind the username param to it (in place of the question mark)
-		if($stmt = mysqli_prepare($conn,$sql)){
-			// Bind params to the query, s means string here.
-			mysqli_stmt_bind_param($stmt, "s", $param_username);
-			$param_username = trim($_POST['username']);
+        // Prepare the SQL query and bind the username param to it (in place of the question mark)
+        if($stmt = mysqli_prepare($conn,$sql)){
+            // Bind params to the query, s means string here.
+            mysqli_stmt_bind_param($stmt, "s", $param_username);
+            $param_username = trim($_POST['username']);
 
-			if(mysqli_stmt_execute($stmt)){
+            if(mysqli_stmt_execute($stmt)){
 
-				// To store the result received (doesn't cause performance loss)
-				mysqli_stmt_store_result($stmt);
+                // To store the result received (doesn't cause performance loss)
+                mysqli_stmt_store_result($stmt);
 
-				if(mysqli_stmt_num_rows($stmt)==1){
-					$username_err = "Username already in use";
-				}
-				else{
-					$username = strtolower(trim($_POST['username']));
-				}
-			}
-		}
-		else{
-			echo("Something went wrong with the dollar stmt part");
-		}
-
-
-		if(strpos($username,' ')){
-			$username_err = "Username cannot contain spaces";
-		}
-		else{
-			if(!preg_match('/^[a-z0-9]+$/',$username)){
-				$username_err = "Username can contain only letters and numbers";
-			}
-		}
+                if(mysqli_stmt_num_rows($stmt)==1){
+                    $username_err = "Username already in use";
+                }
+                else{
+                    $username = strtolower(trim($_POST['username']));
+                }
+            }
+        }
+        else{
+            echo("Something went wrong with the dollar stmt part");
+        }
 
 
-
-		mysqli_stmt_close($stmt);
-
-		// ***************************************************************************
-		// Checking if email already exists
-		$sql = "SELECT user_id from USERS WHERE email=?";
-
-		// Prepare the SQL query and bind the username param to it (in place of the question mark)
-		if($stmt = mysqli_prepare($conn,$sql)){
-			// Bind params to the query, s means string here.
-			mysqli_stmt_bind_param($stmt, "s", $param_email);
-			$param_email = trim($_POST['email']);
-
-			if(mysqli_stmt_execute($stmt)){
-
-				// To store the result received (doesn't cause performance loss)
-				mysqli_stmt_store_result($stmt);
-
-				if(mysqli_stmt_num_rows($stmt)==1){
-					$email_err = "E-mail already in use";
-				}
-				else{
-					$email = strtolower(trim($_POST['email']));
-				}
-			}
-		}
-		else{
-			echo("Something went wrong with the dollar stmt part");
-		}
-
-		if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-			$email_err = "Validation failed";
-		}
-		mysqli_stmt_close($stmt);
-
-		// ***************************************************************************
-
-		// Checking first name and last name
-		$firstname = trim($_POST['firstn']);
-		$lastname = trim($_POST['lastn']);
-		if(empty($firstname)){
-			$firstname_err = "First Name cannot be empty";
-		}
-
-		if(empty($lastname)){
-			$firstname_err = "Last Name cannot be empty";
-		}
-
-		$firstname = strtolower($firstname);
-		$firstname = ucfirst($firstname);
-		$firstname = explode(' ', $firstname);
-		$firstname = $firstname[0];
-
-		$lastname = strtolower($lastname);
-		$lastname = ucfirst($lastname);
-		$lastname = explode(' ', $lastname);
-		$lastname = $lastname[0];
-
-		if(!preg_match("/^[A-Z][a-z]*$/",$firstname)){
-			$firstname_err = "First Name cannot contain spaces";
-		}
-
-		if(!preg_match("/^[A-Z][a-z]*$/",$lastname)){
-			$lastname_err = "Last Name cannot contain spaces";
-		}
+        if(strpos($username,' ')){
+            $username_err = "Username cannot contain spaces";
+        }
+        else{
+            if(!preg_match('/^[a-z0-9]+$/',$username)){
+                $username_err = "Username can contain only letters and numbers";
+            }
+        }
 
 
-	}
+
+        mysqli_stmt_close($stmt);
+
+        // ***************************************************************************
+        // Checking if email already exists
+        $sql = "SELECT user_id from USERS WHERE email=?";
+
+        // Prepare the SQL query and bind the username param to it (in place of the question mark)
+        if($stmt = mysqli_prepare($conn,$sql)){
+            // Bind params to the query, s means string here.
+            mysqli_stmt_bind_param($stmt, "s", $param_email);
+            $param_email = trim($_POST['email']);
+
+            if(mysqli_stmt_execute($stmt)){
+
+                // To store the result received (doesn't cause performance loss)
+                mysqli_stmt_store_result($stmt);
+
+                if(mysqli_stmt_num_rows($stmt)==1){
+                    $email_err = "E-mail already in use";
+                }
+                else{
+                    $email = strtolower(trim($_POST['email']));
+                }
+            }
+        }
+        else{
+            echo("Something went wrong with the dollar stmt part");
+        }
+
+        if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+            $email_err = "Validation failed";
+        }
+        mysqli_stmt_close($stmt);
+
+        // ***************************************************************************
+
+        // Checking first name and last name
+        $firstname = trim($_POST['firstn']);
+        $lastname = trim($_POST['lastn']);
+        if(empty($firstname)){
+            $firstname_err = "First Name cannot be empty";
+        }
+
+        if(empty($lastname)){
+            $firstname_err = "Last Name cannot be empty";
+        }
+
+        $firstname = strtolower($firstname);
+        $firstname = ucfirst($firstname);
+        $firstname = explode(' ', $firstname);
+        $firstname = $firstname[0];
+
+        $lastname = strtolower($lastname);
+        $lastname = ucfirst($lastname);
+        $lastname = explode(' ', $lastname);
+        $lastname = $lastname[0];
+
+        if(!preg_match("/^[A-Z][a-z]*$/",$firstname)){
+            $firstname_err = "First Name cannot contain spaces";
+        }
+
+        if(!preg_match("/^[A-Z][a-z]*$/",$lastname)){
+            $lastname_err = "Last Name cannot contain spaces";
+        }
+
+
+    }
 
 
 
 // Checking the password constraints
 if(empty(trim($_POST['password']))) {
-	$password_err = "Password cannot be blank";
+    $password_err = "Password cannot be blank";
 }
 elseif(strlen(trim($_POST['password']))<6){
-	$password_err = "Password needs to be greater than 6 characters";
+    $password_err = "Password needs to be greater than 6 characters";
 }
 else{
-	$password = trim($_POST['password']);
+    $password = trim($_POST['password']);
 }
 
 // Checking the confirm password
 if(empty(trim($_POST["confirmpass"]))){
-	$confirm_password_err = "Confirm password field cannot be empty";
+    $confirm_password_err = "Confirm password field cannot be empty";
 }
 else{
-	$confirm_password = trim($_POST["confirmpass"]);
-	if( empty($password_err) && $password != trim($_POST["confirmpass"])){
-		$confirm_password_err = "Passwords don't match";
-			}
+    $confirm_password = trim($_POST["confirmpass"]);
+    if( empty($password_err) && $password != trim($_POST["confirmpass"])){
+        $confirm_password_err = "Passwords don't match";
+            }
 }
 
 
@@ -170,19 +167,19 @@ else{
 // Checking if any errors before entering into database
 if(empty($username_err) && empty($password_err) && empty($confirm_password_err)&& empty($email_err)
 && empty($firstname_err)&& empty($lastname_err)){
-	$sql = "INSERT INTO USERS (username, password,email, first_name,last_name) VALUES (?,?,?,?,?)";
+    $sql = "INSERT INTO USERS (username, password,email, first_name,last_name) VALUES (?,?,?,?,?)";
 
-	if($stmt = mysqli_prepare($conn, $sql)){
-		mysqli_stmt_bind_param($stmt, "sssss", $username, $param_password, $email, $firstname, $lastname);
-		$param_password = password_hash($password , PASSWORD_DEFAULT);
-		if(mysqli_stmt_execute($stmt)){
-			header("location: login.php");
-		}
-		else{
-			echo "Something went wrong with the second dollar stmt part";
-		}
+    if($stmt = mysqli_prepare($conn, $sql)){
+        mysqli_stmt_bind_param($stmt, "sssss", $username, $param_password, $email, $firstname, $lastname);
+        $param_password = password_hash($password , PASSWORD_DEFAULT);
+        if(mysqli_stmt_execute($stmt)){
+            header("location: login.php");
+        }
+        else{
+            echo "Something went wrong with the second dollar stmt part";
+        }
 
-	mysqli_stmt_close($stmt);
+    mysqli_stmt_close($stmt);
 }}
 
 mysqli_close($conn);
@@ -191,6 +188,7 @@ mysqli_close($conn);
  ?>
 
 
+<!DOCTYPE html>
 <html>
 <head>
 	<title>Register</title>
@@ -198,22 +196,23 @@ mysqli_close($conn);
 <body>
 
 	<?php
- include("account_navbar.php")
- ?>
+        include("account_navbar.php")
+    ?>
 
  <!-- ======= Breadcrumbs ======= -->
- <section id="breadcrumbs" class="breadcrumbs">
- 	<div class="container">
+<br><br>
+<section id="breadcrumbs" class="breadcrumbs">
+<div class="container">
 
- 		<div class="d-flex justify-content-between align-items-center">
- 			<h2>Register</h2>
- 			<ol>
- 				<li><a href="../index">Home</a></li>
- 				<li>Register</li>
- 			</ol>
- 		</div>
+    <div class="d-flex justify-content-between align-items-center">
+        <h2>Register</h2>
+        <ol>
+            <li><a href="../index">Home</a></li>
+            <li>Register</li>
+        </ol>
+    </div>
 
- 	</div>
+</div>
  </section><!-- End Breadcrumbs -->
 
 	<div class="container p-4 middle">
@@ -251,14 +250,13 @@ mysqli_close($conn);
 		</div><br>
 		<div class="text-center">
 			<button class="btn btn-primary">Register</button>
-			</div>
-			</form>
+        </div><br>
+        </form>
 
-
-	<div class="text-center">
-		<a href="login.php"><button class="btn btn-secondary">Login</button></a>
-	</div>
-</div>
+        <div class="text-center">
+            <a href="login.php"><button class="btn btn-secondary">Login</button></a>
+        </div>
+    </div>
 <br><br><br>
 <?php include("account_footer.php") ?>
 </body>

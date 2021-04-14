@@ -111,43 +111,45 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
  	include("account_navbar.php")
  	?>
 
-	<!-- ======= Breadcrumbs ======= -->
-	<section id="breadcrumbs" class="breadcrumbs">
-		<div class="container">
+<!-- ======= Breadcrumbs ======= -->
+<br><br>
+<section id="breadcrumbs" class="breadcrumbs">
+  <div class="container">
 
-			<div class="d-flex justify-content-between align-items-center">
-				<h2>Login</h2>
-				<ol>
-					<li><a href="../index">Home</a></li>
-					<li>Login</li>
-				</ol>
-			</div>
+    <div class="d-flex justify-content-between align-items-center">
+      <h2>Login</h2>
+      <ol>
+        <li><a href="../index">Home</a></li>
+        <li>Login</li>
+      </ol>
+    </div>
 
-		</div>
-	</section><!-- End Breadcrumbs -->
-
-
- 	<div class="container middle p-3">
+  </div>
+</section><!-- End Breadcrumbs -->
+    <div class="container middle p-3">
  		<form action="login.php" method="POST">
- 			<h2 class="text-center">Login</h2><br>
- 			<div class="form-group">
- 				<label for="username" class="form-label">E-mail</label>
- 				<input type="text" class="form-control" id="username" name="username" placeholder="Enter e-mail">
- 			</div>
- 			<div class="form-group">
- 				<label for="password" class="form-label">Password</label>
- 				<input type="password" class="form-control" id="password" name="password" placeholder="Enter password">
- 			</div>
- 			<br><br>
- 			<div class="text-center">
-	 			<button class="btn btn-primary">Login</button>
- 			</div>
+        <h2 class="text-center">Login</h2><br>
+        <div class="form-group">
+            <label for="username" class="form-label">E-mail</label>
+            <input type="text" class="form-control" id="username" name="username" placeholder="Enter e-mail">
+        </div>
+
+
+        <div class="form-group">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Enter password">
+        </div>
+        <br><br>
+        <div class="text-center">
+            <button class="btn btn-primary">Login</button>
+        </div><br>
  		</form>
+
  		<div class="text-center">
  			<a href="register.php"><button class="btn btn-secondary">Register</button></a>
  		</div><br>
  	</div>
-	<br><br><br>
-	<?php include("account_footer.php") ?>
- </body>
- </html>
+<br><br><br>
+<?php include("account_footer.php") ?>
+</body>
+</html>
