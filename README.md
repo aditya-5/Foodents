@@ -17,13 +17,12 @@ We are first-year students in the [`Department of Computer Science` ](https://ww
 #### ![Search](https://img.shields.io/badge/-Search-%231bbd36)
 This is the basic part of our application! If you are looking for a particular recipe, use our **Search Recipe** feature  to find the one you want! Don't be worry if you can not find the recipe you actually want among so many recipes, you can **sort** the recipes out based on their cooking times, number of ingredients and ratings.
 
-
 #### ![Sharing and Commenting](https://img.shields.io/badge/-Sharing%20and%20Commenting-%231bbd36)
 Don't waste your fantastic recipes, use our **Login/Register** function to interact with other users on Foodents. Share your personalised recipes and hear what others have to say about it. Also, if you have something to say about other recipes, remeber to **login** before commenting on recipes.
 
 ### Our developers
 [Aditya Agarwal](http://linkedin.com/in/aditya-5/)<br>
 [Yiheng Tan](https://github.com/yiheng-tan)<br>
-George Lorimer<br>
 [Tudor Bujdei-Leonte](http://linkedin.com/in/tudor-bujdei-leonte/)<br>
 [Asad Ahmed](https://www.linkedin.com/in/asad-ah/)<br>
+George Lorimer<br>
