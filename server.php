@@ -1,8 +1,8 @@
 <?php
-// require_once('config.inc.php');
-//
-//
-// $con = new mysqli($database_host, $database_user, $database_pass, $group_dbnames[0]);
+require_once('config.inc.php');
+
+
+$con = new mysqli($database_host, $database_user, $database_pass, $group_dbnames[0]);
 //
 // if($con -> connect_error) {
 //     die('Connect Error ('.$con -> connect_errno.') '.$con -> connect_error);
@@ -26,9 +26,9 @@
 // $con -> close();
 
 
-require_once('./config.inc.php');
-//
-$conn = new mysqli($database_host, $database_user, $database_pass, $group_dbnames[0]);
+// require_once('./config.inc.php');
+// //
+// $conn = new mysqli($database_host, $database_user, $database_pass, $group_dbnames[0]);
 //
 // if($conn === false){
 // 	die("ERROR: COULDN'T CONNECT TO DATABASE " .  mysqli_connect_error());
