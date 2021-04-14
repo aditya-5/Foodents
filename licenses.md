@@ -1,4 +1,4 @@
-# Foodents uses the following open source resources:
+# Resources used by Foodents:
 
 ## Assets have been taken from freepik.com and these are the creators : 
 
