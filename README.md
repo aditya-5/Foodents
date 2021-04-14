@@ -38,6 +38,9 @@ Messaging functionality ![Shop](https://img.shields.io/badge/--green?style=flat-
 ![JavaScript](https://img.shields.io/badge/-JavaScript-black?style=flat-square&logo=javascript)
 ![jQuery](https://img.shields.io/badge/-jQuery-black?style=flat-square&logo=jQuery)
 
+### Licenses
+Please refer to the LICENSES.MD file for the license information. <br>
+[LICENSES.md](https://github.com/aditya-5/Cookbook_10120_X9/blob/main/LICENSES.MD)<br>
 
 ### Developers ![Developers](https://img.shields.io/badge/--black?style=flat-square&logo=CODERSRANK&logoColor=white)
 [Aditya Agarwal](http://linkedin.com/in/aditya-5/)<br>
