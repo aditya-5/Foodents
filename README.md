@@ -48,4 +48,3 @@ Please refer to the LICENSES.MD file for the license information. <br>
 [Tudor Bujdei-Leonte](http://linkedin.com/in/tudor-bujdei-leonte/)<br>
 [Asad Ahmed](https://www.linkedin.com/in/asad-ah/)<br>
 George Lorimer<br>
-
