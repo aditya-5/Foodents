@@ -51,13 +51,13 @@
             <div class="info-wrap">
               <div class="row  justify-content-center">
                 <div class="col-lg-6 info  justify-content-center">
-                  <i class="bi bi-geo-alt"></i>
+                  <i style="padding: 10px;" class="bi bi-geo-alt"></i>
                   <h4>Location:</h4>
                   <p>Oxford Rd<br>Manchester M13 9PL</p>
                 </div>
 
                 <div class="col-lg-6 info mt-4 mt-lg-0  justify-content-center">
-                  <i class="bi bi-envelope"></i>
+                  <i style="padding: 10px;" class="bi bi-envelope"></i>
                   <h4>Email:</h4>
                   <p>foodents@outlook.com</p>
                 </div>
