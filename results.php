@@ -125,6 +125,8 @@ if(isset($_GET['fridgeRes'])){
 
 <head>
   <title>Recipe Results</title>
+  <link rel="shortcut icon" href="./assets/img/favicon.png">
+  <link rel="bookmark" href="./assets/img/favicon.png">
 
   <!-- =======================================================
   * Template Name: Company - v4.0.1

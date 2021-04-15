@@ -531,6 +531,8 @@ else{
 	<title>
 		Reset Password
 	</title>
+    <link rel="shortcut icon" href="./../assets/img/favicon.png">
+    <link rel="bookmark" href="./../assets/img/favicon.png">
 </head>
 <body>
 

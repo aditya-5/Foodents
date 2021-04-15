@@ -102,9 +102,9 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
  <!DOCTYPE html>
  <html>
  <head>
- 	<title>
- 		Login
- 	</title>
+ 	<title>Login</title>
+    <link rel="shortcut icon" href="./../assets/img/favicon.png">
+    <link rel="bookmark" href="./../assets/img/favicon.png">
  </head>
  <body>
 	 <?php
