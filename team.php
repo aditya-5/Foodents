@@ -3,6 +3,8 @@
 
 <head>
   <title>Team - Company Bootstrap Template</title>
+  <link rel="shortcut icon" href="./assets/img/favicon.png">
+  <link rel="bookmark" href="./assets/img/favicon.png">
 
   <!-- =======================================================
   * Template Name: Company - v4.0.1

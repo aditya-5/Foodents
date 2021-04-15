@@ -3,6 +3,8 @@
 
 <head>
   <title>Foodents by X9</title>
+  <link rel="shortcut icon" href="./assets/img/favicon.png">
+  <link rel="bookmark" href="./assets/img/favicon.png">
   <!-- =======================================================
   * Template Name: Company - v4.0.1
   * Template URL: https://bootstrapmade.com/company-free-html-bootstrap-template/
