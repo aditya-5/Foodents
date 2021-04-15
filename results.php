@@ -183,7 +183,7 @@ include("navbar.php")
                       </div>
 
                       <div class='col-lg-3'>
-                        <img class=' thumb' src='".$value['image_url']."' alt='Card image cap'>
+                        <img class=' thumb' src='".$value['image_url']."' alt='Card image cap' style='width: 250px; height: 200px; object-fit: cover;'>
                       </div>
 
                      </div></div>
