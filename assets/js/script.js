@@ -104,7 +104,6 @@ $("#ings").on("keyup",function(){
 
   $("#displayIng").on('click','.displayRow',function(){
     var item2 = $(this).text();
-
     var index2 = arr.indexOf(item2);
     if (index2 > -1) {
     arr.splice(index2, 1);
