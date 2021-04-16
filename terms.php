@@ -45,7 +45,7 @@
 
              
             <br><br><h4><center>  <a href="./assets/legal/tc.pdf" download>Download T&C</a></center></h4><br>
-
+<!-- 
             <style>
   [data-custom-class='body'], [data-custom-class='body'] * {
           background: transparent !important;
@@ -218,7 +218,7 @@ Calibri;color:#595959;mso-themecolor:text1;mso-themetint:166;">In order to resol
       }
     </style>
       </div>
-      <div style="color: #595959;font-size: 14px;font-family: Arial;padding-top:16px;">These terms of use were created using <a style="color: rgb(48, 48, 241) !important;" href="https://termly.io/products/terms-and-conditions-generator/?ftseo">Termly’s Terms and Conditions Generator</a>.</div>
+      <div style="color: #595959;font-size: 14px;font-family: Arial;padding-top:16px;">These terms of use were created using <a style="color: rgb(48, 48, 241) !important;" href="https://termly.io/products/terms-and-conditions-generator/?ftseo">Termly’s Terms and Conditions Generator</a>.</div> -->
 
              <!-- <h2>Terms and Conditions</h1> -->
 <p>Last updated: April 16, 2021</p>
