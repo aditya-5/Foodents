@@ -20,11 +20,7 @@
 
 
 
-     <section id="contact" class="contact">
-       <div class="section-title" data-aos="fade-up" style = "padding-bottom: 0px">
-         <h1><strong>Terms & Conditions</strong></h1>
-       </div>
-       <div class="container">
+         <center><h1><strong>Terms & Conditions</strong></h1></center>
              <!-- <div class="row justify-content-center" data-aos="fade-up" style="background-color:#d9d9d9; padding:10px; border-radius:10px"> -->
 
              
