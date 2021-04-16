@@ -41,7 +41,7 @@
          <h1><strong>Terms & Conditions</strong></h1>
        </div>
        <div class="container">
-             <div class="row justify-content-center" data-aos="fade-up" style="background-color:#d9d9d9; padding:10px; border-radius:10px">
+             <!-- <div class="row justify-content-center" data-aos="fade-up" style="background-color:#d9d9d9; padding:10px; border-radius:10px"> -->
 
              
             <br><br><h4><center>  <a href="./assets/legal/tc.pdf" download>Download T&C</a></center></h4>
@@ -130,7 +130,7 @@ You agree that the original English text shall prevail in the case of a dispute.
 &nbsp;&nbsp;&nbsp;&nbsp;<li>By visiting this page on our website: <a href="https://web.cs.manchester.ac.uk/n98211tb/Foodents/contact" rel="external nofollow noopener" target="_blank">https://web.cs.manchester.ac.uk/n98211tb/Foodents/contact</a></li>
 </ul>
 
-             </div>
+             <!-- </div> -->
       </div>
 
          </section>
