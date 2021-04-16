@@ -149,7 +149,7 @@
          <!--  _________
  -->
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-Starters">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-Desserts">
             <a href="./recipe?id=620"><img src="https://www.healthywomen.org/media-library/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWFnZSI6Imh0dHBzOi8vYXNzZXRzLnJibC5tcy8xOTE1NzM3My9vcmlnaW4uanBnIiwiZXhwaXJlc19hdCI6MTY2MTg3NTE2N30.mc96FoPc8PjMjLsBYF-AwOFOY7bKcXkoSlLmQ39wlxs/image.jpg?width=980&quality=85" class="img-fluid" alt=""></a>
             <div class="portfolio-info">
               <h4>Strawberries Romanov</h4>
@@ -170,7 +170,7 @@
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-Starters">
+          <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-Starters">
           <a href="./recipe?id=635"><img src="https://hispanickitchen-nglmedia.netdna-ssl.com/wp-content/uploads/2017/07/Ensalada-de-Pollo_1500-700x500.jpg" class="img-fluid" alt=""></a>
             <div class="portfolio-info">
               <h4>Mexican Ensalada</h4>
@@ -178,7 +178,7 @@
               <a href="https://hispanickitchen-nglmedia.netdna-ssl.com/wp-content/uploads/2017/07/Ensalada-de-Pollo_1500-700x500.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Sushi"><i class="bx bx-plus"></i></a>
               <a href="./recipe?id=635" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
-          </div>
+          </div> -->
 
 
 
