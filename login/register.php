@@ -272,6 +272,7 @@ mysqli_close($conn);
 			<label for="pass" class="form-label">Password</label>
 			<input type="password" class="form-control" id="confirmpass" name="confirmpass" placeholder="Confirm Password">
 		</div><br>
+    	<center><small class='text-muted'>By registering, you agree to our <a href="../terms">Terms and Conditions.</a></small></center> <br>
 		<div class="text-center">
 			<button class="btn btn-primary">Register</button>
         </div><br>

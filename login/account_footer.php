@@ -31,6 +31,7 @@
             <li><i class="bx bx-chevron-right"></i> <a href="../fridge">Fridge</a></li>
             <li><i class="bx bx-chevron-right"></i> <a href="../search">Search Recipe</a></li>
             <li><i class="bx bx-chevron-right"></i> <a href="./login">Login</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="../terms">Terms and Conditions</a></li>
           </ul>
         </div>
 

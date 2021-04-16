@@ -87,6 +87,7 @@ if(isset($_SESSION['loggedin'])){
               <li><a href="about">About Us</a></li>
               <li><a href="team">Team</a></li>
               <li><a href="testimonials">Testimonials</a></li>
+              <li><a href="terms">Terms and Conditions</a></li>
             </ul>
           </span>
 
