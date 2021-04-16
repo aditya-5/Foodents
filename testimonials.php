@@ -40,17 +40,57 @@
 
           <div class="col-lg-6" data-aos="fade-up">
             <div class="testimonial-item">
-              <img src="assets/img/testimonials/boris.jpg" class="testimonial-img" alt="">
-              <h3>Boaris Jaunson</h3>
-              <h4>Praime &amp; Minster of yuK</h4>
+              <img src="assets/img/team/tan.jpg" class="testimonial-img" alt="">
+              <h3>Yiheng Tan</h3>
+              <h4>Culinary Advisor</h4>
               <p>
                 <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                June 21st, it is lads.
+                A liberating experience. There is nothing as beautifully executed, as utterly delightful.
                 <i class="bx bxs-quote-alt-right quote-icon-right"></i>
               </p>
             </div>
           </div>
 
+          <div class="col-lg-6" data-aos="fade-up">
+            <div class="testimonial-item">
+              <img src="assets/img/team/asad.jpg" class="testimonial-img" alt="">
+              <h3>Asad Ahmed</h3>
+              <h4>Sous-Chef</h4>
+              <p>
+                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                The feeling that I get whenever I browse the soup recipes... Breathtaking. Exhilarating.
+                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-up">
+          <br>
+            <div class="testimonial-item">
+              <img src="assets/img/team/aditya.JPG" class="testimonial-img" alt="">
+              <h3>Aditya Agarwal</h3>
+              <h4>Food Quality Assurance</h4>
+              <p>
+                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                How can one ever go back to a normal restaurant and give them a passing grade?
+                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-up">
+          <br>
+            <div class="testimonial-item">
+              <img src="assets/img/team/leo.jpg" class="testimonial-img" alt="">
+              <h3>Tudor Bujdei-Leonte</h3>
+              <h4>Food - Student Relationship Advisor</h4>
+              <p>
+                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                The Foodents experience is an indescribable emotion. Harmony, passion, excitement...
+                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+              </p>
+            </div>
+          </div>
 
 
         </div>
