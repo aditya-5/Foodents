@@ -20,6 +20,11 @@ if(isset($_SESSION['loggedin'])){
 	$log = false;
 }
 
+if(isset($_SESSION['msg'])){
+	$error = $_SESSION['msg'];
+	unset($_SESSION['msg']);
+}
+
 require("index.php");
 
 
@@ -126,7 +131,13 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 
   </div>
 </section><!-- End Breadcrumbs -->
+
     <div class="container middle p-3">
+			<?php
+			if(isset($error)){
+			echo "<div class='alert alert-success' role='alert'>".$error."</div>";
+			}
+			?>
  		<form action="login.php" method="POST">
         <h2 class="text-center">Login</h2><br>
         <div class="form-group">

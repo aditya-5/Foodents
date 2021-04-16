@@ -7,6 +7,7 @@ if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']==true){
     exit();
 }
 
+
 if(isset($_SESSION['loggedin'])){
   if($_SESSION['loggedin']==true){
       $fname = $_SESSION['first_name'];
@@ -19,14 +20,19 @@ if(isset($_SESSION['loggedin'])){
     $log = false;
 }
 
+if(isset($_SESSION['error'])){
+  $error = $_SESSION['error'];
+  unset($_SESSION['error']);
+}
+
 // Initialising the values
 $username = $password = $confirm_password = $email= $firstname = $lastname = '';
-$username_err = $password_err = $confirm_password_err = $email_err = $firstname_err = $lastname_err = '' ;
+// $username_err = $password_err = $confirm_password_err = $email_err = $firstname_err = $lastname_err = '' ;
 
 // Checking if form has been submitted or not (similar to isset())
 if($_SERVER['REQUEST_METHOD']=="POST"){
     if(empty(trim($_POST['username']))){
-        $username_err = 'Email cannot be blank';
+        $err = 'Email cannot be blank';
     }
     else{
 
@@ -46,7 +52,7 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
                 mysqli_stmt_store_result($stmt);
 
                 if(mysqli_stmt_num_rows($stmt)==1){
-                    $username_err = "Username already in use";
+                    $err = "Username already in use";
                 }
                 else{
                     $username = strtolower(trim($_POST['username']));
@@ -57,15 +63,17 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
             echo("Something went wrong with the dollar stmt part");
         }
 
+        if(empty($err)){
+          if(strpos($username,' ')){
+              $err = "Username cannot contain spaces";
+          }
+          else{
+              if(!preg_match('/^[a-z0-9]+$/',$username)){
+                  $err = "Username can contain only letters and numbers";
+              }
+          }
+        }
 
-        if(strpos($username,' ')){
-            $username_err = "Username cannot contain spaces";
-        }
-        else{
-            if(!preg_match('/^[a-z0-9]+$/',$username)){
-                $username_err = "Username can contain only letters and numbers";
-            }
-        }
 
 
 
@@ -87,7 +95,7 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
                 mysqli_stmt_store_result($stmt);
 
                 if(mysqli_stmt_num_rows($stmt)==1){
-                    $email_err = "E-mail already in use";
+                    $err = "E-mail already in use";
                 }
                 else{
                     $email = strtolower(trim($_POST['email']));
@@ -98,9 +106,13 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
             echo("Something went wrong with the dollar stmt part");
         }
 
-        if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-            $email_err = "Validation failed";
+        if(empty($err)){
+          if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+              $err = "Email not valid";
+          }
         }
+
+
         mysqli_stmt_close($stmt);
 
         // ***************************************************************************
@@ -109,11 +121,11 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
         $firstname = trim($_POST['firstn']);
         $lastname = trim($_POST['lastn']);
         if(empty($firstname)){
-            $firstname_err = "First Name cannot be empty";
+            $err = "First Name cannot be empty";
         }
 
         if(empty($lastname)){
-            $firstname_err = "Last Name cannot be empty";
+            $err = "Last Name cannot be empty";
         }
 
         $firstname = strtolower($firstname);
@@ -127,11 +139,11 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
         $lastname = $lastname[0];
 
         if(!preg_match("/^[A-Z][a-z]*$/",$firstname)){
-            $firstname_err = "First Name cannot contain spaces";
+            $err = "First Name cannot contain spaces";
         }
 
         if(!preg_match("/^[A-Z][a-z]*$/",$lastname)){
-            $lastname_err = "Last Name cannot contain spaces";
+            $err = "Last Name cannot contain spaces";
         }
 
 
@@ -141,10 +153,10 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
 
 // Checking the password constraints
 if(empty(trim($_POST['password']))) {
-    $password_err = "Password cannot be blank";
+    $err = "Password cannot be blank";
 }
 elseif(strlen(trim($_POST['password']))<6){
-    $password_err = "Password needs to be greater than 6 characters";
+    $err = "Password needs to be greater than 6 characters";
 }
 else{
     $password = trim($_POST['password']);
@@ -152,12 +164,12 @@ else{
 
 // Checking the confirm password
 if(empty(trim($_POST["confirmpass"]))){
-    $confirm_password_err = "Confirm password field cannot be empty";
+    $err = "Confirm password field cannot be empty";
 }
 else{
     $confirm_password = trim($_POST["confirmpass"]);
-    if( empty($password_err) && $password != trim($_POST["confirmpass"])){
-        $confirm_password_err = "Passwords don't match";
+    if( empty($err) && $password != trim($_POST["confirmpass"])){
+        $err = "Passwords don't match";
             }
 }
 
@@ -165,14 +177,14 @@ else{
 
 
 // Checking if any errors before entering into database
-if(empty($username_err) && empty($password_err) && empty($confirm_password_err)&& empty($email_err)
-&& empty($firstname_err)&& empty($lastname_err)){
+if(empty($err)){
     $sql = "INSERT INTO USERS (username, password,email, first_name,last_name) VALUES (?,?,?,?,?)";
 
     if($stmt = mysqli_prepare($conn, $sql)){
         mysqli_stmt_bind_param($stmt, "sssss", $username, $param_password, $email, $firstname, $lastname);
         $param_password = password_hash($password , PASSWORD_DEFAULT);
         if(mysqli_stmt_execute($stmt)){
+            $_SESSION['msg'] = "Account Registered. Please login to continue.";
             header("location: login.php");
         }
         else{
@@ -181,6 +193,11 @@ if(empty($username_err) && empty($password_err) && empty($confirm_password_err)&
 
     mysqli_stmt_close($stmt);
 }}
+
+if(isset($err)){
+  $_SESSION['error'] = $err;
+  header('location: register');
+}
 
 mysqli_close($conn);
 }
@@ -218,6 +235,11 @@ mysqli_close($conn);
  </section><!-- End Breadcrumbs -->
 
 	<div class="container p-4 middle">
+    <?php
+    if(isset($error)){
+    echo "<div class='alert alert-danger' role='alert'>".$error."</div>";
+    }
+    ?>
 		<form action="register.php" method="POST">
 		<h2 class="text-center">Register</h2><br>
 		<div class="form-group mb-3">
