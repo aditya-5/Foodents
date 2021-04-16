@@ -3,17 +3,17 @@
 // ******************************
 // FOR MANCHESTER SERVER DEPLOYMENT
 // ******************************
-require_once('config.inc.php');
-$conn = new mysqli($database_host, $database_user, $database_pass, $group_dbnames[0]);
+// require_once('config.inc.php');
+// $conn = new mysqli($database_host, $database_user, $database_pass, $group_dbnames[0]);
 
 // ******************************
 // FOR LOCAL DEVELOPMENT
 // ******************************
-// define("DB_SERVER",'localhost');
-// define("DB_USERNAME", 'root');
-// define("DB_PASSWORD", '');
-// define("DB_NAME", '2020_comp10120_x9');
-// $conn = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD, DB_NAME);
+define("DB_SERVER",'localhost');
+define("DB_USERNAME", 'root');
+define("DB_PASSWORD", '');
+define("DB_NAME", '2020_comp10120_x9');
+$conn = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD, DB_NAME);
 
 
 // ******************************
