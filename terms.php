@@ -43,6 +43,9 @@
        <div class="container">
              <div class="row justify-content-center" data-aos="fade-up" style="background-color:#d9d9d9; padding:10px; border-radius:10px">
 
+             
+             <br><h4><center>  <a href="./assets/legal/tc.pdf" download>Download T&C</a></center></h4>
+
 
              <!-- <h1>Terms and Conditions</h1> -->
 <p>Last updated: April 16, 2021</p>
@@ -127,7 +130,6 @@ You agree that the original English text shall prevail in the case of a dispute.
 <li>By visiting this page on our website: <a href="https://web.cs.manchester.ac.uk/n98211tb/Foodents/contact" rel="external nofollow noopener" target="_blank">https://web.cs.manchester.ac.uk/n98211tb/Foodents/contact</a></li>
 </ul>
 
-                 <br><center>  <a href="./assets/legal/tc.pdf" download>Download T&C</a></center>
              </div>
       </div>
 
