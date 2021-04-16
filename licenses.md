@@ -1,4 +1,5 @@
 ## Resources used by Foodents:
+`These resources are all in the public domain or free to use for non-commercial purposes`<br>
 `1.`https://images.immediate.co.uk/production/volatile/sites/2/2017/10/cheese-and-onion-pie_charlie-richards-8cc1a77.jpg?quality=45&resize=768,574<br>
 `2.`https://www.yourhomebasedmom.com/wp-content/uploads/2017/04/Chocolate-Angel-Pie_0007.jpg<br>
 `3.`https://497543-1573563-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2021/01/German-Spaetzle-Recipe-dumplings-1.jpg<br>

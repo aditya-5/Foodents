@@ -118,7 +118,7 @@ if(isset($_GET['id'])){
 
               <div class="entry-img">
                 <img src="<?php
-                echo $recipe['image_url'] ?>" alt="" class="img-fluid">
+                echo $recipe['image_url'] ?>" alt="" class="img-fluid" style='width: 856px; height: 550px; object-fit: cover;'>
               </div>
 
               <h2 class="entry-title">

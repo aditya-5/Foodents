@@ -3768,7 +3768,7 @@ class Entries():
         "waittime": 0,
         "cooktime": 0,
         "servings": 1,
-        "comments": "In Greek: [a weird fucking string that won't parse in Python, so I removed it. Email tudor8bl@gmail.com if you find this little piece of text.], pronounced kah-leet-SOON-yah KREE-tees  These sweet cheese pastries use a rolled dough instead of thin phyllo sheets. Depending on how they are folded (see below), they can be baked or fried. They are holiday tradition on the Greek island of Crete, but eaten at other times as well because they're so delicious! These call for the fresh soft variety of myzithra (not the aged salty type) cheese, and if you can't find it, try Italian mascarpone or ricotta.",
+        "comments": "In Greek: [a weird string that won't parse in Python, so I removed it. Email tudor8bl@gmail.com if you find this little piece of text.], pronounced kah-leet-SOON-yah KREE-tees  These sweet cheese pastries use a rolled dough instead of thin phyllo sheets. Depending on how they are folded (see below), they can be baked or fried. They are holiday tradition on the Greek island of Crete, but eaten at other times as well because they're so delicious! These call for the fresh soft variety of myzithra (not the aged salty type) cheese, and if you can't find it, try Italian mascarpone or ricotta.",
         "calories": 0,
         "fat": 0,
         "satfat": 0,
