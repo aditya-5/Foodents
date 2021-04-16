@@ -105,12 +105,12 @@
         <div class="row portfolio-container" data-aos="fade-up">
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-Desserts">
-            <a href="recipe3.html"><img src="assets/img/recipeimg/cake.jpg" class="img-fluid" alt=""></a>
+            <a href="./recipe?id=629"><img src="assets/img/recipeimg/cake.jpg" class="img-fluid" alt=""></a>
             <div class="portfolio-info">
               <h4>Godiva Dark Chocolate Cheesecake</h4>
               <p>Dessert</p>
               <a href="assets/img/recipeimg/cake.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Godiva Dark Chocolate Cheesecake"><i class="bx bx-plus"></i></a>
-              <a href="recipe3.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+              <a href="./recipe?id=629" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
