@@ -49,7 +49,7 @@
                  Condition 2
                  <br>
 
-                 <br><center>  <a href="./assets/legal/cv.pdf" download>Download T&C</a></center>
+                 <br><center>  <a href="./assets/legal/tc.pdf" download>Download T&C</a></center>
              </div>
       </div>
 
