@@ -816,7 +816,7 @@ echo "<div class='alert alert-danger' role='alert'>".$error."</div>";
 				}
 			 ?>
 </div>
-  </div></div>
+  </div></div></div>
 
 
 
