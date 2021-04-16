@@ -324,6 +324,8 @@ if(isset($_GET['id'])){
                     </form>
                   </div>";
                 }
+              }else{
+                echo "<br><h4><a href='./login/login'>Login</a> to comment !!</h4>";
               }
 
 
