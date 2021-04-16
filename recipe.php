@@ -258,12 +258,7 @@ if(isset($_GET['id'])){
               <div class="entry-footer">
 
 
-                <i class="bi bi-tags"></i>
-                <ul class="tags">
-                  <li><a href="#">Biscuits</a></li>
-                  <li><a href="#">Quick</a></li>
-                  <li><a href="#">Easy</a></li>
-                </ul>
+              
               </div>
 
             </article><!-- End blog entry -->

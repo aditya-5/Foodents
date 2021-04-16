@@ -1,9 +1,9 @@
 <div class="sidebar">
 
-              <h3 class="sidebar-title"><a href="search.html"> <- Go Back</h3><br></a>
-           
+              <h3 class="sidebar-title"><i class="fas fa-arrow-left"></i> <a href="./search"> Go Back</h3><br></a>
 
-           
+
+
 
               <h3 class="sidebar-title">Popular Recipes</h3>
               <div class="sidebar-item recent-posts">
@@ -29,15 +29,15 @@
 
               </div><!-- End sidebar recent posts-->
 
-              <h3 class="sidebar-title">Tags</h3>
-              <div class="sidebar-item tags">
-                <ul>
+              <!-- <h3 class="sidebar-title">Tags</h3>
+              <div class="sidebar-item tags"> -->
+                <!-- <ul>
                   <li><a href="#">Dessert</a></li>
                   <li><a href="#">Biscuits</a></li>
                   <li><a href="#">Italian</a></li>
                   <li><a href="#">Chinese</a></li>
                   <li><a href="#">Easy</a></li>
                 </ul>
-              </div><!-- End sidebar tags-->
+              </div> -->
 
             </div><!-- End sidebar -->
