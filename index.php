@@ -115,7 +115,7 @@
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-Starters">
-            <a href="recipe2.html"><img src="assets/img/recipeimg/salad.jpg" class="img-fluid" alt=""></a>
+            <a href="./recipe?id=629"><img src="assets/img/recipeimg/salad.jpg" class="img-fluid" alt=""></a>
             <div class="portfolio-info">
               <h4>Greek Salad</h4>
               <p>Starter</p>
