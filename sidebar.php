@@ -5,7 +5,7 @@
 
            
 
-              <h3 class="sidebar-title">Recent Recipes</h3>
+              <h3 class="sidebar-title">Popular Recipes</h3>
               <div class="sidebar-item recent-posts">
                 <div class="post-item clearfix">
                   <img src="assets/img/recipeimg/biscuit.jpg" alt="">
@@ -14,14 +14,14 @@
                 </div>
 
                 <div class="post-item clearfix">
-                  <img src="assets/img/recipeimg/salad.jpg" alt="">
-                  <h4><a href="recipe1.html">Greek Salad</a></h4>
+                  <img src="https://hispanickitchen-nglmedia.netdna-ssl.com/wp-content/uploads/2017/07/Ensalada-de-Pollo_1500-700x500.jpg" alt="">
+                  <h4><a href="recipe1.html">Mexican Ensalada</a></h4>
                   <time datetime="2020-01-01">March 5, 2020</time>
                 </div>
 
                 <div class="post-item clearfix">
-                  <img src="assets/img/recipeimg/cake.jpg" alt="">
-                  <h4><a href="recipe1.html">Godiva Dark Chocolate Cheesecake</a></h4>
+                  <img src="http://themessybaker.com/wp-content/uploads/2013/04/salmon-ebelskivers.gif" alt="">
+                  <h4><a href="recipe1.html">Smoked Salmon Ebelskivers</a></h4>
                   <time datetime="2020-01-01">February 1, 2020</time>
                 </div>
 
