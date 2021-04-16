@@ -11,6 +11,7 @@ if(isset($_SESSION['loggedin'])){
     $lname = $_SESSION['last_name'];
 		$em = $_SESSION['email'];
 		$us = $_SESSION['username'];
+		$id = $_SESSION['id'];
 		$display_url = $_SESSION['profurl'];
 		$display_bio = $_SESSION['bio'];
     $log = true;
@@ -44,7 +45,6 @@ if(isset($_SESSION['loggedin'])){
 		}
 
 
-
   }
 }
 
@@ -67,10 +67,26 @@ require('index.php') ;
 
 // ************************************
 // ************************************
+// FETCH MY RECIPES
+// ************************************
+// ************************************
+if(isset($_SESSION['loggedin'])){
+	$sql = "SELECT * FROM RECIPES WHERE user_id= $id";
+	$result = mysqli_query($conn, $sql);
+	mysqli_fetch_all($result);
+	$myRecipes = array();
+
+	foreach($result as $value){
+		array_push($myRecipes, $value);
+	}
+}
+
+
+// ************************************
+// ************************************
 // RESET PASSWORD PHP
 // ************************************
 // ************************************
-// if($_SERVER['REQUEST_METHOD']=="POST"){
 if(isset($_POST["resetForm"])){
 
 
@@ -515,10 +531,8 @@ if(isset($_POST["addRecipe"])){
 else{
 	$error = "Not set";
 }
-	if(isset($error)){
-		$_SESSION["error"] = $error;
-		header("location: ./profile.php");
-	}
+
+
 
 	mysqli_close($conn);
 }
@@ -763,8 +777,51 @@ echo "<div class='alert alert-danger' role='alert'>".$error."</div>";
 
 
 
-    <div class="tab-pane fade" id="v-pills-myrecipes" role="tabpanel" aria-labelledby="v-pills-myrecipes-tab">...</div>
-  </div>
+    <div class="tab-pane fade" id="v-pills-myrecipes" role="tabpanel" aria-labelledby="v-pills-myrecipes-tab">
+
+		<div class="card-group">
+			<div class="row row-cols-1 row-cols-md-3 g-4">
+
+			<?php
+				if(isset($myRecipes)){
+
+
+					foreach($myRecipes as $value){
+						echo "<div class='col'>
+						<div class='card'>
+							<img src='".$value['image_url']."' class='card-img-top' alt='...'>
+							<div class='card-body'>
+								<a class='link-res' href='../recipe?id=".$value['recipe_id']."'>
+								<h5 class='card-title'>".$value['name']."</h5></a>
+								<p class='card-text'>". substr($value['instructions'],0,50) ."....</p>
+							</div>
+							<div class='card-footer'>
+								<small class='text-muted'>".$value['date_created']."&nbsp&nbsp&nbsp
+								<i class='fas fa-clock'></i>&nbsp&nbsp".$value['time']." minutes&nbsp
+								<i class='fas fa-utensils'></i> ".$value['servings']." servings</small>
+							</div>
+						</div></div>";
+
+
+					}
+
+
+
+
+
+// ".$value['image_url']."
+
+
+
+				}
+			 ?>
+</div>
+  </div></div>
+
+
+
+
+
 </div>
   </div>
 </div>
