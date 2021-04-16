@@ -4,7 +4,7 @@
 // FOR MANCHESTER SERVER DEPLOYMENT
 // ******************************
 require_once('config.inc.php');
-$con = new mysqli($database_host, $database_user, $database_pass, $group_dbnames[0]);
+$conn = new mysqli($database_host, $database_user, $database_pass, $group_dbnames[0]);
 
 // ******************************
 // FOR LOCAL DEVELOPMENT
