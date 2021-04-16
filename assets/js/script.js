@@ -61,6 +61,8 @@ $(".profDP").click(function(){
 var arr = [];
 var ingData = []
 var i =1;
+
+
 $("#ings").on("keyup",function(){
   if(i==1){
     $.ajax({
@@ -95,10 +97,13 @@ $("#ings").on("keyup",function(){
 
 })
 
-  $("#displayIng").on('click','.displayRow',function(){
-    console.log('sdd')
-    var item2 = $(this).text();
 
+
+
+
+
+  $("#displayIng").on('click','.displayRow',function(){
+    var item2 = $(this).text();
     var index2 = arr.indexOf(item2);
     if (index2 > -1) {
     arr.splice(index2, 1);
@@ -113,10 +118,44 @@ $("#ings").on("keyup",function(){
       $('#displayIng').append("<tr class='displayRow' style='cursor:pointer'><td><center>"+item+"</center></td></tr>")
     })
 
-    $('#selectedIng').append("<span class='badge bg-info p-2 mb-3 mx-2'>"+item2+"</span>")
+    $('#selectedIng').append(
+      "<span class='badge bg-info p-2 mb-3 mx-2'>"+item2+
+      "&nbsp <div class='del' style='cursor:pointer; display:inline'><font color='red'><i class='fas fa-times'></i><font></div></span>")
+
+
 
     var existingValue = $('#selectedIngs').val();
+
     $('#selectedIngs').val(existingValue+","+item2)
+
+  })
+
+  $("#selectedIng").on('click','.del',function(){
+    var hello = $(this).closest('span');
+    hello = hello[0].innerHTML
+    hello = hello.substr(0, hello.indexOf('&'));
+    $(this).closest('span').remove();
+    var existingValue = $('#selectedIngs').val();
+    existingValue = existingValue.replace(hello+",","");
+    $('#selectedIngs').val(existingValue)
+    ingData.unshift(hello)
+
+    arr = [];
+     var vals= $("#ings").val();
+     if(vals.length>1){
+       ingData.forEach(function(item,index){
+         if(item.toLowerCase().includes(vals.toLowerCase())){
+           arr.push(item)
+         }
+       })
+       $('#displayIng').html("<tr><td><span id='opti'>Click on ingredients to select them</span></td></tr>")
+
+       arr.forEach(function(item,index){
+         $('#displayIng').append("<tr class='displayRow' style='cursor:pointer'><td><center>"+item+"</center></td></tr>")
+       })
+     }else{
+       $('#displayIng').html("<tr><td><span id='opti'>Click on ingredients to select them</span></td></tr>")
+     }
 
   })
 

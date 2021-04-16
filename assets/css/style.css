@@ -719,6 +719,7 @@ section {
 }
 
 .breadcrumbs h2 {
+	padding-top: 15px;
   font-size: 26px;
   font-weight: 300;
   color: #fff;

@@ -303,30 +303,38 @@ if(isset($_GET['id'])){
                 </div>";
               }
               ?>
-
-              <div class="reply-form">
-                <div class="alert alert-success" hidden role="alert" id="commentSuccess">
-
-                </div>
-                <div class="alert alert-danger" hidden role="alert" id="commentError">
-
-                </div>
-                <h4>Leave a Reply</h4>
-                <p><span id="opti"> < 255 characters</span> </p>
-
-
-
-                <form id="comAdd">
-                  <div class="row">
-                    <div class="col form-group">
-                      <textarea name="comment" name="comment" id="comment" class="form-control" placeholder="Your Comment"></textarea>
+              <?php
+              if(isset($_SESSION['loggedin'])){
+                if($_SESSION['loggedin']==true){
+                  echo "<div class='reply-form'>
+                    <div class='alert alert-success' hidden role='alert' id='commentSuccess'>
                     </div>
-                    <input type="text" hidden name="rid" value="<?php echo $uid ?>">
-                  </div>
-                  <button type="submit"  name="comAdd" class="btn btn-primary">Post Comment</button>
-                </form>
+                    <div class='alert alert-danger' hidden role='alert' id='commentError'>
+                    </div>
+                    <h4>Leave a Reply</h4>
+                    <p><span id='opti'> < 255 characters</span> </p>
+                    <form id='comAdd'>
+                      <div class='row'>
+                        <div class='col form-group'>
+                          <textarea name='comment' name='comment' id='comment' class='form-control' placeholder='Your Comment'></textarea>
+                        </div>
+                        <input type='text' hidden name='rid' value='<?php echo $uid ?>'>
+                      </div>
+                      <button type='submit'  name='comAdd' class='btn btn-primary'>Post Comment</button>
+                    </form>
+                  </div>";
+                }
+              }else{
+                echo "<br><h4><a href='./login/login'>Login</a> to comment !!</h4>";
+              }
 
-              </div>
+
+               ?>
+
+
+
+
+
             </div><!-- End blog comments -->
           </div><!-- End blog entries list -->
 

@@ -1,6 +1,3 @@
-<?php
-header( "refresh:6;url=index" );
- ?>
 
  <!DOCTYPE html>
  <html lang="en">
@@ -22,7 +19,6 @@ header( "refresh:6;url=index" );
  <?php
  include("navbar.php")
   ?>
-
    <main id="main">
 
      <!-- ======= Breadcrumbs ======= -->
@@ -42,41 +38,25 @@ header( "refresh:6;url=index" );
 
      <section id="contact" class="contact">
        <div class="section-title" data-aos="fade-up" style = "padding-bottom: 0px">
-         <h2><strong>Redirecting in <span id="timer">5</span> ...</strong></h2>
+         <h2><strong>Terms & Conditions</strong></h2>
        </div>
+       <div class="container">
+             <div class="row justify-content-center" data-aos="fade-up" style="background-color:#d9d9d9; padding:10px; border-radius:10px">
 
-             <div class="row justify-content-center" data-aos="fade-up">
 
-                 <img src="./assets/img/stories.jpg" alt="" style="height:70vh; width:70vh">
+                 Condition 1
+                 <br>
+                 Condition 2
+                 <br>
 
+                 <br><center>  <a href="./assets/legal/tc.pdf" download>Download T&C</a></center>
              </div>
+      </div>
 
          </section>
 
    </main><!-- End #main -->
 
  <?php include("footer.php") ?>
-
- <script>
- $(document).ready(function() {
-var i =5
-
-var x = setInterval(function(){
-   as();
-   i--;
-   if(i<0){
-     clearInterval(x);
-   }
- },1000)
-
-
-function as(){
-  $("#timer").text(i);
-}
-
-
-
- })
- </script>
  </body>
  </html>
