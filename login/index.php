@@ -5,25 +5,25 @@
 // ******************************
 // FOR LOCAL DEVELOPMENT
 // ******************************
-define("DB_SERVER",'localhost');
-define("DB_USERNAME", 'root');
-define("DB_PASSWORD", '');
-define("DB_NAME", '2020_comp10120_x9');
-$conn = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD, DB_NAME);
+// define("DB_SERVER",'localhost');
+// define("DB_USERNAME", 'root');
+// define("DB_PASSWORD", '');
+// define("DB_NAME", '2020_comp10120_x9');
+// $conn = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD, DB_NAME);
 
 
 // ******************************
 // FOR MANCHESTER SERVER DEPLOYMENT
 // ******************************
-// require_once('../config.inc.php');
-// $conn = new mysqli($database_host, $database_user, $database_pass, $group_dbnames[0]);
-//
-// if($conn === false){
-// 	die("ERROR: COULDN'T CONNECT TO DATABASE " .  mysqli_connect_error());
-// }
-// else{
-// 	$msgs = "Connected Successfully";
-// }
+require_once('../config.inc.php');
+$conn = new mysqli($database_host, $database_user, $database_pass, $group_dbnames[0]);
+
+if($conn === false){
+	die("ERROR: COULDN'T CONNECT TO DATABASE " .  mysqli_connect_error());
+}
+else{
+	$msgs = "Connected Successfully";
+}
 
 // ******************************
 // FOR LOCAL DEVELOPMENT WITHOUT DB
@@ -64,7 +64,7 @@ $conn = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD, DB_NAME);
 // ******************************
 // ONLY FOR HEROKU DEPLOYMENT
 // ******************************
-//Get Heroku ClearDB connection information
+// Get Heroku ClearDB connection information
 // $cleardb_url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 // $cleardb_server = $cleardb_url["host"];
 // $cleardb_username = $cleardb_url["user"];
