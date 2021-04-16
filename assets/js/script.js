@@ -141,6 +141,23 @@ $("#ings").on("keyup",function(){
     $('#selectedIngs').val(existingValue)
     ingData.unshift(hello)
 
+    arr = [];
+     var vals= $("#ings").val();
+     if(vals.length>1){
+       ingData.forEach(function(item,index){
+         if(item.toLowerCase().includes(vals.toLowerCase())){
+           arr.push(item)
+         }
+       })
+       $('#displayIng').html("<tr><td><span id='opti'>Click on ingredients to select them</span></td></tr>")
+
+       arr.forEach(function(item,index){
+         $('#displayIng').append("<tr class='displayRow' style='cursor:pointer'><td><center>"+item+"</center></td></tr>")
+       })
+     }else{
+       $('#displayIng').html("<tr><td><span id='opti'>Click on ingredients to select them</span></td></tr>")
+     }
+
   })
 
 });
