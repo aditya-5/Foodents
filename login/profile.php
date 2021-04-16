@@ -767,7 +767,7 @@ echo "<div class='alert alert-danger' role='alert'>".$error."</div>";
 						<label for="ing1">Ingredients <span><i class="fas fa-plus-circle" id="addIng"></i></span></label>
 						<input type="text" id="ing1" name="ing[]" placeholder="Ingredient #1" class="form-control mb-2">
 					</div><br>
-
+					<center><small class='text-muted'>By adding a recipe, you automatically agree to our Terms and Conditions.</small></center> <br>
 					<div class="text-center">
 						<button class="btn btn-primary" name="addRecipe" type="submit">Add Recipe</button>
 					</div>
