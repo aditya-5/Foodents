@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 14, 2021 at 10:39 PM
+-- Generation Time: Apr 16, 2021 at 03:20 PM
 -- Server version: 5.7.32
 -- PHP Version: 7.3.21
 
@@ -167,8 +167,8 @@ INSERT INTO `INGREDIENTS` (`ingredient_id`, `category_id`, `name`) VALUES
 (96, NULL, ' Bacon '),
 (97, NULL, ' Cereals ready - to - eat '),
 (98, NULL, ' Cereals '),
-(99, NULL, ' Milk\r\n    and cereal bar '),
-(100, NULL, ' Rice\r\n    and Wheat cereal bar '),
+(99, NULL, ' Milk and cereal bar '),
+(100, NULL, ' Rice and Wheat cereal bar '),
 (101, NULL, ' Apples '),
 (102, NULL, ' Apple juice '),
 (103, NULL, ' Applesauce '),
@@ -198,7 +198,7 @@ INSERT INTO `INGREDIENTS` (`ingredient_id`, `category_id`, `name`) VALUES
 (127, NULL, ' Kumquats '),
 (128, NULL, ' Lemons '),
 (129, NULL, ' Lemon juice '),
-(130, NULL, ' Lemon juice\r\n    from\r\n      concentrate '),
+(130, NULL, ' Lemon juice from concentrate '),
 (131, NULL, ' Lemon peel '),
 (132, NULL, ' Limes '),
 (133, NULL, ' Lime juice '),
@@ -353,7 +353,7 @@ INSERT INTO `INGREDIENTS` (`ingredient_id`, `category_id`, `name`) VALUES
 (282, NULL, ' Crustaceans '),
 (283, NULL, ' Mollusks '),
 (284, NULL, ' Broadbeans (fava beans) '),
-(285, NULL, ' Chickpeas (\r\n        garbanzo beans '),
+(285, NULL, ' Chickpeas (garbanzo beans)'),
 (286, NULL, ' Chili with beans '),
 (287, NULL, ' Cowpeas '),
 (288, NULL, ' Lentils '),
@@ -367,10 +367,10 @@ INSERT INTO `INGREDIENTS` (`ingredient_id`, `category_id`, `name`) VALUES
 (296, NULL, ' Natto '),
 (297, NULL, ' Soy flour '),
 (298, NULL, ' Soy protein isolate '),
-(299, NULL, ' Soy sauce made\r\n        from\r\n          soy\r\n          and wheat (shoyu) '),
+(299, NULL, ' Soy sauce made from soy and wheat (shoyu) '),
 (300, NULL, ' Tofu '),
 (301, NULL, ' Soymilk '),
-(302, NULL, ' Veggie burgers\r\n          or soyburgers '),
+(302, NULL, ' Veggie burgers or soyburgers '),
 (303, NULL, ' Peanut spread '),
 (304, NULL, ' Soymilk (all flavors) '),
 (305, NULL, ' Lamb '),
@@ -410,7 +410,7 @@ INSERT INTO `INGREDIENTS` (`ingredient_id`, `category_id`, `name`) VALUES
 (339, NULL, ' Cinnamon buns '),
 (340, NULL, ' Cream puff '),
 (341, NULL, ' Focaccia '),
-(342, NULL, ' SCHIFF,\r\n          TIGER\' S MILK BAR '),
+(342, NULL, 'Schiff Tiger\'s milk bar'),
 (343, NULL, ' Candies '),
 (344, NULL, ' Snacks '),
 (345, NULL, ' Fruit syrup '),
@@ -431,7 +431,7 @@ INSERT INTO `INGREDIENTS` (`ingredient_id`, `category_id`, `name`) VALUES
 (360, NULL, ' Frozen yogurts '),
 (361, NULL, ' Fruit butters '),
 (362, NULL, ' Honey '),
-(363, NULL, ' Jams\r\n    and preserves '),
+(363, NULL, ' Jams and preserves '),
 (364, NULL, ' Jellies '),
 (365, NULL, ' Marmalade '),
 (366, NULL, ' Molasses '),
@@ -439,7 +439,7 @@ INSERT INTO `INGREDIENTS` (`ingredient_id`, `category_id`, `name`) VALUES
 (368, NULL, ' Sugars '),
 (369, NULL, ' Sweeteners '),
 (370, NULL, ' Snack '),
-(371, NULL, ' Cheese puffs\r\n    and twists '),
+(371, NULL, ' Cheese puffs and twists '),
 (372, NULL, ' Potato chips '),
 (373, NULL, ' Sweetener '),
 (374, NULL, ' Jams '),
@@ -473,7 +473,7 @@ INSERT INTO `INGREDIENTS` (`ingredient_id`, `category_id`, `name`) VALUES
 (402, NULL, ' Light Ice Cream '),
 (403, NULL, ' Yogurt parfait '),
 (404, NULL, ' School Lunch '),
-(405, NULL, ' Macaroni\r\n    and Cheese '),
+(405, NULL, ' Macaroni and Cheese '),
 (406, NULL, ' HOT POCKETS '),
 (407, NULL, ' HOT POCKETS Ham \' N Cheese Stuffed Sandwich '),
 (408, NULL, ' Ravioli '),
@@ -486,7 +486,7 @@ INSERT INTO `INGREDIENTS` (`ingredient_id`, `category_id`, `name`) VALUES
 (415, NULL, ' Lasagna with meat & sauce '),
 (416, NULL, ' Egg rolls '),
 (417, NULL, ' Rice bowl with chicken '),
-(418, NULL, ' Macaroni\r\n    and cheese dinner with dry sauce mix '),
+(418, NULL, ' Macaroni and cheese dinner with dry sauce mix '),
 (419, NULL, ' LEAN POCKETS '),
 (420, NULL, ' Potato salad with egg '),
 (421, NULL, ' Corn dogs '),
@@ -502,13 +502,13 @@ INSERT INTO `INGREDIENTS` (`ingredient_id`, `category_id`, `name`) VALUES
 (431, NULL, ' Cookie '),
 (432, NULL, ' Waffles '),
 (433, NULL, ' Sweet Potatoes '),
-(434, NULL, ' Rice\r\n    and vermicelli mix '),
+(434, NULL, ' Rice and vermicelli mix '),
 (435, NULL, ' Taquitos '),
 (436, NULL, ' Pasta mix '),
 (437, NULL, ' Yellow rice with seasoning '),
 (438, NULL, ' Pizza rolls '),
-(439, NULL, ' Potsticker\r\n    or wonton '),
-(440, NULL, ' Macaroni\r\n    or noodles with cheese '),
+(439, NULL, ' Potsticker or wonton '),
+(440, NULL, ' Macaroni or noodles with cheese '),
 (441, NULL, ' Turnover '),
 (442, NULL, ' Rice mix '),
 (443, NULL, ' Dumpling '),
@@ -528,7 +528,7 @@ INSERT INTO `INGREDIENTS` (`ingredient_id`, `category_id`, `name`) VALUES
 (457, NULL, ' Luncheon slices '),
 (458, NULL, ' Meatballs '),
 (459, NULL, ' Vegetarian fillets '),
-(460, NULL, ' Vegetarian meatloaf\r\n    or patties '),
+(460, NULL, ' Vegetarian meatloaf or patties '),
 (461, NULL, ' Beverage '),
 (462, NULL, ' Bacon bits '),
 (463, NULL, ' Butter replacement '),
@@ -536,7 +536,7 @@ INSERT INTO `INGREDIENTS` (`ingredient_id`, `category_id`, `name`) VALUES
 (465, NULL, ' Pheasant '),
 (466, NULL, ' Dove '),
 (467, NULL, ' Soybean '),
-(468, NULL, ' Tomato\r\n    and vegetable juice '),
+(468, NULL, ' Tomato and vegetable juice '),
 (469, NULL, ' Cranberry juice '),
 (470, NULL, ' Hearts of palm '),
 (471, NULL, ' Yeast extract spread '),
@@ -898,7 +898,7 @@ INSERT INTO `RECIPES` (`recipe_id`, `user_id`, `name`, `date_created`, `servings
 (631, 31, 'Flaky Buttermilk Biscuits', '2020-01-18', 12, 'Adjust oven rack to lower-middle position; heat oven to 450 degrees.  \r\n\r\n\r\n\r\nWhisk flour, baking power, baking soda, and salt in large bowl.\r\n\r\n\r\n\r\nAdd shortening to flour mixture; break up chunks with fingertips until only pea-sized pieces remain.\r\n\r\nWorking in batches, drop butter slices into flour mixture and toss to coat; pick up each slice of butter and press between floured fingertips into flat, nickel-sized pieces.\r\n\r\nRepeat until all butter is incorporated; toss to combine.\r\n\r\nFreeze mixture (in bowl) until chilled, about 15 minutes.\r\n\r\n\r\n\r\nSpray 24-square-inch work surface with nonstick cooking spray; spread spray evenly across surface with kitchen towel or paper towel.\r\n\r\nSprinkle 1/3 cup of extra flour across sprayed area; gently spread flour across work surface with palm to form thin, even coating.\r\n\r\nAdd all but 2 tablespoons of buttermilk to flour mixture; stir briskly with fork until ball forms and no dry bits of flour are visible, adding remaining buttermilk as needed (dough will be sticky and shaggy but should clear sides of bowl).\r\n\r\nWith rubber spatula, transfer dough onto center of prepared work surface, dust surface lightly with flour, and, with floured hands, bring dough together into cohesive ball.\r\n\r\n\r\n\r\nPat dough into approximate 10-inch square; roll into 18- by 14-inch rectangle about 1/4 inch thick, dusting dough and rolling pin with flour as needed.\r\n\r\nUsing bench scraper or thin metal spatula, fold dough into thirds, brushing any excess flour from surface; lift short end of dough and fold in thirds again to form approximate 6- by 4-inch rectangle.\r\n\r\nRotate dough 90 degrees, dusting work surface underneath with flour; roll and fold dough again, dusting with flour as needed.\r\n\r\n\r\n\r\nRoll dough into 10-inch square about 1/2 inch thick; flip dough and cut nine 3-inch rounds with floured biscuit cutter, dipping cutter back into flour after each cut.\r\n\r\nCarefully invert and transfer rounds to ungreased baking sheet, spaced 1 inch apart.\r\n\r\nGather dough scraps into ball; roll and fold once or twice until scraps form smooth dough.\r\n\r\nRoll dough into 1/2-inch-thick round; cut 3 more 3-inch rounds and transfer to baking sheet.  Discard excess dough.\r\n\r\n\r\n\r\nBrush biscuit tops with melted butter.\r\n\r\nBake, without opening oven door, until tops are golden brown and crisp, 15 to 17 minutes.\r\n\r\nLet cool on baking sheet 5 to 10 minutes before serving.', 'Used to make this with my Mum and I whip it up whenever I miss home. All the effort is definitely worth it :)', 40, 5, 'https://www.cookingmaniac.com/wp-content/uploads/2015/09/buttermilk-biscuit-1.jpg', 'biscuits, bread, sides'),
 (633, 82, 'Sherry Vinaigrette', '2015-05-08', 1, 'Whisk together the shallot, vinegar, mustard, salt, and pepper in a small bowl. Slowly whisk in the oil until emulsified.', 'Rich, tangy and sweet. Just wonderful all around and it brightens up even plain salad greens. I use it on my Grilled Portobello Mushrooms, check that out next!', 40, 2, 'https://www.cookingclarified.com/wp-content/uploads/2016/09/Sherry-Dijon-Vinaigrette-9-1024x683.jpg', 'dressing, components'),
 (634, 97, 'Margherita Salad', '2020-07-16', 4, 'Puree the plum tomato, sun-dried tomatoes, vinegar, garlic, oregano, a basil leaves and parmesan in a blender, drizzling in the sun-dried tomato oil until smooth.\r\n\r\nAdd 2 to 3 tablespoons water, if needed to make a pour-able dressing; season with salt and pepper.\r\n\r\n\r\n\r\nHeat the olive oil in a large skillet over medium-high heat. Add the breadcrumbs, season with salt and pepper and cook, stirring occasionally, until golden, about 2 minutes.\r\n\r\nAdd the remaining parmesan and the parsley and cook until toasted, about 1 more minute.\r\n\r\n\r\n\r\nToss the salad greens, mozzarella, and remaining basil in a large bowl.\r\n\r\nToss with the dressing, then sprinkle with the breadcrumb mixture.', 'I like to use home made bread crumbs instead of store bought.\r\n\r\nThey stay crispier on the salad.\r\n\r\nEnjoy! :)', 50, 3, 'https://media.chefdehome.com/740/0/0/caprese/cherry-tomato-mozzarella-salad.jpg', 'salad, dressing, main'),
-(635, 108, 'Mexican Ensalada', '2022-08-01', 2, 'In small bowl, whisk together dressing ingredients.\r\n\r\n\r\n\r\nChop up additional ingredients bite size and add to a medium bowl.\r\n\r\n\r\n\r\nCombine dressing and all ingredients in a large bowl, toss, and serve.\r\n\r\nAnd here\'s an alternate dressing: 1/2 lemon, juiced; 1 tbsp apple cider vinegar; 2 tbsp olive oil; 2 tablespoons cilantro, chopped.', 'For when you want something really savory', 50, 2, 'https://dashofcolorandspice.com/wp-content/uploads/2020/07/IMG_4312.jpg', 'salad, mexican, FUF, main, vegetarian'),
+(635, 108, 'Mexican Ensalada', '2022-08-01', 2, 'In small bowl, whisk together dressing ingredients.\r\n\r\n\r\n\r\nChop up additional ingredients bite size and add to a medium bowl.\r\n\r\n\r\n\r\nCombine dressing and all ingredients in a large bowl, toss, and serve.\r\n\r\nAnd here\'s an alternate dressing: 1/2 lemon, juiced; 1 tbsp apple cider vinegar; 2 tbsp olive oil; 2 tablespoons cilantro, chopped.', 'For when you want something really savory', 50, 2, 'https://hispanickitchen-nglmedia.netdna-ssl.com/wp-content/uploads/2017/07/Ensalada-de-Pollo_1500-700x500.jpg', 'salad, mexican, FUF, main, vegetarian'),
 (636, 50, 'Guacamole', '2021-05-10', 8, 'Place all ingredients in a bowl with a flat bottom and mash it with a potato masher.  Alternatively, you can mix everything briefly in a food processor.\r\n\r\nStir well and keep refrigerated. This dish will brown on the areas exposed to air within a few hours, so serve it shortly after making it or just stir again before serving.', 'Simple Guacamole. Good for gatherings, great for parties', 20, 1, 'https://www.jessicagavin.com/wp-content/uploads/2019/04/guacamole-6-1200.jpg', 'dip, appetizer, mexican, FUF, sides'),
 (637, 78, 'Sweet Almond Date Smoothie', '2021-10-17', 2, 'Combine all ingredients in blender. Blend until smooth.', 'Feel free to change some of the ingredient amounts, this is only for the really sweet tooths!', 20, 3, 'https://feelgoodfoodie.net/wp-content/uploads/2020/02/Date-Shake-4.jpg', 'smoothie, FUF, breakfast'),
 (638, 42, 'Super Protein Salad', '2022-08-09', 1, 'Combine olive oil, vinegar, mustard, salt and pepper to taste. Toss with other ingredients in a bowl and serve.', 'The best way to make a salad is to make it interesting, and there\'s plenty of variety here for that!', 20, 3, 'https://i1.wp.com/www.thewholeingredient.com/wp-content/uploads/2015/01/IMG_3501-edit.jpg?resize=1200%2C800', 'salad, beans, FUF, main'),
@@ -927,24 +927,25 @@ CREATE TABLE `USERS` (
 
 INSERT INTO `USERS` (`user_id`, `username`, `password`, `email`, `first_name`, `last_name`, `profile_url`, `Bio`) VALUES
 (1, 'admin', '$2y$10$6luPHGi9H/We/ZAG7mGrc.685SFI0ZOZrM6H4tRMIrAhQUXC6AVi.', 'admin@manchester.ac.uk', 'Admin', 'Realperson', '1.png', 'Admin account for admin things.'),
-(17, 'wanderingtowboats40', '$2y$10$kdAlKtaTwFpt5SLZ2l8CK.3Q4jhosKrbCl3dPdixTGgJ9KJh6QDq6', 'brodie.donnie@student.manchester.ac.uk', 'Brodie', 'Donnie', '1.png', ''),
-(24, 'drumbeatslurps75', '$2y$10$qKZQVpks1RQtwAuP0/rYK.c0et0nEvc.CA.pWHPKOXM99hMTWR0LK', 'chena.chadwick@student.manchester.ac.uk', 'Chena', 'Chadwick', '1.png', ''),
-(25, 'Unstablenessuruguayans', '$2y$10$Lfkej4WZbehSqWfaZuJpweHvYAvGMvSTdsyWIEO65viiX9LwXSKMq', 'tymon.danny@student.manchester.ac.uk', 'Tymon', 'Danny', '2.png', ''),
-(29, 'deesidegardening', '$2y$10$mDVXKA75VONgfPHBqY7xFOLuDrmbTuhg3PCEPATKv/WqyMnqA78sC', 'jill.shaterra@student.manchester.ac.uk', 'Jill', 'Shaterra', '2.png', ''),
-(31, 'inuringbattleships28', '$2y$10$eirPUg121AZtqjU/eLH1RO0gkPnN/TFkOhEPZ76Bvp/khcSwpdnee', 'manu.kiersten@student.manchester.ac.uk', 'Manu', 'Kiersten', '2.png', ''),
-(33, 'westmeathmegavitamin', '$2y$10$yy54brTyeqJB.QImwAhFNOUmafJ5BWkQc4reWCvW44PuUerAeIGo2', 'kalysta.vontrell@student.manchester.ac.uk', 'Kalysta', 'Vontrell', '2.png', ''),
-(42, 'expendituresamplify70', '$2y$10$cxaZKD1i1L0M1TxUmGfEmuR6.RglMhRvIvi6QdPEK3.Q5wnFjsvxe', 'kamilla.jacqui@student.manchester.ac.uk', 'Kamilla', 'Jacqui', '3.png', ''),
-(50, 'freemasonbangle', '$2y$10$BBoXFAJk2oaNWMBJCPLaAei1WsRfZvulZEVHb70TDnNvecjQcbLK.', 'rayford.colm@student.manchester.ac.uk', 'Rayford', 'Colm', '3.png', ''),
-(52, 'Stunningbaffled', '$2y$10$LT/8Tafj72/JwvngSxXFoeGWjXxpqFTuKIbkmM81Wsy58o.WeTe2m', 'shikita.kalisa@student.manchester.ac.uk', 'Shikita', 'Kalisa', '3.png', ''),
-(54, 'practicabledegenerative32', '$2y$10$v77Zk.wR0o721jw8iDQKZeyhpKKkT/MvigBT88N9/yQ09dQbfAVpu', 'cheyanne.danh@student.manchester.ac.uk', 'Cheyanne', 'Danh', '3.png', ''),
-(72, 'Chokerforfeiting', '$2y$10$hTxzhClPdgih5A5kffyrcOzcY2P/u8hLU/wnNsXtouf0m.SqyTfg.', 'pricsilla.girl@student.manchester.ac.uk', 'Pricsilla', 'Girl', '5.png', ''),
-(78, 'Sourpussesdisplaces61', '$2y$10$ZttV8rYar2J.LZIOSlrnQOEyO/MWZi36vFYnhFN0ISdVaq624Z2EC', 'quinette.olusegun@student.manchester.ac.uk', 'Quinette', 'Olusegun', '5.png', ''),
-(82, 'Springssubtending87', '$2y$10$zOWRpElxLs9xR1mDh.TVPOSf8bAvxcdQq8s4TcbB1esKskjKJg9kO', 'lanay.hashem@student.manchester.ac.uk', 'Lanay', 'Hashem', '5.png', ''),
-(84, 'ridiculingoarlock96', '$2y$10$R64EBpjOhzXq11ujGNGg5uKHj0TaP9t4yK4DPcDQx2ful/HBJO3wO', 'tahesha.eliott@student.manchester.ac.uk', 'Tahesha', 'Eliott', '5.png', ''),
-(96, 'sponsorspayed79', '$2y$10$qeKtmj2FaTtANPXuOFoaTeiS0goABfJ54r3vk17qmL.UC5iFxHoiS', 'keno.sherise@student.manchester.ac.uk', 'Keno', 'Sherise', '6.png', ''),
-(97, 'Vividlyskilfulness68', '$2y$10$dVWP5cy1cudKfuYrWDKH3.pOqbkCxd9dhQNOjaFH0PaU46NItbTLS', 'lacoya.demetreus@student.manchester.ac.uk', 'Lacoya', 'Demetreus', '6.png', ''),
-(106, 'deathlessparliamentarians19', '$2y$10$GF0uE1BRRv/Cw.AmO.s5FuQWPn7Z2nN0YU/hMoN2PHU685LroiKZK', 'laurina.rosaelena@student.manchester.ac.uk', 'Laurina', 'Rosaelena', '7.png', ''),
-(108, 'Crematingmarlines', '$2y$10$7to6QSc70HhcqTkPWtH9qOMqDmlYM0.2AUjrB1WYRGLUsqdUhBmVm', 'shanyn.danya@student.manchester.ac.uk', 'Shanyn', 'Danya', '7.png', '');
+(17, 'wanderingtowboats40', '$2y$10$kdAlKtaTwFpt5SLZ2l8CK.3Q4jhosKrbCl3dPdixTGgJ9KJh6QDq6', 'brodie.donnie@student.manchester.ac.uk', 'Brodie', 'Donnie', '1.png', 'Just a foodie trying to make good food'),
+(24, 'drumbeatslurps75', '$2y$10$qKZQVpks1RQtwAuP0/rYK.c0et0nEvc.CA.pWHPKOXM99hMTWR0LK', 'chena.chadwick@student.manchester.ac.uk', 'Chena', 'Chadwick', '1.png', 'Just a foodie trying to make good food'),
+(25, 'Unstablenessuruguayans', '$2y$10$Lfkej4WZbehSqWfaZuJpweHvYAvGMvSTdsyWIEO65viiX9LwXSKMq', 'tymon.danny@student.manchester.ac.uk', 'Tymon', 'Danny', '2.png', 'Just a foodie trying to make good food'),
+(29, 'deesidegardening', '$2y$10$mDVXKA75VONgfPHBqY7xFOLuDrmbTuhg3PCEPATKv/WqyMnqA78sC', 'jill.shaterra@student.manchester.ac.uk', 'Jill', 'Shaterra', '2.png', 'I hope you enjoy my recipes!'),
+(31, 'inuringbattleships28', '$2y$10$eirPUg121AZtqjU/eLH1RO0gkPnN/TFkOhEPZ76Bvp/khcSwpdnee', 'manu.kiersten@student.manchester.ac.uk', 'Manu', 'Kiersten', '2.png', 'I hope you enjoy my recipes!'),
+(33, 'westmeathmegavitamin', '$2y$10$yy54brTyeqJB.QImwAhFNOUmafJ5BWkQc4reWCvW44PuUerAeIGo2', 'kalysta.vontrell@student.manchester.ac.uk', 'Kalysta', 'Vontrell', '3.png', 'I hope you enjoy my recipes!'),
+(42, 'expendituresamplify70', '$2y$10$cxaZKD1i1L0M1TxUmGfEmuR6.RglMhRvIvi6QdPEK3.Q5wnFjsvxe', 'kamilla.jacqui@student.manchester.ac.uk', 'Kamilla', 'Jacqui', '3.png', 'I\'m a student who\'s trying to spice up their boring cooking'),
+(50, 'freemasonbangle', '$2y$10$BBoXFAJk2oaNWMBJCPLaAei1WsRfZvulZEVHb70TDnNvecjQcbLK.', 'rayford.colm@student.manchester.ac.uk', 'Rayford', 'Colm', '3.png', 'I\'m a student who\'s trying to spice up their boring cooking'),
+(52, 'Stunningbaffled', '$2y$10$LT/8Tafj72/JwvngSxXFoeGWjXxpqFTuKIbkmM81Wsy58o.WeTe2m', 'shikita.kalisa@student.manchester.ac.uk', 'Shikita', 'Kalisa', '4.png', 'I\'m a student who\'s trying to spice up their boring cooking'),
+(54, 'practicabledegenerative32', '$2y$10$v77Zk.wR0o721jw8iDQKZeyhpKKkT/MvigBT88N9/yQ09dQbfAVpu', 'cheyanne.danh@student.manchester.ac.uk', 'Cheyanne', 'Danh', '4.png', 'Leveling up your cooking is so satisfying :)'),
+(72, 'Chokerforfeiting', '$2y$10$hTxzhClPdgih5A5kffyrcOzcY2P/u8hLU/wnNsXtouf0m.SqyTfg.', 'pricsilla.girl@student.manchester.ac.uk', 'Pricsilla', 'Girl', '4.png', 'Leveling up your cooking is so satisfying :)'),
+(78, 'Sourpussesdisplaces61', '$2y$10$ZttV8rYar2J.LZIOSlrnQOEyO/MWZi36vFYnhFN0ISdVaq624Z2EC', 'quinette.olusegun@student.manchester.ac.uk', 'Quinette', 'Olusegun', '5.png', 'Leveling up your cooking is so satisfying :)'),
+(82, 'Springssubtending87', '$2y$10$zOWRpElxLs9xR1mDh.TVPOSf8bAvxcdQq8s4TcbB1esKskjKJg9kO', 'lanay.hashem@student.manchester.ac.uk', 'Lanay', 'Hashem', '5.png', 'Healthy food is good food. Atleast that\'s what I think'),
+(84, 'ridiculingoarlock96', '$2y$10$R64EBpjOhzXq11ujGNGg5uKHj0TaP9t4yK4DPcDQx2ful/HBJO3wO', 'tahesha.eliott@student.manchester.ac.uk', 'Tahesha', 'Eliott', '5.png', 'Healthy food is good food. Atleast that\'s what I think'),
+(96, 'sponsorspayed79', '$2y$10$qeKtmj2FaTtANPXuOFoaTeiS0goABfJ54r3vk17qmL.UC5iFxHoiS', 'keno.sherise@student.manchester.ac.uk', 'Keno', 'Sherise', '6.png', 'Healthy food is good food. Atleast that\'s what I think'),
+(97, 'Vividlyskilfulness68', '$2y$10$dVWP5cy1cudKfuYrWDKH3.pOqbkCxd9dhQNOjaFH0PaU46NItbTLS', 'lacoya.demetreus@student.manchester.ac.uk', 'Lacoya', 'Demetreus', '6.png', 'Anyone else have as much of a sweet tooth as me?'),
+(106, 'deathlessparliamentarians19', '$2y$10$GF0uE1BRRv/Cw.AmO.s5FuQWPn7Z2nN0YU/hMoN2PHU685LroiKZK', 'laurina.rosaelena@student.manchester.ac.uk', 'Laurina', 'Rosaelena', '7.png', 'Anyone else have as much of a sweet tooth as me?'),
+(108, 'Crematingmarlines', '$2y$10$7to6QSc70HhcqTkPWtH9qOMqDmlYM0.2AUjrB1WYRGLUsqdUhBmVm', 'shanyn.danya@student.manchester.ac.uk', 'Shanyn', 'Danya', '7.png', 'Anyone else have as much of a sweet tooth as me?'),
+(116, 'newuser', '$2y$10$ydLqSujOeEib73LcIvbQTu.Sjc97PY9SFEBeljx7DRP4PqlaMJJSq', 'newuser@gmail.com', 'Adi', 'Agar', '1.png', NULL);
 
 --
 -- Indexes for dumped tables
@@ -1044,7 +1045,7 @@ ALTER TABLE `RECIPES`
 -- AUTO_INCREMENT for table `USERS`
 --
 ALTER TABLE `USERS`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=116;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=117;
 
 --
 -- Constraints for dumped tables
