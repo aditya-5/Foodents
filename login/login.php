@@ -21,33 +21,37 @@ if(isset($_SESSION['loggedin'])){
 }
 
 if(isset($_SESSION['msg'])){
-	$error = $_SESSION['msg'];
+	$msg = $_SESSION['msg'];
 	unset($_SESSION['msg']);
+}
+
+if(isset($_SESSION['error'])){
+	$error = $_SESSION['error'];
+	unset($_SESSION['error']);
 }
 
 require("index.php");
 
 
 $username = $password = "";
-$username_err = $password_err = "";
 
 if($_SERVER["REQUEST_METHOD"]=="POST"){
 	if(empty(trim($_POST['username']))){
-		$username_err = "Username field cannot be blank";
+		$err = "Username field cannot be blank";
 	}
 	else{
 		$username = trim($_POST['username']);
 	}
 
 	if(empty(trim($_POST['password']))){
-		$password_err = "Password field cannot be blank";
+		$err = "Password field cannot be blank";
 	}
 	else{
 		$password = trim($_POST['password']);
 	}
 
 
-	if(empty($username_err) && empty($password_err)){
+	if(empty($err)){
 
 		$sql = "SELECT user_id, username, password, first_name, last_name,email,profile_url,Bio from USERS where username= ? or email = ?";
 
@@ -77,25 +81,29 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 							$_SESSION['email'] = $email;
 							$_SESSION['profurl'] = $profurl;
 							$_SESSION['bio'] = $bio;
-							// header("location: welcome.php");
 							header("location: ../index.php");
 						}
 						else{
-							echo "Oops. The password is incorrect";
+							$err =  "Oops. The password is incorrect";
 						}
 
 					}
 				}
 				else{
-					echo "No account was found with these credentials";
+				$err ="No account was found with these credentials";
 				}
 			}
 			else{
-				echo "Something is wrong with the dollar stmt part";
+				$err ="Something is wrong with the dollar stmt part";
 			}
 			mysqli_stmt_close($stmt);
 		}
 
+	}
+
+	if(isset($err)){
+	  $_SESSION['error'] = $err;
+	  header('location: login');
 	}
 
     mysqli_close($conn);
@@ -134,15 +142,20 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 
     <div class="container middle p-3">
 			<?php
+			if(isset($msg)){
+			echo "<div class='alert alert-success' role='alert'>".$msg."</div>";
+			}
+			?>
+			<?php
 			if(isset($error)){
-			echo "<div class='alert alert-success' role='alert'>".$error."</div>";
+			echo "<div class='alert alert-danger' role='alert'>".$error."</div>";
 			}
 			?>
  		<form action="login.php" method="POST">
         <h2 class="text-center">Login</h2><br>
         <div class="form-group">
-            <label for="username" class="form-label">E-mail</label>
-            <input type="text" class="form-control" id="username" name="username" placeholder="Enter e-mail">
+            <label for="username" class="form-label">E-mail/Username</label>
+            <input type="text" class="form-control" id="username" name="username" placeholder="Enter email or username">
         </div>
 
 
