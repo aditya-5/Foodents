@@ -115,34 +115,34 @@
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-Starters">
-            <a href="./recipe?id=629"><img src="assets/img/recipeimg/salad.jpg" class="img-fluid" alt=""></a>
+            <a href="./recipe?id=630"><img src="assets/img/recipeimg/salad.jpg" class="img-fluid" alt=""></a>
             <div class="portfolio-info">
               <h4>Greek Salad</h4>
               <p>Starter</p>
               <a href="assets/img/recipeimg/salad.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Greek Salad"><i class="bx bx-plus"></i></a>
-              <a href="recipe3.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+              <a href="./recipe?id=630" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
 
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-Desserts">
-            <a href="recipe1.html"><img src="assets/img/recipeimg/biscuit.jpg" class="img-fluid" alt=""></a>
+            <a href="./recipe?id=631"><img src="assets/img/recipeimg/biscuit.jpg" class="img-fluid" alt=""></a>
             <div class="portfolio-info">
               <h4>Flaky Buttermilk Biscuits</h4>
               <p>Dessert</p>
               <a href="assets/img/recipeimg/biscuit.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Flaky Buttermilk Biscuits"><i class="bx bx-plus"></i></a>
-              <a href="recipe1.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+              <a href="./recipe?id=631" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
            <div class="col-lg-4 col-md-6 portfolio-item filter-Main">
-            <img src="assets/img/recipeimg/shrimp.jpg" class="img-fluid" alt="">
+            <a href="./recipe?id=619"><img src="assets/img/recipeimg/shrimp.jpg" class="img-fluid" alt=""></a>
             <div class="portfolio-info">
-              <h4>Shrimp</h4>
+              <h4>Baked Shrimp Scampi</h4>
               <p>Main Course</p>
               <a href="assets/img/recipeimg/shrimp.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Shrimp"><i class="bx bx-plus"></i></a>
-              <a href="#" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+              <a href="./recipe?id=619" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
@@ -150,33 +150,33 @@
  -->
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-Starters">
-            <img src="assets/img/recipeimg/pasta.jpg" class="img-fluid" alt="">
+            <a href="./recipe?id=620"><img src="https://www.healthywomen.org/media-library/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWFnZSI6Imh0dHBzOi8vYXNzZXRzLnJibC5tcy8xOTE1NzM3My9vcmlnaW4uanBnIiwiZXhwaXJlc19hdCI6MTY2MTg3NTE2N30.mc96FoPc8PjMjLsBYF-AwOFOY7bKcXkoSlLmQ39wlxs/image.jpg?width=980&quality=85" class="img-fluid" alt=""></a>
             <div class="portfolio-info">
-              <h4>Tomato Basil Pasta</h4>
-              <p>Starters</p>
-              <a href="assets/img/recipeimg/pasta.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Tomato Basil Pasta"><i class="bx bx-plus"></i></a>
-              <a href="#" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+              <h4>Strawberries Romanov</h4>
+              <p>Dessert</p>
+              <a href="https://www.healthywomen.org/media-library/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWFnZSI6Imh0dHBzOi8vYXNzZXRzLnJibC5tcy8xOTE1NzM3My9vcmlnaW4uanBnIiwiZXhwaXJlc19hdCI6MTY2MTg3NTE2N30.mc96FoPc8PjMjLsBYF-AwOFOY7bKcXkoSlLmQ39wlxs/image.jpg?width=980&quality=85" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Strawberries Romanov"><i class="bx bx-plus"></i></a>
+              <a href="./recipe?id=620" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-Starters">
-            <img src="assets/img/recipeimg/pizza.jpg" class="img-fluid" alt="">
+          <a href="./recipe?id=623"><img src="http://themessybaker.com/wp-content/uploads/2013/04/salmon-ebelskivers.gif" class="img-fluid" alt=""></a>
             <div class="portfolio-info">
-              <h4>Michigan Farmhouse Pizza</h4>
+              <h4>Smoked Salmon Ebelskivers</h4>
               <p>Starters</p>
-              <a href="assets/img/recipeimg/pizza.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Michigan Farmhouse Pizza"><i class="bx bx-plus"></i></a>
-              <a href="#" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+              <a href="http://themessybaker.com/wp-content/uploads/2013/04/salmon-ebelskivers.gif" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Michigan Farmhouse Pizza"><i class="bx bx-plus"></i></a>
+              <a href="./recipe?id=623" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-Starters">
-            <img src="assets/img/recipeimg/sushi.jpg" class="img-fluid" alt="">
+          <a href="./recipe?id=635"><img src="https://hispanickitchen-nglmedia.netdna-ssl.com/wp-content/uploads/2017/07/Ensalada-de-Pollo_1500-700x500.jpg" class="img-fluid" alt=""></a>
             <div class="portfolio-info">
-              <h4>Sushi</h4>
+              <h4>Mexican Ensalada</h4>
               <p>Starters</p>
-              <a href="assets/img/recipeimg/sushi.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Sushi"><i class="bx bx-plus"></i></a>
-              <a href="#" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+              <a href="https://hispanickitchen-nglmedia.netdna-ssl.com/wp-content/uploads/2017/07/Ensalada-de-Pollo_1500-700x500.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Sushi"><i class="bx bx-plus"></i></a>
+              <a href="./recipe?id=635" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
