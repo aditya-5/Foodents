@@ -16,24 +16,8 @@
 
  <body>
 
- <?php
- include("navbar.php")
-  ?>
    <main id="main">
 
-     <!-- ======= Breadcrumbs ======= -->
-     <section id="breadcrumbs" class="breadcrumbs">
-       <!-- <div class="container">
-
-         <div class="d-flex justify-content-between align-items-center">
-           <h3></h2>
-           <ol>
-             &nbsp;&nbsp;&nbsp;&nbsp;<li><a href="index">Home / Terms and Conditions</a></li>
-           </ol>
-         </div>
-
-       </div> -->
-     </section><!-- End Breadcrumbs -->
 
 
      <section id="contact" class="contact">
@@ -44,7 +28,6 @@
              <!-- <div class="row justify-content-center" data-aos="fade-up" style="background-color:#d9d9d9; padding:10px; border-radius:10px"> -->
 
              
-            <br><br><h4><center>  <a href="./assets/legal/tc.pdf" download>Download T&C</a></center></h4><br>
 
             <style>
   [data-custom-class='body'], [data-custom-class='body'] * {
@@ -310,6 +293,5 @@ You agree that the original English text shall prevail in the case of a dispute.
 
    </main><!-- End #main -->
 
- <?php include("footer.php") ?>
  </body>
  </html>
