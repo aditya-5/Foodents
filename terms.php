@@ -28,7 +28,7 @@
          <div class="d-flex justify-content-between align-items-center">
            <h2></h2>
            <ol>
-             <li><a href="index">Home</a></li>
+             &nbsp;&nbsp;&nbsp;&nbsp;<li><a href="index">Home</a></li>
            </ol>
          </div>
 
@@ -44,7 +44,7 @@
              <div class="row justify-content-center" data-aos="fade-up" style="background-color:#d9d9d9; padding:10px; border-radius:10px">
 
              
-             <br><h4><center>  <a href="./assets/legal/tc.pdf" download>Download T&C</a></center></h4>
+            <br><br><h4><center>  <a href="./assets/legal/tc.pdf" download>Download T&C</a></center></h4>
 
 
              <!-- <h1>Terms and Conditions</h1> -->
@@ -56,31 +56,31 @@
 <h2>Definitions</h2>
 <p>For the purposes of these Terms and Conditions:</p>
 <ul>
-<li>
+&nbsp;&nbsp;&nbsp;&nbsp;<li>
 <p><strong>Affiliate</strong> means an entity that controls, is controlled by or is under common control with a party, where &quot;control&quot; means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.</p>
 </li>
-<li>
+&nbsp;&nbsp;&nbsp;&nbsp;<li>
 <p><strong>Country</strong> refers to:  United Kingdom</p>
 </li>
-<li>
+&nbsp;&nbsp;&nbsp;&nbsp;<li>
 <p><strong>Company</strong> (referred to as either &quot;the Company&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in this Agreement) refers to Foodents.</p>
 </li>
-<li>
+&nbsp;&nbsp;&nbsp;&nbsp;<li>
 <p><strong>Device</strong> means any device that can access the Service such as a computer, a cellphone or a digital tablet.</p>
 </li>
-<li>
+&nbsp;&nbsp;&nbsp;&nbsp;<li>
 <p><strong>Service</strong> refers to the Website.</p>
 </li>
-<li>
+&nbsp;&nbsp;&nbsp;&nbsp;<li>
 <p><strong>Terms and Conditions</strong> (also referred as &quot;Terms&quot;) mean these Terms and Conditions that form the entire agreement between You and the Company regarding the use of the Service. This Terms and Conditions agreement has been created with the help of the <a href="https://www.termsfeed.com/terms-conditions-generator/" target="_blank">Terms and Conditions Generator</a>.</p>
 </li>
-<li>
+&nbsp;&nbsp;&nbsp;&nbsp;<li>
 <p><strong>Third-party Social Media Service</strong> means any services or content (including data, information, products or services) provided by a third-party that may be displayed, included or made available by the Service.</p>
 </li>
-<li>
+&nbsp;&nbsp;&nbsp;&nbsp;<li>
 <p><strong>Website</strong> refers to Foodents, accessible from <a href="https://web.cs.manchester.ac.uk/n98211tb/Foodents/index" rel="external nofollow noopener" target="_blank">https://web.cs.manchester.ac.uk/n98211tb/Foodents/index</a></p>
 </li>
-<li>
+&nbsp;&nbsp;&nbsp;&nbsp;<li>
 <p><strong>You</strong> means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.</p>
 </li>
 </ul>
@@ -127,7 +127,7 @@ You agree that the original English text shall prevail in the case of a dispute.
 <h1>Contact Us</h1>
 <p>If you have any questions about these Terms and Conditions, You can contact us:</p>
 <ul>
-<li>By visiting this page on our website: <a href="https://web.cs.manchester.ac.uk/n98211tb/Foodents/contact" rel="external nofollow noopener" target="_blank">https://web.cs.manchester.ac.uk/n98211tb/Foodents/contact</a></li>
+&nbsp;&nbsp;&nbsp;&nbsp;<li>By visiting this page on our website: <a href="https://web.cs.manchester.ac.uk/n98211tb/Foodents/contact" rel="external nofollow noopener" target="_blank">https://web.cs.manchester.ac.uk/n98211tb/Foodents/contact</a></li>
 </ul>
 
              </div>
