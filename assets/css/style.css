@@ -9,8 +9,10 @@
 #  Profile Settings Page
 --------------------------------------------------------------*/
 .profDP{
-	height:14vh;
-	width:14vh;
+	/* height:14vh;
+	width:14vh; */
+	height:100px;
+	width:100px;
 	transition: all 0.2s ease-in-out;
 }
 

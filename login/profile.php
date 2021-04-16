@@ -177,6 +177,21 @@ mysqli_close($conn);
 }
 // ************************************
 // ************************************
+// RECIPE DELETE
+// ************************************
+if(isset($_POST["idDelete"])){
+	$idToDelete = $_POST["idDelete"];
+	$sql = "DELETE FROM RECIPEINGREDIENTS WHERE recipe_id=$idToDelete";
+	$result = mysqli_query($conn, $sql);
+	$sql = "DELETE FROM RECIPES WHERE recipe_id=$idToDelete";
+	$result = mysqli_query($conn, $sql);
+	header("location: ./profile.php");
+}
+
+
+
+// ************************************
+// ************************************
 // ************************************
 // ************************************
 
@@ -786,37 +801,39 @@ echo "<div class='alert alert-danger' role='alert'>".$error."</div>";
 				if(isset($myRecipes)){
 
 
-					foreach($myRecipes as $value){
-						echo "<div class='col'>
-						<div class='card'>
-							<img src='".$value['image_url']."' class='card-img-top' alt='...'>
-							<div class='card-body'>
-								<a class='link-res' href='../recipe?id=".$value['recipe_id']."'>
-								<h5 class='card-title'>".$value['name']."</h5></a>
-								<p class='card-text'>". substr($value['instructions'],0,50) ."....</p>
-							</div>
-							<div class='card-footer'>
-								<small class='text-muted'>".$value['date_created']."&nbsp&nbsp&nbsp
-								<i class='fas fa-clock'></i>&nbsp&nbsp".$value['time']." minutes&nbsp
-								<i class='fas fa-utensils'></i> ".$value['servings']." servings</small>
-							</div>
-						</div></div>";
 
+					if(count($myRecipes)>0){
+						foreach($myRecipes as $value){
+							$string = trim(preg_replace('/\s+/', ' ', $value['instructions']));
+							echo "<form action='profile' method='post'><div class='col'>
+							<div class='card'>
+								<img src='".$value['image_url']."' class='card-img-top' alt='...'>
+								<div class='card-body'>
 
+									<h5 class='card-title'><a class='link-res' href='../recipe?id=".$value['recipe_id']."'>".$value['name']."
+									</a>&nbsp&nbsp<button class='btn btn-danger btn-sm' name='idDelete' value='".$value['recipe_id']."' style='display:inline-block;cursor:pointer'>
+									<i class='fas fa-trash-alt'></i>&nbsp&nbsp&nbspDelete</button></h5>
+									<p class='card-text'>". substr(	$string,0,50) ."....</p>
+								</div>
+								<div class='card-footer'>
+									<small class='text-muted'>".$value['date_created']."
+									<i class='fas fa-clock'></i>&nbsp&nbsp".$value['time']." minutes
+									<i class='fas fa-utensils'></i> ".$value['servings']." servings</small>
+								</div>
+							</div></div></form>";
+						}
+					}else{
+							echo "<br><br>&nbsp&nbsp&nbsp&nbspYou have not added any recipes until yet.";
 					}
 
 
-
-
-
-// ".$value['image_url']."
-
-
-
+				}else{
+					echo "<br><br>&nbsp&nbsp&nbsp&nbspYou have not added any recipes until yet.";
 				}
 			 ?>
 </div>
-  </div></div>
+
+  </div></div></div>
 
 
 
